@@ -86,7 +86,7 @@
     mapView = global.TPMap.create(box.querySelector('#pl-map'));
     mapView.setStops(list);
     UI.$$('[data-focus]', box).forEach(function (b) {
-      b.onclick = function () { var p = list[+b.dataset.focus]; mapView.focus(p.lat, p.lng); box.querySelector('#pl-map').scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+      b.onclick = function () { var p = list[+b.dataset.focus]; mapView.focus(p.lat, p.lng); S.earn('explore', p.id); box.querySelector('#pl-map').scrollIntoView({ behavior: 'smooth', block: 'center' }); };
     });
     UI.$$('[data-add]', box).forEach(function (b) { b.onclick = function () { addToTrip(D.PLACES.filter(function (x) { return x.id === b.dataset.add; })[0]); }; });
   }
@@ -103,7 +103,8 @@
       el.onclick = function () {
         var t = s.trips.filter(function (x) { return x.id === el.dataset.t; })[0];
         t.days[+el.dataset.d].push({ name: p.name, lat: p.lat, lng: p.lng, time: '', memo: p.desc });
-        S.save(); UI.closeSheet(); UI.toast(t.title + ' ' + (+el.dataset.d + 1) + '일차에 담았어요 ✨');
+        S.save(); UI.closeSheet();
+        if (!S.earn('place', t.id + ':' + p.id)) UI.toast(t.title + ' ' + (+el.dataset.d + 1) + '일차에 담았어요 ✨');
       };
     });
   }

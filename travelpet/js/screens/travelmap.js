@@ -40,12 +40,13 @@
   function render(root) {
     var s = S.get(), cnt = counts();
     var krVisited = korea().filter(function (f) { return cnt.region[f.properties.key]; }).length;
+    var krTotal = korea().length;
     var countries = Object.keys(cnt.country).length;
     var provs = s.records.filter(function (r) { return r.scope === 'world'; }).map(function (r) { return r.region; })
       .filter(function (v, i, a) { return a.indexOf(v) === i; }).length;
     var head = scope === 'kr'
-      ? '<div class="card stack" style="gap:10px"><p class="eyebrow">대한민국 방방곡곡</p><div class="row between"><h2 style="font-size:22px">' + krVisited + ' / 229 지역 색칠</h2><span class="badge pink">' + (krVisited / 229 * 100).toFixed(1) + '%</span></div>' +
-        '<div class="bar"><i style="width:' + (krVisited / 229 * 100) + '%"></i></div><p class="hint">시·군·구를 누르면 기록을 보거나 남길 수 있어요</p></div>'
+      ? '<div class="card stack" style="gap:10px"><p class="eyebrow">대한민국 방방곡곡</p><div class="row between"><h2 style="font-size:22px">' + krVisited + ' / ' + krTotal + ' 지역 색칠</h2><span class="badge pink">' + (krVisited / krTotal * 100).toFixed(1) + '%</span></div>' +
+        '<div class="bar"><i style="width:' + (krVisited / krTotal * 100) + '%"></i></div><p class="hint">도는 시·군으로, 특별·광역시는 도시 하나로 색칠해요. 지역을 누르면 기록을 볼 수 있어요</p></div>'
       : '<div class="card stack" style="gap:10px"><p class="eyebrow">세계 발자국</p><div class="row between"><h2 style="font-size:22px">' + countries + '개국 · ' + provs + '개 지역</h2><span class="badge sky">' + (countries / 195 * 100).toFixed(1) + '%</span></div>' +
         '<div class="bar sky"><i style="width:' + (countries / 195 * 100) + '%"></i></div><p class="hint">나라를 누르면 주·도·현 단위로 자세히 색칠할 수 있어요</p></div>';
 
@@ -53,7 +54,7 @@
       '<div class="seg"><button data-s="kr" aria-pressed="' + (scope === 'kr') + '">🇰🇷 국내</button><button data-s="world" aria-pressed="' + (scope === 'world') + '">🌏 해외</button></div>' +
       head +
       (scope === 'kr' ? sidoChips() : '') +
-      '<div class="geo" id="geo"><svg id="geo-svg" role="img" aria-label="' + (scope === 'kr' ? '대한민국 시군구 지도' : '세계 지도') + '"></svg>' +
+      '<div class="geo" id="geo"><svg id="geo-svg" role="img" aria-label="' + (scope === 'kr' ? '대한민국 시군 지도' : '세계 지도') + '"></svg>' +
       '<div class="zoom"><button data-z="in" aria-label="확대">＋</button><button data-z="out" aria-label="축소">－</button><button data-z="reset" aria-label="처음 크기로">⟲</button></div>' +
       (scope === 'world' && country ? '<div class="crumb"><button class="btn small ghost" id="back-world" style="background:#fff;box-shadow:var(--shadow)">← 세계지도</button></div>' : '') + '</div>' +
       '<div class="legend"><span><i style="background:' + COLORS[0] + '"></i>아직</span><span><i style="background:' + COLORS[1] + '"></i>1번</span><span><i style="background:' + COLORS[2] + '"></i>2번</span><span><i style="background:' + COLORS[3] + '"></i>3번 이상</span></div>' +
@@ -83,11 +84,12 @@
   function sidoChips() {
     var cnt = counts(), map = {};
     korea().forEach(function (f) {
-      var p = f.properties; map[p.sido] = map[p.sido] || { name: p.sidonm, total: 0, done: 0 };
-      map[p.sido].total++; if (cnt.region[p.key]) map[p.sido].done++;
+      var p = f.properties, k = p.metro ? 'metro' : p.sido;
+      map[k] = map[k] || { name: p.metro ? '특별·광역시' : p.sidonm, total: 0, done: 0 };
+      map[k].total++; if (cnt.region[p.key]) map[k].done++;
     });
-    var short = function (n) { return n.replace(/특별자치도|특별자치시|특별시|광역시/, '').replace(/^(충청|전라|경상)(남|북)도$/, function (m, a, b) { return a[0] + b; }).replace(/도$/, '') || n; };
-    return '<div class="chips">' + Object.keys(map).map(function (k) {
+    var short = function (n) { if (n === '특별·광역시') return n; return n.replace(/특별자치도|특별자치시|특별시|광역시/, '').replace(/^(충청|전라|경상)(남|북)도$/, function (m, a, b) { return a[0] + b; }).replace(/도$/, '') || n; };
+    return '<div class="chips">' + Object.keys(map).sort(function (a, b) { return (b === 'metro') - (a === 'metro'); }).map(function (k) {
       return '<button class="chip" data-sido="' + k + '" aria-pressed="' + (sido === k) + '">' + short(map[k].name) + ' ' + map[k].done + '/' + map[k].total + '</button>';
     }).join('') + '</div>';
   }
@@ -168,7 +170,7 @@
   function focusSido(instant) {
     if (!svgSel) return;
     if (!sido) { svgSel.transition().duration(400).call(zoomer.transform, d3.zoomIdentity); return; }
-    zoomTo(korea().filter(function (f) { return f.properties.sido === sido; }), instant);
+    zoomTo(korea().filter(function (f) { return sido === 'metro' ? f.properties.metro : f.properties.sido === sido; }), instant);
   }
 
   function label(f) {
@@ -199,6 +201,7 @@
   /* ---------- 지역 기록 시트 ---------- */
   function regionSheet(root, region, regionName, sc, iso, countryName) {
     var recs = S.get().records.filter(function (r) { return r.region === region; });
+    S.earn('explore', region);
     var b = UI.openSheet(regionName,
       '<div class="row"><span class="badge ' + (recs.length ? 'pink' : 'lav') + '">' + (recs.length ? recs.length + '번 다녀왔어요' : '아직 안 가본 곳') + '</span></div>' +
       (recs.length ? recs.map(recCard).join('') : '<div class="empty"><span class="big">🗺️</span>다녀왔다면 기록을 남기고 지도를 색칠해보세요!<br><b>기록 1건마다 🪙100, 처음 가본 곳은 🪙50 더!</b></div>') +

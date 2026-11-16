@@ -120,7 +120,7 @@
         var s = global.TPData.demoState();
         // 새 계정은 기록·계획 없이 시작하고, 첫 꾸미기를 위해 코인 300을 준다
         s.user = { name: form.name.trim(), birth: form.birth, zodiac: z.id, petName: (form.petName || z.name).trim(), color: form.color, joined: new Date().toISOString().slice(0, 10) };
-        s.coins = 300; s.records = []; s.trips = []; s.pet.exp = 0; s.pet.full = 70; s.pet.happy = 80;
+        s.coins = 300; s.records = []; s.trips = []; s.pet.level = 1; s.pet.full = 70; s.pet.happy = 80;
         done(s);
       };
     }

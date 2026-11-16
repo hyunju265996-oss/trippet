@@ -45,7 +45,8 @@
       v: 1,
       user: { name: '여행자', birth: '2000-05-05', zodiac: 'dragon', petName: '미르', color: '#A7E4D3', joined: iso(today) },
       coins: 800,
-      pet: { full: 62, happy: 80, exp: 140, last: Date.now(), freeFood: '', equip: {}, owned: [] },
+      pet: { full: 62, happy: 80, level: 2, last: Date.now(), freeFood: '', equip: {}, owned: [] },
+      guestbook: { me: [{ from: '민지', zodiac: 'rabbit', text: '미르 방 놀러 왔어! 다음엔 같이 강릉 가자 🌊', date: '2025-11-02' }] },
       room: { wall: 'plain', floor: 'plain', items: {}, ownedWall: ['plain'], ownedFloor: ['plain'] },
       settings: { gmapsKey: '' },
       records: [
@@ -53,7 +54,7 @@
         { id: 'r2', scope: 'kr', region: '51:강릉시', regionName: '강원특별자치도 강릉시', date: '2024-08-02', title: '경포해변 여름휴가', memo: '튜브 타고 둥둥', photos: [], mood: '🥰' },
         { id: 'r3', scope: 'kr', region: '51:속초시', regionName: '강원특별자치도 속초시', date: '2025-03-16', title: '속초 중앙시장 닭강정', memo: '줄 서서 산 닭강정, 기다린 보람!', photos: [], mood: '😋' },
         { id: 'r4', scope: 'kr', region: '50:제주시', regionName: '제주특별자치도 제주시', date: '2024-10-12', title: '협재 바다 산책', memo: '비양도가 보이는 에메랄드 바다', photos: [], mood: '😍' },
-        { id: 'r5', scope: 'kr', region: '26:해운대구', regionName: '부산광역시 해운대구', date: '2024-05-04', title: '해변열차 타기', memo: '청사포 쪽 바다가 제일 예뻤다', photos: [], mood: '😊' },
+        { id: 'r5', scope: 'kr', region: '26:부산광역시', regionName: '부산광역시', date: '2024-05-04', title: '해변열차 타기', memo: '청사포 쪽 바다가 제일 예뻤다', photos: [], mood: '😊' },
         { id: 'r6', scope: 'world', country: 'JPN', countryName: '일본', region: 'JPN-1860', regionName: '일본 도쿄도', date: '2024-12-20', title: '도쿄 연말 일루미네이션', memo: '시부야 스카이 야경 최고', photos: [], mood: '🤩' },
         { id: 'r7', scope: 'world', country: 'VNM', countryName: '베트남', region: 'VNM-491', regionName: '베트남 다낭', date: '2024-02-10', title: '다낭 미케비치', memo: '반미랑 코코넛 커피!', photos: [], mood: '😎' }
       ],
@@ -79,5 +80,44 @@
     };
   }
 
-  global.TPData = { PLACES: PLACES, AIRPORTS: AIRPORTS, demoState: demoState };
+  /* 레벨 업 보상. 쿠폰은 예시 혜택이며, 실제로 쓰려면 숙소·관광지 제휴처 연결이 필요해요 */
+  var LEVELS = [
+    { lv: 2, coins: 100 },
+    { lv: 3, coins: 150, coupon: { title: '관광지 입장권 1,000원 할인', desc: '제휴 관광지 입장권 할인' } },
+    { lv: 4, coins: 200, coupon: { title: '숙소 5% 할인권', desc: '제휴 숙소 1박 예약 시' } },
+    { lv: 5, coins: 250, coupon: { title: '여행지 카페 음료 1+1', desc: '제휴 카페에서 음료 주문 시' } },
+    { lv: 6, coins: 300, coupon: { title: '관광지 무료 입장권 1매', desc: '제휴 관광지 1곳 무료 입장' } },
+    { lv: 7, coins: 350, coupon: { title: '숙소 10% 할인권', desc: '제휴 숙소 1박 예약 시' } },
+    { lv: 8, coins: 400, coupon: { title: '렌터카 10% 할인권', desc: '제휴 렌터카 24시간 이상' } },
+    { lv: 9, coins: 450 },
+    { lv: 10, coins: 600, coupon: { title: '항공권 20,000원 할인권', desc: '제휴 항공권 왕복 예약 시' } }
+  ];
+
+  /* 예시 친구들 (커뮤니티가 비어 보이지 않도록. 화면에 '예시 친구'로 표시) */
+  function sampleFriends() {
+    return [
+      { id: 'f-minji', sample: true, name: '민지', zodiac: 'rabbit', color: '#F7B9CA', petName: '깡총이', level: 5,
+        equip: { head: 'flower', neck: 'bowtie' }, room: { wall: 'pinkstripe', floor: 'wood', items: { window: { x: 6, y: 21 }, plant: { x: 80, y: 52 }, rug: { x: 14, y: 66 }, garland: { x: 10, y: 17 } } },
+        hearts: 12, status: '제주 감귤 따러 가고 싶다 🍊',
+        posts: [
+          { id: 'p1', title: '협재 바다 노을', region: '제주특별자치도 제주시', date: '2025-10-12', mood: '😍', memo: '깡총이랑 노을 보면서 감귤 주스!' },
+          { id: 'p2', title: '전주 한옥마을 한복 데이트', region: '전북특별자치도 전주시', date: '2025-09-03', mood: '🥰', memo: '비빔밥이랑 초코파이 필수' }
+        ] },
+      { id: 'f-junho', sample: true, name: '준호', zodiac: 'tiger', color: '#FFCBAA', petName: '어흥이', level: 3,
+        equip: { head: 'cap', face: 'sunglasses' }, room: { wall: 'mintdot', floor: 'grass', items: { suitcase: { x: 74, y: 60 }, lamp: { x: 4, y: 50 }, frame: { x: 74, y: 22 } } },
+        hearts: 7, status: '설악산 단풍 정복 완료 🏔️',
+        posts: [
+          { id: 'p3', title: '설악산 권금성 등반', region: '강원특별자치도 속초시', date: '2025-10-25', mood: '🤩', memo: '케이블카 줄이 엄청 길었지만 단풍 최고' }
+        ] },
+      { id: 'f-sua', sample: true, name: '수아', zodiac: 'sheep', color: '#D4CCF4', petName: '몽글이', level: 7,
+        equip: { head: 'beret', neck: 'lei', hand: 'balloon' }, room: { wall: 'night', floor: 'tile', items: { bed: { x: 52, y: 64 }, shelf: { x: 4, y: 37 }, globe: { x: 84, y: 38 }, balloons: { x: 62, y: 17 }, window: { x: 6, y: 21 } } },
+        hearts: 25, status: '다음 달 파리 간다! 🗼',
+        posts: [
+          { id: 'p4', title: '도쿄 시부야 스카이', region: '일본 도쿄도', date: '2025-08-14', mood: '🤩', memo: '야경 보면서 몽글이랑 사진 100장' },
+          { id: 'p5', title: '부산 해변열차', region: '부산광역시', date: '2025-07-02', mood: '😊', memo: '청사포 쌍둥이 등대 귀여워' }
+        ] }
+    ];
+  }
+
+  global.TPData = { PLACES: PLACES, AIRPORTS: AIRPORTS, LEVELS: LEVELS, demoState: demoState, sampleFriends: sampleFriends };
 })(window);

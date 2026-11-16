@@ -99,9 +99,10 @@ textarea.input { padding: 14px 16px; min-height: 110px; resize: vertical; }
 /* ---------- 탭바 (가운데 펫 동그라미) ---------- */
 .tabbar { position: fixed; z-index: 40; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; height: calc(var(--tabbar-h) + env(safe-area-inset-bottom)); padding: 0 8px env(safe-area-inset-bottom); display: grid; grid-template-columns: 1fr 1fr 92px 1fr 1fr; align-items: center; background: rgba(255, 255, 255, .96); backdrop-filter: blur(14px); border-top: 1px solid var(--line); border-radius: 24px 24px 0 0; box-shadow: 0 -8px 30px -18px rgba(76, 52, 58, .35); }
 .tabbar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 60px; text-decoration: none; font-size: 13px; font-weight: 700; color: var(--ink-3); border-radius: 16px; }
-.tabbar .ti { font-size: 22px; line-height: 1; filter: grayscale(.6); opacity: .75; }
+.tabbar .ti { display: flex; line-height: 1; }
+.tabbar .ti svg { width: 24px; height: 24px; }
 .tabbar a[aria-current="page"] { color: var(--pink-ink); }
-.tabbar a[aria-current="page"] .ti { filter: none; opacity: 1; }
+.tabbar a[aria-current="page"] .ti svg { stroke-width: 2.4; }
 .tabbar .tab-pet { position: relative; }
 .pet-orb { position: absolute; top: -34px; left: 50%; transform: translateX(-50%); width: 84px; height: 84px; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #fff, var(--pink-soft)); border: 5px solid #fff; box-shadow: 0 10px 26px -8px rgba(214, 110, 138, .7); display: flex; align-items: center; justify-content: center; overflow: hidden; transition: transform .2s ease; }
 .pet-orb svg { width: 92%; height: 92%; margin-top: 6px; }
@@ -254,3 +255,43 @@ body.device-mode .screen { height: 100%; min-height: 0; overflow-y: auto; oversc
 body.device-mode .screen::-webkit-scrollbar { display: none; }
 body.device-mode .tabbar, body.device-mode .sheet { max-width: none; }
 body.device-mode .tabbar { border-radius: 24px 24px 40px 40px; }
+
+/* ---------- 홈: 레벨·코인 버튼, 펫이 모은 코인 ---------- */
+button.name-card, button.coin { border: 0; text-align: left; font-family: inherit; color: inherit; cursor: pointer; }
+.collect { position: absolute; z-index: 7; left: 50%; transform: translateX(-50%); top: calc(168px + env(safe-area-inset-top)); padding: 10px 16px; border: 2px solid var(--butter); font-weight: 700; font-size: 15px; white-space: nowrap; animation: pop 1.6s ease-in-out infinite; }
+.collect b { color: var(--butter-ink); }
+@keyframes pop { 50% { transform: translateX(-50%) scale(1.04); } }
+.shop-item.locked { opacity: .55; }
+.shop-item.locked .p { color: var(--ink-2); }
+.buy-preview { width: 160px; height: 160px; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 24px; background: #fff; box-shadow: var(--shadow); padding: 8px; }
+.buy-preview svg { width: 100%; height: 100%; }
+.lv-row { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: var(--r-md); background: #fff; box-shadow: var(--shadow); }
+.lv-row.got { background: var(--mint-soft); }
+.lv-row .t { font-weight: 700; } .lv-row .s { font-size: 14px; color: var(--ink-2); }
+.lv-badge { flex-shrink: 0; padding: 4px 10px; border-radius: 999px; background: var(--pink-soft); color: var(--pink-ink); font-weight: 800; font-size: 14px; }
+.coupon { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: var(--r-md); background: linear-gradient(135deg, var(--pink-soft), var(--butter-soft)); border: 2px dashed #EAB6C4; }
+.coupon .ci { color: var(--pink-ink); display: flex; } .coupon .t { font-weight: 800; } .coupon .s { font-size: 14px; color: var(--ink-2); }
+.thumb .ic-svg { width: 24px; height: 24px; }
+.btn .ic-svg { flex-shrink: 0; }
+
+/* ---------- 친구 광장 ---------- */
+.plaza { position: relative; height: 380px; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow); background: linear-gradient(#CDE7F8, #EAF5FC 45%); }
+.pz-ground { position: absolute; left: -10%; right: -10%; top: 40%; bottom: 0; border-radius: 50% 50% 0 0 / 30px 30px 0 0; background: radial-gradient(#B9E5CB 2px, transparent 2.5px) 0 0/22px 22px, linear-gradient(#C9EBD6, #B5E2C6); }
+.pz-sun { position: absolute; right: 12%; top: 10%; width: 46px; height: 46px; border-radius: 50%; background: #FFE7A3; box-shadow: 0 0 30px #FFE7A3; }
+.pz-cloud { position: absolute; width: 70px; height: 22px; border-radius: 20px; background: #fff; }
+.pz-cloud::before { content: ""; position: absolute; left: 14px; top: -12px; width: 34px; height: 30px; border-radius: 50%; background: #fff; }
+.pz-deco { position: absolute; font-size: 44px; pointer-events: none; }
+.pz-deco.small { font-size: 22px; }
+.walker { position: absolute; width: 92px; padding: 0; border: 0; background: none; display: flex; flex-direction: column; align-items: center; transform: translate(-0%, -50%); transition: left 3s ease-in-out, top 3s ease-in-out; cursor: pointer; }
+.walker .wk-pet { width: 84px; height: 84px; display: block; animation: walk .6s ease-in-out infinite alternate; }
+.walker .wk-pet svg { width: 100%; height: 100%; overflow: visible; }
+.walker.flip .wk-pet svg { transform: scaleX(-1); }
+.walker.jump .wk-pet { animation: hop .5s ease; }
+@keyframes walk { to { transform: translateY(-4px) rotate(2deg); } }
+.wk-name { margin-top: -4px; padding: 2px 10px; border-radius: 999px; background: rgba(255, 255, 255, .92); font-size: 13px; font-weight: 800; color: var(--ink); box-shadow: var(--shadow); white-space: nowrap; }
+.wk-name.me { background: var(--pink); color: #4A1F2C; }
+.visitor { position: absolute; z-index: 4; left: 6%; bottom: calc(var(--tabbar-h) + 128px); width: 30%; display: flex; flex-direction: column; align-items: center; }
+.visitor svg { width: 100%; height: auto; overflow: visible; }
+.gb { display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: var(--r-md); background: #fff; box-shadow: var(--shadow); font-size: 15px; }
+.gb .avatar { margin: 0; flex-shrink: 0; }
+.cm { padding: 8px 12px; border-radius: 12px; background: #F6F1EC; font-size: 15px; }

@@ -6,7 +6,7 @@
   function render(root) {
     var s = S.get(), mine = s.user.zodiac;
     var me = Z.ZODIAC.filter(function (z) { return z.id === mine; })[0];
-    root.innerHTML = '<div class="page"><div class="page-head"><div><p class="eyebrow">12간지 친구들</p><h1>여행펫 도감</h1></div></div>' +
+    root.innerHTML = '<div class="page"><div class="row"><a class="icon-btn" href="#/friends" aria-label="친구 광장으로">←</a><div><p class="eyebrow">12간지 친구들</p><h1 style="font-size:24px;font-weight:800">여행펫 도감</h1></div></div>' +
       '<div class="card row" style="background:linear-gradient(135deg,var(--pink-soft),var(--lav-soft))"><div class="pv" style="width:96px;height:96px;flex-shrink:0">' + P.petSVG(mine, { color: s.user.color, equip: s.pet.equip }) + '</div>' +
       '<div class="stack" style="gap:2px"><span class="badge pink" style="align-self:flex-start">나의 펫 · ' + me.hanja + ' ' + me.ko + '띠</span><strong style="font-size:20px">' + UI.esc(s.user.petName) + '</strong><span class="muted" style="font-size:15px">' + me.trait + '</span><span class="hint">생일 ' + UI.fmtDate(s.user.birth) + '</span></div></div>' +
       '<p class="muted">태어난 해의 띠에 따라 가입할 때 펫이 정해져요. 친구들의 펫도 구경해보세요!</p>' +

@@ -12,14 +12,14 @@
   document.addEventListener('tp:pet-changed', updateTabPet);
 
   function route() {
-    global.TPPlan.cleanup(); global.TPExplore.cleanup();
+    global.TPPlan.cleanup(); global.TPExplore.cleanup(); global.TPCommunity.cleanup();
     UI.closeSheet();
     var s = S.get();
     var h = (location.hash || '').replace(/^#\/?/, '');
     var parts = h.split('/');
     if (!s) {
       // 초대 링크로 처음 들어온 경우, 가입 후 다시 초대 화면으로
-      var pendingJoin = parts[0] === 'join' ? h : null;
+      var pendingJoin = (parts[0] === 'join' || parts[0] === 'friend') ? h : null;
       tabbar.hidden = true;
       screen.className = 'screen no-tabbar';
       global.TPOnboarding.render(screen, function (state) {
@@ -34,6 +34,9 @@
     screen.className = 'screen';
     var tab = parts[0] || 'home';
     if (tab === 'join') tab = 'plan';
+    if (tab === 'room' || tab === 'friend' || tab === 'dex') tab = 'friends';
+    // 매일 출석 코인 (하루 한 번)
+    if (S.attend()) setTimeout(function () { UI.toast('📅 출석 체크! 🪙 +30 코인'); }, 400);
     UI.$$('.tabbar a').forEach(function (a) {
       if (a.dataset.tab === tab) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
@@ -45,6 +48,9 @@
       case 'explore': global.TPExplore.render(screen); break;
       case 'map': global.TPTravelMap.render(screen); break;
       case 'dex': global.TPDex.render(screen); break;
+      case 'friends': global.TPCommunity.render(screen); break;
+      case 'room': global.TPCommunity.room(screen, parts[1]); break;
+      case 'friend': global.TPCommunity.accept(screen, parts.slice(1).join('/')); break;
       default: global.TPHome.render(screen);
     }
   }
@@ -99,6 +105,8 @@
     if (now - lastTap < 300 && !e.target.closest('.geo, .map-box, input, textarea, select')) e.preventDefault();
     lastTap = now;
   }, { passive: false });
+
+  S.onLevelUp(function (info) { global.TPHome.levelUpSheet(info); });
 
   global.TPApp = { openSettings: openSettings, route: route };
   S.load();
