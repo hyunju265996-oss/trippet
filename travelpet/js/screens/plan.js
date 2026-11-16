@@ -51,6 +51,7 @@
       var t = { id: 't' + Date.now().toString(36), title: String(f.get('title')).trim(), dest: String(f.get('dest') || '').trim(), start: start, end: end, days: days,
         members: [{ name: s.user.name || '나', me: true, zodiac: s.user.zodiac }] };
       s.trips.push(t); S.save(); UI.closeSheet();
+      S.earn('plan', t.id);
       location.hash = '#/plan/' + t.id;
     };
   }
@@ -124,7 +125,8 @@
         var f = new FormData(e.target);
         stops.push({ name: p.name, lat: p.lat, lng: p.lng, time: f.get('time'), memo: String(f.get('memo') || '').trim() });
         stops.sort(function (a, c) { return (a.time || '99') < (c.time || '99') ? -1 : 1; });
-        S.save(); UI.closeSheet(); UI.toast('일정에 추가했어요 📍');
+        S.save(); UI.closeSheet();
+        if (!S.earn('place', t.id + ':' + p.name)) UI.toast('일정에 추가했어요 📍');
         detail(root, id, day);
       };
     }
