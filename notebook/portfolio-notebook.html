@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>진현주 · Portfolio Notebook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@500;600;900&family=Nanum+Pen+Script&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  ✏️  여기만 고치면 됩니다 — 포트폴리오 내용 설정                       ║
+  ║                                                                  ║
+  ║  · projects 배열의 순서 = 수첩에 채워지는 순서                          ║
+  ║  · 프로젝트 하나에 sheets(종이)를 원하는 만큼 넣을 수 있어요              ║
+  ║    - 첫 번째 종이는 자동으로 "프로젝트 표지"(제목 + MVP)로 그려져요        ║
+  ║    - 두 번째부터는 label(소제목), image(이미지 주소), text(설명)          ║
+  ║  · image는 비워 두면 "이미지 자리" 상자가 그려져요.                      ║
+  ║    이미지 파일을 이 HTML과 같은 폴더에 두고 'images/screen1.png'처럼       ║
+  ║    적거나, data:image/... 주소를 넣으면 됩니다.                         ║
+  ║  · 하단 바에는 title · mvp가, '자세히'를 누르면 label · text가 나와요.     ║
+  ║  · initial = 표지에 바느질로 새길 이니셜                                 ║
+  ║  · thanks = 마지막 감사 인사                                           ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<script>
+window.PORTFOLIO = {
+  owner: {
+    name: '진현주',
+    nameEn: 'JIN HYUNJU',
+    initial: 'J',
+    role: 'Product Owner · 서비스 기획',
+    year: '2026',
+    intro: '[한 줄 소개를 적어 주세요]',
+    contact: [['Email', '[이메일]'], ['GitHub', '[GitHub 주소]']],
+    thanks: '한 장 한 장 끝까지 넘겨 주셔서 진심으로 감사합니다.\n이 수첩의 다음 페이지는 함께 채워 가고 싶어요.',
+  },
+
+  projects: [
+    { about: true, kind: 'ABOUT', title: '진현주', mvp: 'Product Owner · 서비스 기획', color: '#8A2E2E',
+      sheets: [ { label: '소개', image: '' } ] },
+
+    { kind: 'PROJECT 01', title: '만다라트 목표 플래너', color: '#2E5B47',
+      mvp: '목표 하나를 입력하면 AI가 실행 단계로 나눠 주는 플래너',
+      tags: ['Next.js', 'Google Cloud'],
+      sheets: [
+        { label: '표지', image: '' },
+        { label: '핵심 화면', image: '', text: '' },
+        { label: '배포 구조', image: '', text: '' },
+      ] },
+
+    { kind: 'PROJECT 02', title: '올리브영 오늘드림 품절 UX', color: '#A8521F',
+      mvp: '오늘드림이 품절이어도 픽업·일반배송으로 바로 이어 사는 구매 흐름',
+      tags: ['린캔버스', '프로토타입'],
+      sheets: [
+        { label: '표지', image: '' },
+        { label: '문제 정의', image: '', text: '' },
+        { label: '개선 화면', image: '', text: '' },
+      ] },
+
+    { kind: 'PROJECT 03 · TEAM', title: 'Body Log', color: '#2F5687',
+      mvp: '진료 후 시작해 평소 가볍게 기록하고, 다음 진료 전 필요한 내용만 공유',
+      tags: ['PRD', 'PO'],
+      sheets: [
+        { label: '표지', image: '' },
+        { label: '핵심 화면', image: '', text: '' },
+      ] },
+
+    { kind: 'PROJECT 04', title: 'HJ전자 회원가입', color: '#9E2B2B',
+      mvp: '입력이 끝난 뒤 한 번만 확인하는, 막힘 없는 회원가입',
+      tags: ['UX 원칙', 'Figma'],
+      sheets: [
+        { label: '표지', image: '' },
+        { label: '개선 화면', image: '', text: '' },
+      ] },
+
+    { kind: 'PROJECT 05 · TEAM', title: '우리 사이', color: '#6E5596',
+      mvp: '친구 모임을 함께 기록하는 앱',
+      tags: ['디자인 시스템', '협업'],
+      sheets: [
+        { label: '표지', image: '' },
+        { label: '디자인 시스템', image: '', text: '' },
+      ] },
+
+    { toolbox: true, kind: 'TOOLBOX', title: '도구와 방법', color: '#5E5242',
+      mvp: '기획부터 배포까지 직접 써 본 것들',
+      groups: [
+        ['기획', ['린캔버스', 'PRD', '사용자 흐름', '문제 정의']],
+        ['디자인', ['Figma', '디자인 시스템', '프로토타입']],
+        ['개발 · 배포', ['HTML/CSS', 'Next.js', 'GitHub', 'Netlify', 'Google Cloud', 'nginx', 'pm2']],
+      ],
+      sheets: [ { label: '도구' } ] },
+  ],
+};
+</script>
+
+<style>
+  :root{
+    --bg:#0b0806; --ink:#F3EADB; --muted:#BFAE93; --gold:#D9B26A; --gold2:#F1D9A0;
+    --glass:rgba(17,11,8,.74); --line:rgba(217,178,106,.22);
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+    --serif:'Noto Serif KR', serif; --en:'Cormorant Garamond', 'Noto Serif KR', serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-snap-type:y mandatory;background:var(--bg)}
+  html.locked{overflow:hidden}
+  html,body{margin:0;color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg)}
+  body.wand-on, body.wand-on *{cursor:none !important}
+  #scene{position:fixed;inset:0;width:100vw;height:100vh;display:block;touch-action:pan-y}
+  #fx{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:40}
+  #spacer section{height:100vh;scroll-snap-align:start;scroll-snap-stop:always}
+
+  /* 영화 같은 비네트 */
+  .vignette{position:fixed;inset:0;pointer-events:none;z-index:3;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(0,0,0,.55) 100%)}
+
+  header{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:22px 30px;z-index:20;pointer-events:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  header b{color:var(--gold);font-weight:600}
+
+  /* 시작 화면 문구 */
+  .intro{position:fixed;left:50%;top:9vh;transform:translateX(-50%);z-index:20;text-align:center;pointer-events:none;width:min(92vw,760px);transition:opacity .9s ease, transform .9s ease}
+  .intro.gone{opacity:0;transform:translate(-50%,-14px)}
+  .intro .eb{font-family:var(--en);font-style:italic;font-size:20px;letter-spacing:.06em;color:var(--gold)}
+  .intro h1{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,42px);line-height:1.45;margin:12px 0 0;color:#F6EBD6;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+  .intro h1 em{font-style:normal;color:var(--gold2)}
+
+  /* 하단 바 */
+  .bar{position:fixed;left:20px;right:20px;bottom:18px;z-index:30;background:var(--glass);backdrop-filter:blur(14px) saturate(130%);-webkit-backdrop-filter:blur(14px) saturate(130%);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.45);transition:opacity .6s, transform .6s}
+  .bar.dim{opacity:.0;transform:translateY(20px);pointer-events:none}
+  .bar-main{display:flex;align-items:center;gap:22px;height:64px;padding:0 14px 0 22px}
+  .b-info{flex:1 1 auto;min-width:0;display:flex;align-items:baseline;gap:14px;white-space:nowrap;overflow:hidden}
+  .b-kind{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;flex-shrink:0}
+  .b-title{font-family:var(--serif);font-weight:600;font-size:18px;color:#F6EBD6;flex-shrink:0}
+  .b-mvp{font-size:14px;color:#D9CCB4;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .b-dots{display:flex;align-items:center;gap:4px;flex-shrink:0}
+  .b-dots .gap{width:8px}
+  .b-dots button{all:unset;display:block;width:16px;height:22px;position:relative}
+  .b-dots button::after{content:"";position:absolute;left:3px;right:3px;top:9px;height:4px;border-radius:2px;background:rgba(217,178,106,.22);transition:background .4s,height .25s,top .25s}
+  .b-dots button.filled::after{background:rgba(217,178,106,.75)}
+  .b-dots button.cur::after{background:var(--gold2);top:7px;height:8px;box-shadow:0 0 10px rgba(241,217,160,.8)}
+  .b-dots button:focus-visible{outline:1px solid var(--gold2);border-radius:3px}
+  .b-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .meter{display:flex;flex-direction:column;gap:5px;min-width:132px}
+  .meter span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+  .meter span b{color:var(--gold2);font-weight:600}
+  .meter i{display:block;height:3px;border-radius:2px;background:rgba(217,178,106,.18);overflow:hidden}
+  .meter i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#9b7130,#f3dc9f);transition:width .5s}
+  .btn{font:600 12px var(--mono);letter-spacing:.08em;color:var(--ink);background:rgba(255,240,210,.06);border:1px solid var(--line);border-radius:999px;padding:9px 13px;white-space:nowrap}
+  .btn:hover{background:rgba(255,240,210,.12)}
+  .btn:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+  .btn.gold{background:var(--gold);color:#1d140d;border-color:var(--gold)}
+  .drawer{max-height:0;overflow:hidden;transition:max-height .45s ease}
+  .bar.open .drawer{max-height:46vh}
+  .drawer-in{padding:4px 24px 20px;border-top:1px solid var(--line);max-height:46vh;overflow:auto;display:grid;grid-template-columns:1.1fr 1fr;gap:10px 40px}
+  .drawer h3{font-family:var(--serif);font-size:20px;margin:16px 0 6px;color:#F6EBD6}
+  .drawer .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;margin-top:16px}
+  .drawer p{font-size:15px;line-height:1.75;color:#E2D6C0;margin:6px 0 0;white-space:pre-line}
+  .drawer .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .drawer .tags span{font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:#E8DCC4}
+  .drawer dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:8px 0 0;font-size:14px}
+  .drawer dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;padding-top:2px}
+  .drawer dd{margin:0}
+  .hint{font-family:var(--en);font-style:italic;font-size:16px;color:var(--gold2)}
+
+  /* 감사 인사 */
+  .thanks{position:fixed;inset:0;z-index:35;display:flex;align-items:center;justify-content:center;text-align:center;pointer-events:none;opacity:0;transition:opacity 1.6s ease;background:radial-gradient(ellipse at 50% 50%,rgba(8,5,3,.35),rgba(8,5,3,.82) 70%)}
+  .thanks.show{opacity:1;pointer-events:auto}
+  .thanks .in{width:min(90vw,640px);max-height:100vh;overflow:auto;padding:24px 0;transform:translateY(16px);transition:transform 1.6s ease}
+  .thanks.show .in{transform:none}
+  .thanks .eb{font-family:var(--en);font-style:italic;font-size:20px;letter-spacing:.08em;color:var(--gold)}
+  .thanks .sub{font-family:var(--serif);font-size:18px;color:#D9CCB4;margin-top:18px}
+  .thanks h2{font-family:var(--serif);font-weight:900;font-size:clamp(40px,6vw,68px);margin:6px 0 18px;color:#F6EBD6;letter-spacing:-.01em;text-shadow:0 0 40px rgba(241,217,160,.25)}
+  .thanks p{font-size:16px;line-height:1.85;color:#E6DAC4;white-space:pre-line;margin:0}
+  .thanks .rule{width:120px;height:1px;margin:26px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .thanks dl{display:inline-grid;grid-template-columns:auto auto;gap:6px 18px;text-align:left;margin:0 0 22px;font-size:14.5px}
+  .thanks dt{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;padding-top:3px}
+  .thanks dd{margin:0}
+
+  /* 지팡이 커서 */
+  #wand{position:fixed;left:0;top:0;z-index:60;pointer-events:none;width:150px;height:150px;transform-origin:6px 6px;will-change:transform;opacity:0;transition:opacity .3s}
+  body.wand-on #wand{opacity:1}
+  #wand svg{display:block;filter:drop-shadow(4px 8px 6px rgba(0,0,0,.45));transform-origin:6px 6px;transition:transform .18s ease}
+  #wand.small svg{transform:scale(.72)}
+  #wand.flick svg{transform:rotate(-16deg)}
+  #wand.small.flick svg{transform:scale(.72) rotate(-16deg)}
+  #wand .glow{position:absolute;left:6px;top:6px;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:radial-gradient(circle,rgba(255,244,214,.95) 0,rgba(255,206,120,.45) 28%,rgba(255,170,80,0) 70%);opacity:.55;transition:opacity .3s, transform .3s;animation:breathe 2.4s ease-in-out infinite}
+  #wand.hot .glow{opacity:1;transform:scale(1.7)}
+  @keyframes breathe{50%{filter:brightness(1.25)}}
+
+  .loader{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:var(--bg);transition:opacity .9s}
+  .loader b{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--gold2)}
+  .loader span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+  .loader.done{opacity:0;pointer-events:none}
+
+  @media (max-width:860px){
+    header{padding:14px 16px}
+    .bar{left:10px;right:10px;bottom:10px}
+    .bar-main{height:auto;flex-wrap:wrap;gap:8px 12px;padding:12px 12px 12px 16px}
+    .b-info{flex-basis:100%;flex-wrap:wrap;white-space:normal;gap:2px 10px}
+    .b-mvp{flex-basis:100%;font-size:13px}
+    .b-dots{flex:1;flex-wrap:wrap}
+    .meter{min-width:96px}
+    .drawer-in{grid-template-columns:1fr;gap:0}
+  }
+  @media (prefers-reduced-motion: reduce){ .intro,.bar,.thanks,.thanks .in{transition:none} #wand .glow{animation:none} }
+</style>
+</head>
+<body>
+<canvas id="scene" aria-label="마법사의 서재 책상 위에 놓인 가죽 포트폴리오 수첩"></canvas>
+<div class="vignette"></div>
+<canvas id="fx"></canvas>
+<header><div><b id="brandName">JIN HYUNJU</b> · PORTFOLIO NOTEBOOK</div><div id="topRight"></div></header>
+
+<div class="intro" id="intro">
+  <div class="eb">a notebook, written one page at a time</div>
+  <h1>한 장 한 장, 페이지가 채워지며<br><em id="introName">진현주</em>가 완성됩니다.</h1>
+</div>
+
+<div class="bar" id="bar">
+  <div class="bar-main">
+    <div class="b-info"><span class="b-kind" id="bKind"></span><span class="b-title" id="bTitle"></span><span class="b-mvp" id="bMvp"></span></div>
+    <div class="b-dots" id="bDots" aria-label="페이지 이동"></div>
+    <div class="b-right">
+      <div class="meter" aria-live="polite"><span id="meterTxt"></span><i><u id="meterFill"></u></i></div>
+      <button class="btn" id="soundBtn" aria-pressed="true">♪ 소리 켬</button>
+      <button class="btn" id="moreBtn" aria-expanded="false">자세히 ▴</button>
+      <button class="btn gold" id="openBtn">마법으로 열기</button>
+    </div>
+  </div>
+  <div class="drawer" id="drawer"><div class="drawer-in" id="drawerIn"></div></div>
+</div>
+
+<div class="thanks" id="thanks" aria-hidden="true">
+  <div class="in">
+    <div class="eb">the last page</div>
+    <div class="sub">모든 페이지가 채워졌습니다</div>
+    <h2 id="thanksName">진현주, 완성.</h2>
+    <p id="thanksMsg"></p>
+    <div class="rule"></div>
+    <dl id="thanksContact"></dl>
+    <div><button class="btn gold" id="againBtn">처음부터 다시 보기</button></div>
+  </div>
+</div>
+
+<div id="wand" aria-hidden="true">
+  <span class="glow"></span>
+  <svg width="150" height="150" viewBox="0 0 220 220">
+    <defs>
+      <linearGradient id="wShaft" x1="0" y1="-5" x2="0" y2="5" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7a5134"/><stop offset=".45" stop-color="#4a2d1b"/><stop offset="1" stop-color="#21130a"/></linearGradient>
+      <linearGradient id="wHandle" x1="0" y1="-8" x2="0" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6a4329"/><stop offset=".5" stop-color="#3a2213"/><stop offset="1" stop-color="#1a0e07"/></linearGradient>
+      <linearGradient id="wGold" x1="0" y1="-6" x2="0" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f6dfa3"/><stop offset=".5" stop-color="#b98a3c"/><stop offset="1" stop-color="#6e4f1c"/></linearGradient>
+    </defs>
+    <g transform="translate(6 6) rotate(45)">
+      <path d="M0,-1.1 C60,-1.9 130,-3.1 190,-4.4 L190,4.4 C130,3.1 60,1.9 0,1.1 Z" fill="url(#wShaft)"/>
+      <path d="M8,-0.8 C70,-1.6 130,-2.6 186,-3.4" stroke="rgba(255,226,190,.28)" stroke-width="0.8" fill="none"/>
+      <path d="M150,-3.6 C152,-5 154,-5 156,-3.8 M164,-4 C166,-5.6 168,-5.6 170,-4.2" stroke="#1d0f07" stroke-width="1" fill="none" opacity=".6"/>
+      <rect x="189" y="-6" width="6" height="12" rx="1.5" fill="url(#wGold)"/>
+      <path d="M195,-5.4 C210,-7.6 216,-3.6 228,-6.6 C240,-9.4 247,-4.6 258,-7.6 L268,-7 C275,-6.5 279,-3.6 279,0 C279,3.6 275,6.5 268,7 L258,7.6 C247,4.6 240,9.4 228,6.6 C216,3.6 210,7.6 195,5.4 Z" fill="url(#wHandle)"/>
+      <path d="M212,-6 L212,6 M236,-7 L236,7 M252,-6.6 L252,6.6" stroke="#160b05" stroke-width="1.4" opacity=".7"/>
+      <path d="M200,-4.2 C214,-6 222,-2.6 234,-5.4 C246,-8 252,-4 266,-6" stroke="rgba(255,220,180,.22)" stroke-width="1" fill="none"/>
+      <circle cx="276" cy="0" r="2.2" fill="url(#wGold)"/>
+    </g>
+  </svg>
+</div>
+
+<div class="loader" id="loader"><b>서재의 촛불을 밝히는 중…</b><span>Loading</span></div>
+<div id="spacer"></div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script>
+  setTimeout(function () {
+    var l = document.getElementById('loader');
+    if (l && !l.classList.contains('done')) l.innerHTML = '<b>3D 장면을 불러오지 못했어요.</b><span>새로고침해 보세요 · WebGL 지원 브라우저 필요</span>';
+  }, 20000);
+  window.addEventListener('error', function (e) {
+    var l = document.getElementById('loader');
+    if (l && !l.classList.contains('done')) l.innerHTML = '<b>3D 장면을 불러오지 못했어요.</b><span>' + (e.message || 'WebGL error') + '</span>';
+  });
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const CFG = window.PORTFOLIO;
+const OWNER = CFG.owner;
+const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = window.matchMedia('(pointer: fine)').matches;
+
+/* ───────────── 종이 목록 · 단계 ─────────────
+   s = 0 닫힌 수첩 (지팡이로 열기)
+   s = 1 … NS  종이 한 장씩 (도착 → 잉크로 채워짐 → 다음 단계에서 넘어감)
+   s = END    수첩이 덮이고 끈으로 묶임 → 감사 인사                        */
+const SHEETS = [];
+CFG.projects.forEach((proj, pi) => (proj.sheets && proj.sheets.length ? proj.sheets : [{}]).forEach((sheet, si, arr) => {
+  SHEETS.push({ proj, pi, sheet, si, count: arr.length, gi: SHEETS.length });
+}));
+const NS = SHEETS.length;
+const FIRST = 1, LAST = NS, END = NS + 1;
+
+/* ───────────── 수첩 치수 (1 unit = 100 mm) ───────────── */
+const W = 1.48, D = 2.10, CT = 0.03;
+const PT = Math.min(0.006, 0.09 / NS);
+const ringX = -W / 2 + 0.075;
+const RING_R = 0.085, RING_Y = 0.075;
+const RING_Z = [-0.85, -0.51, -0.17, 0.17, 0.51, 0.85];
+const pL = ringX - 0.05, pR = W / 2, pW = pR - pL;
+const cL = ringX - 0.11, cR = W / 2 + 0.035, cW = cR - cL, cD = D + 0.05;
+const COVER_TOP = CT + NS * PT + CT;
+const PAGE_H = 1478, PAGE_WPX = 1024;
+const fW = cR - (ringX + 0.025);
+const BOOK_CX = (cL + cR) / 2, SHEET_CX = (pL + pR) / 2;
+
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pad = n => String(n).padStart(2, '0');
+const clamp01 = t => Math.min(1, Math.max(0, t));
+const ease = t => { t = clamp01(t); return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+const easeOut = t => 1 - Math.pow(1 - clamp01(t), 3);
+const win = (s, a, b) => ease((s - a) / (b - a));
+function rng(seed) { let s = (seed * 2654435761) >>> 0 || 1; return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 4294967296; }; }
+
+/* ───────────── 렌더러 · 장면 ───────────── */
+const canvas = document.getElementById('scene');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const maxAniso = renderer.capabilities.getMaxAnisotropy();
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#0b0806');
+scene.fog = new THREE.Fog('#0b0806', 7.5, 17);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+
+const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.05, 60);
+
+/* 조명: 은은한 달빛 + 따뜻한 독서등 + 촛불 */
+scene.add(new THREE.HemisphereLight('#6f6488', '#1c120a', 0.32));
+const key = new THREE.DirectionalLight('#ffe3bd', 1.55);
+key.position.set(1.2, 7.5, 3.2);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+Object.assign(key.shadow.camera, { left: -4.5, right: 4.5, top: 4.5, bottom: -4.5, near: 1, far: 16 });
+key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02; key.shadow.radius = 4;
+scene.add(key);
+const moon = new THREE.DirectionalLight('#8aa0ff', 0.32);
+moon.position.set(-5, 4, -6);
+scene.add(moon);
+const bookGlow = new THREE.PointLight('#ffcd85', 0, 3.2, 2);
+bookGlow.position.set(BOOK_CX, 0.7, 0.2);
+scene.add(bookGlow);
+
+/* ───────────── 캔버스 도우미 ───────────── */
+function tex(c, color = true) { const t = new THREE.CanvasTexture(c); if (color) t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = maxAniso; return t; }
+function mk(w, h) { const c = document.createElement('canvas'); c.width = w; c.height = h; return [c, c.getContext('2d')]; }
+function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+function spaced(g, text, x, y, sp) { let cx = x; for (const ch of String(text)) { g.fillText(ch, cx, y); cx += g.measureText(ch).width + sp; } return cx; }
+function wrap(g, text, x, y, maxW, lh) {
+  let line = '';
+  for (const w of String(text).split(' ')) {
+    const t = line ? line + ' ' + w : w;
+    if (g.measureText(t).width > maxW && line) { g.fillText(line, x, y); y += lh; line = w; } else line = t;
+  }
+  if (line) { g.fillText(line, x, y); y += lh; }
+  return y;
+}
+const INITIAL = '"Cormorant Garamond", Georgia, serif';
+const SANS = '"Noto Sans KR", sans-serif', SERIF = '"Noto Serif KR", serif', PEN = '"Nanum Pen Script", cursive', MONO = '"IBM Plex Mono", monospace', SCRIPT = '"Pinyon Script", cursive';
+const INK = '#2A2118', SEPIA = '#5a3a1e';
+
+/* ── 양피지 종이 (모든 장이 공유, 잉크는 장마다 따로) ── */
+function drawPaper() {
+  const [c, g] = mk(PAGE_WPX, PAGE_H), w = PAGE_WPX, h = PAGE_H, r = rng(7);
+  g.fillStyle = '#EAD9B4'; g.fillRect(0, 0, w, h);
+  for (let i = 0; i < 9000; i++) { g.fillStyle = `rgba(120,88,48,${0.02 + r() * 0.05})`; g.fillRect(r() * w, r() * h, 1 + r() * 2, 1); }
+  for (let i = 0; i < 14; i++) {
+    const x = r() * w, y = r() * h, rad = 30 + r() * 110;
+    const gr = g.createRadialGradient(x, y, 0, x, y, rad); gr.addColorStop(0, 'rgba(150,100,45,0.09)'); gr.addColorStop(1, 'rgba(150,100,45,0)');
+    g.fillStyle = gr; g.fillRect(x - rad, y - rad, rad * 2, rad * 2);
+  }
+  for (let i = 0; i < 60; i++) { g.strokeStyle = `rgba(120,85,45,${0.03 + r() * 0.04})`; g.lineWidth = 1; g.beginPath(); const x = r() * w, y = r() * h; g.moveTo(x, y); g.lineTo(x + (r() - 0.5) * 140, y + (r() - 0.5) * 30); g.stroke(); }
+  const edge = g.createRadialGradient(w / 2, h / 2, Math.min(w, h) * 0.4, w / 2, h / 2, Math.max(w, h) * 0.74);
+  edge.addColorStop(0, 'rgba(110,70,30,0)'); edge.addColorStop(1, 'rgba(105,62,25,0.34)');
+  g.fillStyle = edge; g.fillRect(0, 0, w, h);
+  const holeX = ((ringX + 0.078) - pL) / pW * w;
+  for (const z of RING_Z) {
+    const hy = (z + D / 2) / D * h;
+    g.fillStyle = '#cdb98f'; g.beginPath(); g.arc(holeX, hy, 17, 0, Math.PI * 2); g.fill();
+    g.fillStyle = '#2a2018'; g.beginPath(); g.arc(holeX, hy, 13, 0, Math.PI * 2); g.fill();
+  }
+  const t = tex(c); t.generateMipmaps = true; return t;
+}
+
+function imageBox(g, img, x, y, w, h, text) {
+  g.save();
+  rr(g, x, y, w, h, 18);
+  if (img) {
+    g.clip();
+    const r = Math.max(w / img.width, h / img.height), iw = img.width * r, ih = img.height * r;
+    g.drawImage(img, x + (w - iw) / 2, y + (h - ih) / 2, iw, ih);
+  } else {
+    g.fillStyle = 'rgba(90,60,30,0.05)'; g.fill();
+    g.setLineDash([14, 10]); g.strokeStyle = 'rgba(90,60,30,0.38)'; g.lineWidth = 3; g.stroke(); g.setLineDash([]);
+    const cx = x + w / 2, cy = y + h / 2 - 20;
+    g.strokeStyle = 'rgba(90,60,30,0.34)'; g.lineWidth = 5; g.lineJoin = 'round';
+    g.strokeRect(cx - 60, cy - 42, 120, 84);
+    g.beginPath(); g.moveTo(cx - 52, cy + 34); g.lineTo(cx - 12, cy - 4); g.lineTo(cx + 12, cy + 16); g.lineTo(cx + 30, cy); g.lineTo(cx + 52, cy + 34); g.stroke();
+    g.beginPath(); g.arc(cx + 28, cy - 20, 9, 0, Math.PI * 2); g.stroke();
+    g.fillStyle = 'rgba(90,60,30,0.6)'; g.font = `500 28px ${SANS}`; g.textAlign = 'center';
+    g.fillText(text, cx, cy + 92); g.textAlign = 'left';
+  }
+  g.restore();
+}
+
+const IMAGES = new Map();
+function loadImages() {
+  const srcs = [...new Set(SHEETS.map(s => s.sheet.image).filter(Boolean))];
+  return Promise.all(srcs.map(src => new Promise(res => {
+    const im = new Image(); im.onload = () => { IMAGES.set(src, im); res(); }; im.onerror = () => res(); im.src = src; setTimeout(res, 6000);
+  })));
+}
+
+/* ── 장마다의 잉크 (투명 바탕 위에 내용만) ── */
+function drawInk(S) {
+  const { proj, sheet, si, count, gi } = S;
+  const [c, g] = mk(PAGE_WPX, PAGE_H);
+  const L = 165, R = PAGE_WPX - 80, CW = R - L;
+  const col = proj.color || '#2E5B47';
+  const img = sheet.image ? IMAGES.get(sheet.image) : null;
+  g.fillStyle = col; g.fillRect(L, 92, 64, 8);
+  g.font = `600 26px ${MONO}`; g.fillStyle = col; spaced(g, proj.kind || '', L, 150, 3);
+  g.fillStyle = '#7d6a50'; g.textAlign = 'right'; g.fillText(`P. ${pad(gi + 1)} / ${pad(NS)}`, R, 150); g.textAlign = 'left';
+  let y;
+  if (proj.about) {
+    g.fillStyle = INK; g.font = `900 124px ${SERIF}`; g.fillText(OWNER.name, L, 310);
+    g.font = `600 28px ${MONO}`; g.fillStyle = col; spaced(g, OWNER.nameEn, L + 4, 362, 6);
+    g.font = `700 38px ${SANS}`; g.fillStyle = INK; y = wrap(g, OWNER.role, L, 450, CW, 52);
+    g.font = `500 32px ${SANS}`; g.fillStyle = '#5b4a36'; y = wrap(g, OWNER.intro, L, y + 10, CW, 46);
+    imageBox(g, img, L, y + 30, CW, 520, '[사진 또는 일러스트]');
+    y = y + 610;
+    (OWNER.contact || []).forEach(([k, v]) => {
+      g.fillStyle = col; g.font = `600 22px ${MONO}`; spaced(g, k.toUpperCase(), L, y, 3);
+      g.fillStyle = INK; g.font = `500 28px ${SANS}`; g.fillText(v, L + 180, y); y += 48;
+    });
+  } else if (proj.toolbox) {
+    g.fillStyle = INK; g.font = `900 84px ${SERIF}`; y = wrap(g, proj.title, L, 270, CW, 96);
+    g.font = `500 32px ${SANS}`; g.fillStyle = '#5b4a36'; y = wrap(g, proj.mvp || '', L, y + 6, CW, 46) + 30;
+    (proj.groups || []).forEach(([name, items]) => {
+      g.font = `600 24px ${MONO}`; g.fillStyle = col; spaced(g, name, L, y + 30, 2);
+      y += 50;
+      let x = L; g.font = `700 28px ${SANS}`;
+      items.forEach(t => {
+        const tw = g.measureText(t).width + 40;
+        if (x + tw > R) { x = L; y += 62; }
+        rr(g, x, y, tw, 50, 25); g.fillStyle = 'rgba(255,248,232,0.55)'; g.fill(); g.strokeStyle = 'rgba(90,60,30,0.45)'; g.lineWidth = 2; g.stroke();
+        g.fillStyle = INK; g.fillText(t, x + 20, y + 35); x += tw + 12;
+      });
+      y += 100;
+    });
+  } else if (si === 0) {
+    const big = proj.title.length > 10;
+    g.fillStyle = INK; g.font = `900 ${big ? 70 : 92}px ${SERIF}`;
+    y = wrap(g, proj.title, L, 280, CW, big ? 86 : 104);
+    y += 24;
+    rr(g, L, y, 104, 44, 10); g.fillStyle = col; g.fill();
+    g.fillStyle = '#F5EAD2'; g.font = `600 24px ${MONO}`; spaced(g, 'MVP', L + 22, y + 31, 4);
+    g.fillStyle = INK; g.font = `700 40px ${SANS}`; y = wrap(g, proj.mvp || '[MVP 한 줄]', L, y + 100, CW, 56);
+    let x = L; y += 6;
+    g.font = `700 26px ${SANS}`;
+    (proj.tags || []).forEach(t => {
+      const tw = g.measureText(t).width + 36;
+      rr(g, x, y, tw, 46, 23); g.fillStyle = col; g.globalAlpha = 0.16; g.fill(); g.globalAlpha = 1;
+      g.fillStyle = col; g.fillText(t, x + 18, y + 32); x += tw + 10;
+    });
+    y += 80;
+    imageBox(g, img, L, y, CW, Math.max(260, PAGE_H - 190 - y), '[대표 이미지]');
+  } else {
+    g.fillStyle = '#6f5c45'; g.font = `700 30px ${SANS}`; g.fillText(proj.title, L, 230);
+    g.fillStyle = INK; g.font = `900 66px ${SERIF}`;
+    y = wrap(g, `${pad(si + 1)}  ${sheet.label || ''}`, L, 320, CW, 78) + 10;
+    imageBox(g, img, L, y, CW, 640, '[화면 이미지 자리]');
+    y += 700;
+    g.font = `500 32px ${SANS}`;
+    if (sheet.text) { g.fillStyle = INK; wrap(g, sheet.text, L, y, CW, 48); }
+    else { g.fillStyle = 'rgba(90,60,30,0.55)'; g.fillText('[설명을 적어 주세요]', L, y); }
+  }
+  g.save(); g.translate(L + 6, PAGE_H - 92); g.rotate(-0.035);
+  g.font = `400 46px ${PEN}`; g.fillStyle = SEPIA;
+  g.fillText(count > 1 ? `${proj.title} · ${si + 1}/${count}` : proj.title, 0, 0);
+  g.restore();
+  g.font = `500 22px ${MONO}`; g.fillStyle = '#93805f'; g.textAlign = 'right';
+  g.fillText(`${OWNER.nameEn} · PORTFOLIO`, R, PAGE_H - 52); g.textAlign = 'left';
+  return tex(c);
+}
+
+function drawPageBack() {
+  const [c, g] = mk(512, 740), r = rng(3);
+  g.fillStyle = '#E4D3AE'; g.fillRect(0, 0, 512, 740);
+  for (let i = 0; i < 1400; i++) { g.fillStyle = `rgba(120,90,50,${r() * 0.06})`; g.fillRect(r() * 512, r() * 740, 2, 1); }
+  g.strokeStyle = 'rgba(110,80,45,0.16)'; g.lineWidth = 2;
+  for (let y = 80; y < 720; y += 30) { g.beginPath(); g.moveTo(60, y); g.lineTo(470, y); g.stroke(); }
+  const e = g.createRadialGradient(256, 370, 200, 256, 370, 470); e.addColorStop(0, 'rgba(100,60,25,0)'); e.addColorStop(1, 'rgba(100,60,25,0.28)');
+  g.fillStyle = e; g.fillRect(0, 0, 512, 740);
+  return tex(c);
+}
+
+/* ── 버건디 가죽: 오돌토돌한 결 + 테두리 바느질 + 바느질 이니셜 (색 · 높이 맵) ── */
+function drawLeather(front) {
+  const w = 1024, h = Math.round(1024 * cD / (front ? fW : cW));
+  const [c, g] = mk(w, h), [hc, hg] = mk(w, h), r = rng(front ? 11 : 23);
+  // 바탕색과 얼룩
+  const base = g.createLinearGradient(0, 0, w, h);
+  base.addColorStop(0, '#521520'); base.addColorStop(0.55, '#40101a'); base.addColorStop(1, '#2c0a11');
+  g.fillStyle = base; g.fillRect(0, 0, w, h);
+  hg.fillStyle = '#7a7a7a'; hg.fillRect(0, 0, w, h);
+  for (let i = 0; i < 22; i++) {
+    const x = r() * w, y = r() * h, rad = 80 + r() * 260, light = r() < 0.5;
+    const gr = g.createRadialGradient(x, y, 0, x, y, rad);
+    gr.addColorStop(0, light ? 'rgba(120,40,50,0.16)' : 'rgba(15,2,5,0.26)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    g.fillStyle = gr; g.fillRect(x - rad, y - rad, rad * 2, rad * 2);
+  }
+  // 페블 그레인: 작은 알갱이를 촘촘히
+  for (let i = 0; i < 42000; i++) {
+    const x = r() * w, y = r() * h, rad = 1.6 + r() * 3.2;
+    const v = r();
+    g.fillStyle = v < 0.5 ? `rgba(14,1,4,${0.12 + r() * 0.12})` : `rgba(125,45,55,${0.05 + r() * 0.07})`;
+    g.beginPath(); g.ellipse(x, y, rad, rad * (0.7 + r() * 0.5), r() * 3, 0, Math.PI * 2); g.fill();
+    hg.fillStyle = v < 0.5 ? `rgba(40,40,40,${0.25 + r() * 0.2})` : `rgba(230,230,230,${0.22 + r() * 0.2})`;
+    hg.beginPath(); hg.ellipse(x, y, rad, rad * (0.7 + r() * 0.5), r() * 3, 0, Math.PI * 2); hg.fill();
+  }
+  // 잔주름
+  for (let i = 0; i < 260; i++) {
+    const x = r() * w, y = r() * h, len = 20 + r() * 70, a = r() * Math.PI;
+    hg.strokeStyle = `rgba(30,30,30,${0.2 + r() * 0.25})`; hg.lineWidth = 1 + r() * 1.5;
+    g.strokeStyle = `rgba(15,2,5,${0.12 + r() * 0.12})`; g.lineWidth = 1;
+    for (const ctx of [g, hg]) { ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo(x + Math.cos(a + 0.6) * len * 0.5, y + Math.sin(a + 0.6) * len * 0.5, x + Math.cos(a) * len, y + Math.sin(a) * len); ctx.stroke(); }
+  }
+  // 손때 묻은 가장자리
+  const ed = 70;
+  for (const [x0, y0, x1, y1] of [[0, 0, ed, 0], [w, 0, w - ed, 0], [0, 0, 0, ed], [0, h, 0, h - ed]]) {
+    const gr = g.createLinearGradient(x0, y0, x1, y1); gr.addColorStop(0, 'rgba(20,3,6,0.55)'); gr.addColorStop(1, 'rgba(20,3,6,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, w, h);
+  }
+  // 바느질 홈 + 실
+  function stitchLine(points, len, gap, width) {
+    const total = []; let acc = 0;
+    for (let i = 0; i < points.length - 1; i++) { const [ax, ay] = points[i], [bx, by] = points[i + 1]; const d = Math.hypot(bx - ax, by - ay); total.push([ax, ay, bx, by, d, acc]); acc += d; }
+    // 홈 (눌린 자국)
+    hg.strokeStyle = 'rgba(25,25,25,0.85)'; hg.lineWidth = width + 5; hg.lineJoin = 'round';
+    g.strokeStyle = 'rgba(20,3,6,0.45)'; g.lineWidth = width + 4;
+    for (const ctx of [g, hg]) { ctx.beginPath(); points.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.stroke(); }
+    for (let d = 0; d < acc; d += len + gap) {
+      const seg = total.find(t => d >= t[5] && d <= t[5] + t[4]); if (!seg) continue;
+      const [ax, ay, bx, by, sd, s0] = seg, u = (d - s0) / sd, x = ax + (bx - ax) * u, y = ay + (by - ay) * u;
+      const ang = Math.atan2(by - ay, bx - ax), dx = Math.cos(ang) * len, dy = Math.sin(ang) * len;
+      // 실 (밝은 크림 금빛)
+      g.lineCap = 'round'; g.lineWidth = width;
+      g.strokeStyle = 'rgba(0,0,0,0.45)'; g.beginPath(); g.moveTo(x + 1.5, y + 2); g.lineTo(x + dx + 1.5, y + dy + 2); g.stroke();
+      g.strokeStyle = '#d9b98a'; g.beginPath(); g.moveTo(x, y); g.lineTo(x + dx, y + dy); g.stroke();
+      g.strokeStyle = 'rgba(255,240,210,0.55)'; g.lineWidth = width * 0.35; g.beginPath(); g.moveTo(x + 0.6, y - 0.8); g.lineTo(x + dx * 0.8, y + dy * 0.8 - 0.8); g.stroke();
+      // 바늘 구멍
+      g.fillStyle = 'rgba(10,1,3,0.8)'; g.beginPath(); g.arc(x - Math.cos(ang) * gap * 0.5, y - Math.sin(ang) * gap * 0.5, width * 0.32, 0, Math.PI * 2); g.fill();
+      hg.lineCap = 'round'; hg.strokeStyle = '#f2f2f2'; hg.lineWidth = width; hg.beginPath(); hg.moveTo(x, y); hg.lineTo(x + dx, y + dy); hg.stroke();
+    }
+  }
+  const m = 46;
+  stitchLine([[m, m], [w - m, m], [w - m, h - m], [m, h - m], [m, m]], 15, 9, 5.5);
+  if (front) {
+    // 바느질 이니셜: 글자 모양을 따라 눌린 자국 + 촘촘한 땀
+    const [jc, jg] = mk(w, h);
+    jg.font = `italic 600 470px ${INITIAL}`; jg.textAlign = 'center'; jg.textBaseline = 'alphabetic';
+    const jx = w * 0.5, jy = h * 0.86, ch = OWNER.initial || 'J';
+    // 눌린(디보싱) 바탕
+    hg.save(); hg.shadowColor = 'rgba(0,0,0,0.9)'; hg.shadowBlur = 14; hg.font = jg.font; hg.textAlign = 'center';
+    hg.fillStyle = 'rgba(45,45,45,0.9)'; hg.fillText(ch, jx, jy); hg.restore();
+    g.save(); g.font = jg.font; g.textAlign = 'center'; g.fillStyle = 'rgba(25,3,7,0.32)'; g.fillText(ch, jx, jy); g.restore();
+    // 땀 (점선 외곽선을 두 겹으로 그려 입체감)
+    for (const [ctx, color, lw, dx, dy] of [[g, 'rgba(0,0,0,0.55)', 7, 2, 3], [g, '#dcbd8e', 6, 0, 0], [hg, '#ffffff', 6, 0, 0]]) {
+      ctx.save(); ctx.font = jg.font; ctx.textAlign = 'center'; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      ctx.setLineDash([12, 9]); ctx.strokeStyle = color; ctx.lineWidth = lw; ctx.strokeText(ch, jx + dx, jy + dy); ctx.restore();
+    }
+    g.save(); g.font = jg.font; g.textAlign = 'center'; g.setLineDash([5, 16]); g.lineDashOffset = 2; g.strokeStyle = 'rgba(255,244,220,0.6)'; g.lineWidth = 2; g.strokeText(ch, jx - 0.8, jy - 1.2); g.restore();
+    // 작은 금박 글씨
+    g.font = `500 30px ${MONO}`; g.textAlign = 'center'; g.fillStyle = 'rgba(214,175,104,0.75)';
+    spaced(g, 'PORTFOLIO', jx - 118, h * 0.9 + 40, 10);
+    hg.font = g.font; hg.textAlign = 'center'; hg.fillStyle = 'rgba(60,60,60,0.8)'; spaced(hg, 'PORTFOLIO', jx - 118, h * 0.9 + 40, 10);
+  }
+  const map = tex(c), bump = tex(hc, false);
+  return { map, bump };
+}
+
+function drawEndpaper() {
+  const [c, g] = mk(512, 760), r = rng(5);
+  g.fillStyle = '#3a1018'; g.fillRect(0, 0, 512, 760);
+  g.strokeStyle = 'rgba(214,175,104,0.10)'; g.lineWidth = 1.2;
+  for (let y = -40; y < 800; y += 34) for (let x = -40; x < 560; x += 34) { g.beginPath(); g.arc(x + (y / 34 % 2) * 17, y, 12, 0, Math.PI * 2); g.stroke(); }
+  for (let i = 0; i < 9000; i++) { g.fillStyle = `rgba(255,200,205,${r() * 0.035})`; g.fillRect(r() * 512, r() * 760, 1.5, 1.5); }
+  return tex(c);
+}
+
+/* ── 서재: 호두나무 책상 · 돌벽 · 책장 ── */
+function drawDesk() {
+  const [c, g] = mk(2048, 1536), r = rng(31);
+  g.fillStyle = '#2a170d'; g.fillRect(0, 0, 2048, 1536);
+  for (let i = 0; i < 1800; i++) {
+    const y = r() * 1536, a = 0.03 + r() * 0.08, light = r() < 0.42;
+    g.strokeStyle = light ? `rgba(150,92,52,${a})` : `rgba(0,0,0,${a * 1.5})`;
+    g.lineWidth = 1 + r() * 3.2; g.beginPath(); g.moveTo(0, y);
+    for (let x = 0; x <= 2048; x += 96) g.lineTo(x, y + Math.sin(x / 340 + i) * 10 + Math.sin(x / 80 + i * 0.7) * 2.2);
+    g.stroke();
+  }
+  for (let i = 0; i < 5; i++) {        // 옹이
+    const x = r() * 2048, y = r() * 1536;
+    for (let k = 0; k < 9; k++) { g.strokeStyle = `rgba(10,4,2,${0.12 - k * 0.01})`; g.lineWidth = 2; g.beginPath(); g.ellipse(x, y, 10 + k * 9, 4 + k * 4, 0, 0, Math.PI * 2); g.stroke(); }
+  }
+  for (let i = 0; i < 140; i++) { g.strokeStyle = `rgba(200,150,100,${0.03 + r() * 0.04})`; g.lineWidth = 0.8; g.beginPath(); const x = r() * 2048, y = r() * 1536; g.moveTo(x, y); g.lineTo(x + (r() - 0.5) * 160, y + (r() - 0.5) * 50); g.stroke(); }
+  return tex(c);
+}
+function drawStone() {
+  const [c, g] = mk(2048, 1024), r = rng(41);
+  g.fillStyle = '#15100c'; g.fillRect(0, 0, 2048, 1024);
+  let y = 0;
+  while (y < 1024) {
+    const bh = 70 + r() * 50; let x = -r() * 120;
+    while (x < 2048) {
+      const bw = 120 + r() * 170, v = r();
+      const base = [52 + v * 20, 44 + v * 16, 36 + v * 13];
+      g.fillStyle = `rgb(${base[0]},${base[1]},${base[2]})`; rr(g, x + 4, y + 4, bw - 8, bh - 8, 8); g.fill();
+      for (let k = 0; k < 90; k++) { g.fillStyle = `rgba(${r() < 0.5 ? '0,0,0' : '160,140,120'},${r() * 0.12})`; g.fillRect(x + 6 + r() * (bw - 12), y + 6 + r() * (bh - 12), 2 + r() * 5, 2 + r() * 4); }
+      const hl = g.createLinearGradient(x, y, x + bw, y + bh); hl.addColorStop(0, 'rgba(255,230,200,0.08)'); hl.addColorStop(1, 'rgba(0,0,0,0.28)');
+      g.fillStyle = hl; rr(g, x + 4, y + 4, bw - 8, bh - 8, 8); g.fill();
+      x += bw;
+    }
+    y += bh;
+  }
+  const v = g.createLinearGradient(0, 0, 0, 1024); v.addColorStop(0, 'rgba(0,0,0,0.55)'); v.addColorStop(0.6, 'rgba(0,0,0,0.1)'); v.addColorStop(1, 'rgba(0,0,0,0.5)');
+  g.fillStyle = v; g.fillRect(0, 0, 2048, 1024);
+  return tex(c);
+}
+function drawShelf() {
+  const [c, g] = mk(1024, 1600), r = rng(51);
+  g.fillStyle = '#1b0f08'; g.fillRect(0, 0, 1024, 1600);
+  const cols = ['#5a1620', '#22412f', '#1d2b4a', '#4b2d17', '#6a4a1c', '#3a1630', '#2d2a26', '#71291f'];
+  const rows = 5, rowH = 1600 / rows;
+  for (let rI = 0; rI < rows; rI++) {
+    const top = rI * rowH + 22, bottom = (rI + 1) * rowH - 26;
+    g.fillStyle = '#0e0704'; g.fillRect(40, top, 944, bottom - top);
+    let x = 52;
+    while (x < 960) {
+      const bw = 20 + r() * 34, bh = (bottom - top) * (0.62 + r() * 0.33), col = cols[Math.floor(r() * cols.length)];
+      if (r() < 0.06) { x += 30; continue; }
+      const lean = r() < 0.08 ? (r() - 0.5) * 0.2 : 0;
+      g.save(); g.translate(x + bw / 2, bottom); g.rotate(lean);
+      const gr = g.createLinearGradient(-bw / 2, 0, bw / 2, 0); gr.addColorStop(0, 'rgba(0,0,0,0.5)'); gr.addColorStop(0.35, col); gr.addColorStop(0.65, col); gr.addColorStop(1, 'rgba(0,0,0,0.6)');
+      g.fillStyle = gr; g.fillRect(-bw / 2, -bh, bw, bh);
+      g.fillStyle = 'rgba(214,175,104,0.55)';
+      g.fillRect(-bw / 2 + 2, -bh + 14, bw - 4, 2); g.fillRect(-bw / 2 + 2, -bh + 20, bw - 4, 1); g.fillRect(-bw / 2 + 2, -18, bw - 4, 2);
+      if (r() < 0.5) { g.fillStyle = 'rgba(0,0,0,0.35)'; g.fillRect(-bw / 2 + 4, -bh * 0.62, bw - 8, bh * 0.16); }
+      g.restore();
+      x += bw + 1;
+    }
+    const sh = g.createLinearGradient(0, bottom, 0, bottom + 26); sh.addColorStop(0, '#3a2213'); sh.addColorStop(1, '#1c0f07');
+    g.fillStyle = sh; g.fillRect(0, bottom, 1024, 26);
+  }
+  g.fillStyle = '#2a170c'; g.fillRect(0, 0, 40, 1600); g.fillRect(984, 0, 40, 1600);
+  return tex(c);
+}
+function drawElastic() {
+  const [c, g] = mk(256, 64), r = rng(61);
+  g.fillStyle = '#2a0b11'; g.fillRect(0, 0, 256, 64);
+  for (let x = 0; x < 256; x += 4) { g.fillStyle = `rgba(150,60,70,${0.18 + r() * 0.1})`; g.fillRect(x, 0, 2, 64); }
+  for (let y = 0; y < 64; y += 6) { g.fillStyle = 'rgba(0,0,0,0.25)'; g.fillRect(0, y, 256, 1); }
+  const e = g.createLinearGradient(0, 0, 0, 64); e.addColorStop(0, 'rgba(0,0,0,0.5)'); e.addColorStop(0.15, 'rgba(0,0,0,0)'); e.addColorStop(0.85, 'rgba(0,0,0,0)'); e.addColorStop(1, 'rgba(0,0,0,0.5)');
+  g.fillStyle = e; g.fillRect(0, 0, 256, 64);
+  const t = tex(c); t.wrapS = THREE.RepeatWrapping; return t;
+}
+function drawWood() {
+  const [c, g] = mk(256, 512), r = rng(71);
+  g.fillStyle = '#3a2214'; g.fillRect(0, 0, 256, 512);
+  for (let i = 0; i < 160; i++) { const x = r() * 256; g.strokeStyle = r() < 0.5 ? `rgba(0,0,0,${0.1 + r() * 0.2})` : `rgba(150,95,55,${0.08 + r() * 0.12})`; g.lineWidth = 1 + r() * 2.5; g.beginPath(); g.moveTo(x, 0); for (let y = 0; y <= 512; y += 64) g.lineTo(x + Math.sin(y / 120 + i) * 4, y); g.stroke(); }
+  return tex(c);
+}
+function softDot() {
+  const [c, g] = mk(64, 64);
+  const gr = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+  gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.25, 'rgba(255,240,210,0.55)'); gr.addColorStop(1, 'rgba(255,220,160,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, 64, 64);
+  return new THREE.CanvasTexture(c);
+}
+function flameTex() {
+  const [c, g] = mk(64, 128);
+  g.save(); g.translate(32, 84); g.scale(1, 2.1);
+  const gr = g.createRadialGradient(0, 0, 0, 0, 0, 28);
+  gr.addColorStop(0, 'rgba(255,255,240,1)'); gr.addColorStop(0.25, 'rgba(255,232,160,0.95)'); gr.addColorStop(0.55, 'rgba(255,150,50,0.55)'); gr.addColorStop(1, 'rgba(255,90,20,0)');
+  g.fillStyle = gr; g.beginPath(); g.arc(0, 0, 28, 0, Math.PI * 2); g.fill(); g.restore();
+  g.fillStyle = 'rgba(90,140,255,0.35)'; g.beginPath(); g.ellipse(32, 108, 6, 8, 0, 0, Math.PI * 2); g.fill();
+  return new THREE.CanvasTexture(c);
+}
+function featherTex() {
+  const [c, g] = mk(128, 512), r = rng(81);
+  g.clearRect(0, 0, 128, 512);
+  g.strokeStyle = '#f2ead8'; g.lineWidth = 3; g.beginPath(); g.moveTo(64, 0); g.quadraticCurveTo(70, 256, 64, 512); g.stroke();
+  for (let y = 20; y < 470; y += 2.2) {
+    const k = Math.sin(Math.PI * (y / 500)), wL = 52 * k * (0.85 + r() * 0.3), wR = 50 * k * (0.85 + r() * 0.3);
+    const tone = 220 + r() * 30, tip = y < 120 ? 0.75 : 1;
+    g.strokeStyle = `rgba(${tone},${tone - 8},${tone - 22},${0.55 * tip})`; g.lineWidth = 1;
+    g.beginPath(); g.moveTo(64, y); g.quadraticCurveTo(64 - wL * 0.5, y - 6, 64 - wL, y - 16); g.stroke();
+    g.beginPath(); g.moveTo(66, y); g.quadraticCurveTo(66 + wR * 0.5, y - 6, 66 + wR, y - 16); g.stroke();
+  }
+  return new THREE.CanvasTexture(c);
+}
+
+/* ───────────── 부품 ───────────── */
+const parts = [], clickables = [];
+const UP = new THREE.Vector3(0, 1, 0), X_AXIS = new THREE.Vector3(1, 0, 0), Z_AXIS = new THREE.Vector3(0, 0, 1);
+const IDENT = new THREE.Quaternion();
+function addPart(o) {
+  const pivot = new THREE.Group();
+  const child = o.mesh;
+  const off = o.offset ? o.offset.clone() : new THREE.Vector3();
+  child.position.copy(off);
+  pivot.add(child);
+  scene.add(pivot);
+  child.traverse(m => { if (m.isMesh) { m.castShadow = true; m.receiveShadow = true; } });
+  o.L = { pos: o.layoutCenter.clone().sub(off), quat: IDENT.clone() };
+  o.pivot = pivot;
+  pivot.position.copy(o.L.pos);
+  parts.push(o);
+  return o;
+}
+function hingePose(f, yR, yL, P, Q) {
+  P.set(ringX, yR + (yL - yR) * f + Math.sin(Math.PI * f) * 0.07, 0);
+  Q.setFromAxisAngle(Z_AXIS, Math.PI * f);
+}
+function leatherMat(maps, color) {
+  return new THREE.MeshPhysicalMaterial({
+    map: maps ? maps.map : null, bumpMap: maps ? maps.bump : null, bumpScale: 1.6,
+    color: maps ? '#ffffff' : color, roughness: 0.6, sheen: 0.35, sheenRoughness: 0.6, sheenColor: new THREE.Color('#8f4651'),
+    clearcoat: 0.18, clearcoatRoughness: 0.5, envMapIntensity: 0.55,
+  });
+}
+
+let cover, band, charms, endSeqT = 0;
+const pages = [], candles = [], floaters = [];
+let paperTex, dustPts, dustGeo, dust, burst, burstGeo;
+
+function build() {
+  /* 책상 */
+  const desk = new THREE.Mesh(new THREE.PlaneGeometry(18, 13), new THREE.MeshPhysicalMaterial({ map: drawDesk(), roughness: 0.42, clearcoat: 0.35, clearcoatRoughness: 0.4, envMapIntensity: 0.35 }));
+  desk.rotation.x = -Math.PI / 2; desk.position.z = -1.6; desk.receiveShadow = true; scene.add(desk);
+
+  /* 돌벽 · 책장 */
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(26, 11), new THREE.MeshStandardMaterial({ map: drawStone(), roughness: 0.95, envMapIntensity: 0.15 }));
+  wall.position.set(0, 4.5, -7.6); scene.add(wall);
+  const shelfTex = drawShelf(), shelfSide = new THREE.MeshStandardMaterial({ color: '#1a0e07', roughness: 0.8 });
+  [-4.6, 4.6].forEach(x => {
+    const mats = [shelfSide, shelfSide, shelfSide, shelfSide, new THREE.MeshStandardMaterial({ map: shelfTex, roughness: 0.85, envMapIntensity: 0.2 }), shelfSide];
+    const s = new THREE.Mesh(new THREE.BoxGeometry(3.4, 5.4, 0.7), mats); s.position.set(x, 2.7, -7.1); scene.add(s);
+  });
+
+  /* 책상 위 소품: 낡은 책 더미 · 잉크병과 깃펜 */
+  const bookCols = ['#3a1418', '#1f3528', '#2a2216'];
+  let by = 0;
+  [[1.1, 0.16, 1.55, 0.25], [1.0, 0.13, 1.4, -0.1], [0.92, 0.12, 1.3, 0.35]].forEach(([w, h, d, rot], i) => {
+    const pageM = new THREE.MeshStandardMaterial({ color: '#d8c49a', roughness: 0.95 });
+    const coverM = new THREE.MeshStandardMaterial({ color: bookCols[i], roughness: 0.7 });
+    const b = new THREE.Mesh(new RoundedBoxGeometry(w, h, d, 2, 0.02), [pageM, coverM, coverM, coverM, pageM, pageM]);
+    b.position.set(-2.75, by + h / 2, -0.35); b.rotation.y = rot; b.castShadow = b.receiveShadow = true; scene.add(b); by += h;
+  });
+  const glass = new THREE.MeshPhysicalMaterial({ color: '#0b0d10', roughness: 0.08, metalness: 0, clearcoat: 1, envMapIntensity: 1.2 });
+  const brass = new THREE.MeshStandardMaterial({ color: '#b9893c', metalness: 1, roughness: 0.3 });
+  const ink = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.2, 0.24, 32), glass); ink.position.set(2.05, 0.12, -0.75); ink.castShadow = true; scene.add(ink);
+  const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.09, 0.07, 24), brass); neck.position.set(2.05, 0.275, -0.75); scene.add(neck);
+  const quill = new THREE.Group();
+  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.01, 1.2, 8), new THREE.MeshStandardMaterial({ color: '#e9dfc8', roughness: 0.5 })); shaft.position.y = 0.6; quill.add(shaft);
+  const vane = new THREE.Mesh(new THREE.PlaneGeometry(0.26, 1.0), new THREE.MeshStandardMaterial({ map: featherTex(), transparent: true, alphaTest: 0.05, side: THREE.DoubleSide, roughness: 0.8 }));
+  vane.position.y = 0.72; quill.add(vane);
+  quill.position.set(2.05, 0.18, -0.75); quill.rotation.set(-0.3, 0.6, -0.42); scene.add(quill);
+
+  /* 책상 촛대 (따뜻하게 일렁이는 빛) */
+  const FLAME = flameTex(), DOT = softDot();
+  const wax = new THREE.MeshStandardMaterial({ color: '#efe3c8', roughness: 0.55, emissive: '#3a2410', emissiveIntensity: 0.4 });
+  [[-2.15, -1.55, 0.62], [-1.55, -2.35, 0.92], [2.45, -1.8, 0.74]].forEach(([x, z, h], i) => {
+    const g = new THREE.Group(); g.position.set(x, 0, z); scene.add(g);
+    const dish = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.22, 0.03, 32), brass); dish.position.y = 0.015; dish.castShadow = true; g.add(dish);
+    const cup = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.07, 0.09, 24), brass); cup.position.y = 0.075; g.add(cup);
+    const prof = [new THREE.Vector2(0, 0), new THREE.Vector2(0.085, 0)];
+    for (let k = 1; k <= 10; k++) prof.push(new THREE.Vector2(0.085 + Math.sin(k * 2.1 + i) * 0.004, (h * k) / 10));
+    prof.push(new THREE.Vector2(0.07, h + 0.01), new THREE.Vector2(0, h + 0.005));
+    const cnd = new THREE.Mesh(new THREE.LatheGeometry(prof, 28), wax); cnd.position.y = 0.11; cnd.castShadow = true; g.add(cnd);
+    const wick = new THREE.Mesh(new THREE.CylinderGeometry(0.004, 0.004, 0.04, 6), new THREE.MeshBasicMaterial({ color: '#1a120c' })); wick.position.y = h + 0.13; g.add(wick);
+    const flame = new THREE.Sprite(new THREE.SpriteMaterial({ map: FLAME, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
+    flame.scale.set(0.085, 0.17, 1); flame.position.y = h + 0.2; g.add(flame);
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: DOT, color: '#ffb766', blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.22 }));
+    halo.scale.setScalar(0.9); halo.position.y = h + 0.2; g.add(halo);
+    const lt = new THREE.PointLight('#ffae5c', 5.5, 7.5, 1.7); lt.position.y = h + 0.24; g.add(lt);
+    candles.push({ flame, halo, lt, seed: i * 3.1, base: 5.5 });
+  });
+
+  /* 허공에 떠 있는 촛불 (영화 속 대연회장처럼, 멀리서 은은하게) */
+  const fr = rng(91);
+  for (let i = 0; i < 16; i++) {
+    const g = new THREE.Group();
+    const h = 0.32 + fr() * 0.2;
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.052, h, 14), wax); g.add(body);
+    const flame = new THREE.Sprite(new THREE.SpriteMaterial({ map: FLAME, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true }));
+    flame.scale.set(0.06, 0.12, 1); flame.position.y = h / 2 + 0.07; g.add(flame);
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: DOT, color: '#ffb766', blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.28 }));
+    halo.scale.setScalar(0.6); halo.position.y = h / 2 + 0.07; g.add(halo);
+    const pos = new THREE.Vector3(-6 + fr() * 12, 2.7 + fr() * 2.2, -6.8 + fr() * 4.6);
+    g.position.copy(pos); scene.add(g);
+    floaters.push({ g, flame, base: pos.clone(), seed: fr() * 10 });
+  }
+
+  /* 책 본체 */
+  const side = leatherMat(null, '#2e0a12');
+  const endpaper = drawEndpaper();
+  const backL = drawLeather(false), frontL = drawLeather(true);
+  const endM = new THREE.MeshStandardMaterial({ map: endpaper, roughness: 0.8 });
+
+  const back = addPart({
+    mesh: new THREE.Mesh(new RoundedBoxGeometry(cW, CT, cD, 3, 0.013), [side, side, endM, leatherMat(backL), side, side]),
+    layoutCenter: new THREE.Vector3((cL + cR) / 2, CT / 2, 0),
+  });
+  back.pose = (s, P, Q) => { P.copy(back.L.pos); Q.identity(); };
+  clickables.push(back.mesh);
+
+  const ringMat = new THREE.MeshStandardMaterial({ color: '#d4ac5d', metalness: 1, roughness: 0.26 });
+  RING_Z.forEach(z => {
+    const r = addPart({ mesh: new THREE.Mesh(new THREE.TorusGeometry(RING_R, 0.011, 14, 48), ringMat), layoutCenter: new THREE.Vector3(ringX, RING_Y, z) });
+    r.pose = (s, P, Q) => { P.copy(r.L.pos); Q.identity(); };
+  });
+
+  const coverClosedY = COVER_TOP - CT / 2;
+  cover = addPart({
+    mesh: new THREE.Mesh(new RoundedBoxGeometry(fW, CT, cD, 3, 0.013), [side, side, leatherMat(frontL), endM, side, side]),
+    offset: new THREE.Vector3(0.025 + fW / 2, 0, 0),
+    layoutCenter: new THREE.Vector3(ringX + 0.025 + fW / 2, coverClosedY, 0),
+  });
+  cover.flipAt = s => win(s, 0.34, 0.78) * (1 - win(endSeqT, 0.2, 0.46));
+  cover.pose = (s, P, Q) => hingePose(cover.flipAt(s), coverClosedY, CT / 2, P, Q);
+  clickables.push(cover.mesh);
+
+  /* 종이: 공유 양피지 + 장마다 잉크. 잉크는 셰이더로 위에서부터 번지듯 채워짐 */
+  paperTex = drawPaper();
+  const paperSide = new THREE.MeshStandardMaterial({ color: '#dccaa2', roughness: 0.95 });
+  const backMat = new THREE.MeshStandardMaterial({ map: drawPageBack(), roughness: 0.92, envMapIntensity: 0.35 });
+  const pageOffset = new THREE.Vector3((pL + pR) / 2 - ringX, 0, 0);
+  const projTabs = new Map();
+  SHEETS.forEach((S, j) => {
+    const front = new THREE.MeshStandardMaterial({ map: paperTex, roughness: 0.88, envMapIntensity: 0.4 });
+    const uReveal = { value: 0 }, uInk = { value: drawInk(S) };
+    front.onBeforeCompile = sh => {
+      sh.uniforms.uReveal = uReveal; sh.uniforms.uInk = uInk;
+      sh.fragmentShader = sh.fragmentShader
+        .replace('#include <common>', '#include <common>\nuniform float uReveal;\nuniform sampler2D uInk;')
+        .replace('#include <map_fragment>', `
+#ifdef USE_MAP
+  vec4 paperC = texture2D( map, vMapUv );
+  vec4 inkC = texture2D( uInk, vMapUv );
+  float wave = sin(vMapUv.x * 17.0 + vMapUv.y * 6.0) * 0.016 + sin(vMapUv.x * 41.0 - vMapUv.y * 23.0) * 0.009 + sin(vMapUv.x * 97.0 + vMapUv.y * 61.0) * 0.004;
+  float edge = (1.0 - vMapUv.y) * 0.9 + wave;
+  float front = uReveal * 1.12 - 0.04;
+  float m = 1.0 - smoothstep(front - 0.07, front, edge);
+  float glowBand = smoothstep(front - 0.07, front - 0.02, edge) * (1.0 - smoothstep(front - 0.02, front + 0.01, edge));
+  vec3 col = mix(paperC.rgb, inkC.rgb, inkC.a * m);
+  col += vec3(0.55, 0.36, 0.08) * glowBand * (0.35 + inkC.a) * step(0.001, uReveal) * (1.0 - step(0.999, uReveal));
+  diffuseColor *= vec4(col, 1.0);
+#endif`);
+    };
+    const page = new THREE.Mesh(new THREE.BoxGeometry(pW, PT * 0.7, D), [paperSide, paperSide, front, backMat, paperSide, paperSide]);
+    if (S.si === 0) {
+      const ti = projTabs.size; projTabs.set(S.pi, ti);
+      const tab = new THREE.Mesh(new THREE.BoxGeometry(0.09, PT * 0.6, 0.18), new THREE.MeshStandardMaterial({ color: S.proj.color || '#888', roughness: 0.55 }));
+      tab.position.set(pW / 2 + 0.04, 0, -0.85 + (ti % 8) * 0.24);
+      page.add(tab);
+    }
+    const p = addPart({ mesh: page, offset: pageOffset, layoutCenter: new THREE.Vector3(SHEET_CX, CT, 0) });
+    const k = FIRST + j, isLast = j === NS - 1;
+    const yArr = CT + PT / 2, yLeft = CT + j * PT + PT / 2, yClosed = CT + (NS - 1 - j) * PT + PT / 2;
+    const arrive = new THREE.Vector3(ringX, yArr, 0);
+    const start = new THREE.Vector3(ringX + 0.5, 1.9, -1.0);
+    const startQ = new THREE.Quaternion().setFromEuler(new THREE.Euler(0.42, 0.28, -0.22));
+    Object.assign(p, { k, j, isLast, uReveal, reveal: 0, pageOffset, prevFlip: 0, prevArr: 0 });
+    p.arriveAt = s => win(s, k - 0.46, k - 0.08);
+    p.flipAt = s => (isLast ? 0 : win(s, k + 0.12, k + 0.55)) * (1 - win(endSeqT, 0, 0.26));
+    p.pose = (s, P, Q) => {
+      const tA = p.arriveAt(s);
+      p.pivot.visible = s > k - 0.47;
+      if (tA < 1) {
+        // 마법으로 천천히 내려앉는 종이
+        P.lerpVectors(start, arrive, easeOut(tA));
+        P.x += Math.sin(tA * Math.PI * 2.2) * 0.09 * (1 - tA);
+        P.y += Math.sin(Math.PI * tA) * 0.12;
+        Q.slerpQuaternions(startQ, IDENT, easeOut(tA));
+        Q.multiply(new THREE.Quaternion().setFromAxisAngle(Z_AXIS, Math.sin(tA * Math.PI * 3) * 0.06 * (1 - tA)));
+        return;
+      }
+      hingePose(p.flipAt(s), endSeqT > 0.001 ? yClosed : yArr, yLeft, P, Q);
+    };
+    pages.push(p);
+    clickables.push(page);
+  });
+
+  /* 고무줄 스트랩 + 금속 참 */
+  buildBand();
+
+  /* 은은히 떨어지는 마법 가루 */
+  const DN = REDUCED ? 140 : 380;
+  dust = { pos: new Float32Array(DN * 3), col: new Float32Array(DN * 3), seed: [] };
+  const dr = rng(101);
+  for (let i = 0; i < DN; i++) {
+    dust.seed.push({ x: -5 + dr() * 10, y: dr() * 4.5, z: -6 + dr() * 7.5, vy: 0.025 + dr() * 0.06, sw: 0.1 + dr() * 0.25, ph: dr() * 10, tw: 0.5 + dr() * 1.4, b: 0.25 + dr() * 0.75 });
+  }
+  dustGeo = new THREE.BufferGeometry();
+  dustGeo.setAttribute('position', new THREE.BufferAttribute(dust.pos, 3));
+  dustGeo.setAttribute('color', new THREE.BufferAttribute(dust.col, 3));
+  dustPts = new THREE.Points(dustGeo, new THREE.PointsMaterial({ size: 0.028, map: DOT, vertexColors: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true }));
+  dustPts.frustumCulled = false; scene.add(dustPts);
+
+  /* 주문을 걸 때 수첩 둘레에서 피어오르는 금빛 가루 */
+  const BN = 220;
+  burst = { pos: new Float32Array(BN * 3), col: new Float32Array(BN * 3), seed: [], t: -1 };
+  for (let i = 0; i < BN; i++) burst.seed.push({ a: dr() * Math.PI * 2, r: 0.9 + dr() * 0.5, h: dr() * 0.3, up: 0.35 + dr() * 0.9, sp: 0.4 + dr() * 0.8, ph: dr() * 6 });
+  burstGeo = new THREE.BufferGeometry();
+  burstGeo.setAttribute('position', new THREE.BufferAttribute(burst.pos, 3));
+  burstGeo.setAttribute('color', new THREE.BufferAttribute(burst.col, 3));
+  const bp = new THREE.Points(burstGeo, new THREE.PointsMaterial({ size: 0.035, map: DOT, vertexColors: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+  bp.frustumCulled = false; scene.add(bp);
+}
+
+/* 스트랩: 수첩 단면을 따라 도는 납작한 띠 (리본 지오메트리) */
+const BAND_X = cR - 0.24;
+function ribbonGeometry(curve, width, segs) {
+  const pos = [], nor = [], uv = [], idx = [];
+  const len = curve.getLength(), tg = new THREE.Vector3(), n = new THREE.Vector3();
+  for (let i = 0; i <= segs; i++) {
+    const t = i / segs, p = curve.getPointAt(t % 1);
+    curve.getTangentAt(t % 1, tg); n.crossVectors(tg, X_AXIS).normalize();
+    for (const sx of [-1, 1]) { pos.push(p.x + sx * width / 2, p.y, p.z); nor.push(n.x, n.y, n.z); uv.push(t * len * 3, sx < 0 ? 0 : 1); }
+  }
+  for (let i = 0; i < segs; i++) { const a = i * 2; idx.push(a, a + 2, a + 1, a + 1, a + 2, a + 3); }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+  g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  g.setIndex(idx);
+  return g;
+}
+function loopPoints(y0, y1, z0, z1, r) {
+  const pts = [];
+  const corner = (cy, cz, from, to) => { for (let k = 0; k <= 6; k++) { const a = from + (to - from) * k / 6; pts.push(new THREE.Vector3(0, cy + Math.sin(a) * r, cz + Math.cos(a) * r)); } };
+  corner(y1 - r, z1 - r, Math.PI / 2, 0);          // top → front
+  corner(y0 + r, z1 - r, 0, -Math.PI / 2);         // front → bottom
+  corner(y0 + r, z0 + r, -Math.PI / 2, -Math.PI);  // bottom → back
+  corner(y1 - r, z0 + r, Math.PI, Math.PI / 2);    // back → top
+  return pts;
+}
+function buildBand() {
+  band = new THREE.Group();
+  const T = COVER_TOP + 0.006, z1 = cD / 2 + 0.01, z0 = -cD / 2 - 0.01;
+  const curve = new THREE.CatmullRomCurve3(loopPoints(-0.004, T, z0, z1, 0.022), true, 'centripetal');
+  const elastic = drawElastic(); elastic.repeat.set(1, 1);
+  const mat = new THREE.MeshStandardMaterial({ map: elastic, roughness: 0.78, side: THREE.DoubleSide, envMapIntensity: 0.3 });
+  const ribbon = new THREE.Mesh(ribbonGeometry(curve, 0.078, 360), mat);
+  ribbon.castShadow = true; ribbon.receiveShadow = true; band.add(ribbon);
+  clickables.push(ribbon);
+
+  /* 참: 금빛 하트 + 로즈골드 곰. 앞쪽 가장자리에서 늘어져 책상 위에 놓임 */
+  charms = new THREE.Group();
+  const gold = new THREE.MeshStandardMaterial({ color: '#e3bd68', metalness: 1, roughness: 0.2 });
+  const rose = new THREE.MeshStandardMaterial({ color: '#e2a98f', metalness: 1, roughness: 0.28 });
+  const dark = new THREE.MeshStandardMaterial({ color: '#1a1210', roughness: 0.4, metalness: 0.2 });
+  const link = (x, y) => { const m = new THREE.Mesh(new THREE.TorusGeometry(0.011, 0.0028, 8, 18), gold); m.position.set(x, y, 0); return m; };
+  const clasp = new THREE.Mesh(new THREE.TorusGeometry(0.016, 0.0035, 8, 20), gold); clasp.position.set(0, 0, 0);
+  charms.add(clasp, link(-0.012, -0.022), link(0.014, -0.022));
+  // 하트
+  const heart = new THREE.Shape();
+  heart.moveTo(0, -0.028); heart.bezierCurveTo(-0.04, 0.0, -0.034, 0.034, 0, 0.02); heart.bezierCurveTo(0.034, 0.034, 0.04, 0.0, 0, -0.028);
+  const hm = new THREE.Mesh(new THREE.ExtrudeGeometry(heart, { depth: 0.008, bevelEnabled: true, bevelSize: 0.004, bevelThickness: 0.004, bevelSegments: 4, curveSegments: 24 }), gold);
+  hm.geometry.center(); hm.position.set(-0.026, -0.062, 0); hm.rotation.z = 0.12; charms.add(hm);
+  // 곰
+  const bear = new THREE.Group();
+  const sph = (r, x, y, z, m) => { const s = new THREE.Mesh(new THREE.SphereGeometry(r, 20, 14), m); s.position.set(x, y, z); return s; };
+  bear.add(sph(0.026, 0, 0, 0, rose), sph(0.011, -0.021, 0.02, 0, rose), sph(0.011, 0.021, 0.02, 0, rose),
+    sph(0.0105, 0, -0.008, 0.016, rose), sph(0.0035, 0, -0.004, 0.026, dark), sph(0.0028, -0.009, 0.006, 0.022, dark), sph(0.0028, 0.009, 0.006, 0.022, dark));
+  bear.scale.set(1, 1, 0.6); bear.position.set(0.03, -0.058, 0); bear.rotation.z = -0.1;
+  charms.add(bear);
+  charms.traverse(m => { if (m.isMesh) m.castShadow = true; });
+  // 책상 위에 눕도록: 늘어지는 방향(-y)이 보는 쪽(+z)으로
+  charms.rotation.x = -Math.PI / 2 + 0.05;
+  charms.position.set(0.0, 0.03, z1 + 0.018);
+  band.add(charms);
+
+  band.position.set(BAND_X, 0, 0);
+  scene.add(band);
+  band.userData = {
+    onPos: new THREE.Vector3(BAND_X, 0, 0), onQ: new THREE.Quaternion(),
+    slidePos: new THREE.Vector3(cR + 0.12, 0.01, 0.05),
+    offPos: new THREE.Vector3(cR + 0.62, 0.039, 0.32),
+    offQ: new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0.22, Math.PI / 2)),
+  };
+}
+const tmpQ = new THREE.Quaternion(), tmpV = new THREE.Vector3();
+function bandOff(s) { return win(s, 0.06, 0.4) * (1 - win(endSeqT, 0.48, 0.86)); }
+function updateBand(s, t) {
+  const u = band.userData, k = bandOff(s);
+  const a = clamp01(k / 0.42), b = clamp01((k - 0.38) / 0.62);
+  if (k <= 0.42) {                                     // 옆으로 미끄러져 빠짐
+    band.position.lerpVectors(u.onPos, u.slidePos, ease(a));
+    band.position.y += Math.sin(Math.PI * a) * 0.02;
+    band.quaternion.copy(u.onQ);
+  } else {                                             // 눕혀져 책상 위에 내려앉음
+    band.position.lerpVectors(u.slidePos, u.offPos, ease(b));
+    band.position.y += Math.sin(Math.PI * b) * 0.28;
+    band.quaternion.slerpQuaternions(u.onQ, u.offQ, ease(b));
+  }
+  // 다시 감길 때 살짝 튕기는 탄성
+  const snap = endSeqT > 0.82 ? Math.sin(clamp01((endSeqT - 0.84) / 0.1) * Math.PI) * 0.06 * (1 - clamp01((endSeqT - 0.84) / 0.1)) : 0;
+  band.scale.set(1, 1 + snap, 1 + snap);
+  const moving = (k > 0.01 && k < 0.99) ? 1 : 0;
+  charms.rotation.y = Math.sin(t * 2.3) * 0.08 * moving;
+  return k;
+}
+
+/* ───────────── 마법 가루 ───────────── */
+function updateDust(t, dt) {
+  const n = dust.seed.length;
+  for (let i = 0; i < n; i++) {
+    const s = dust.seed[i];
+    s.y -= s.vy * dt;
+    if (s.y < 0.02) { s.y = 4.5; s.x = -5 + Math.random() * 10; s.z = -6 + Math.random() * 7.5; }
+    dust.pos[i * 3] = s.x + Math.sin(t * 0.3 + s.ph) * s.sw;
+    dust.pos[i * 3 + 1] = s.y;
+    dust.pos[i * 3 + 2] = s.z + Math.cos(t * 0.24 + s.ph) * s.sw;
+    const b = s.b * (0.45 + 0.55 * (0.5 + 0.5 * Math.sin(t * s.tw + s.ph))) * Math.min(1, s.y * 2) * 0.55;
+    dust.col[i * 3] = b; dust.col[i * 3 + 1] = b * 0.82; dust.col[i * 3 + 2] = b * 0.55;
+  }
+  dustGeo.attributes.position.needsUpdate = true; dustGeo.attributes.color.needsUpdate = true;
+}
+function updateBurst(dt) {
+  const n = burst.seed.length;
+  if (burst.t < 0) { burst.col.fill(0); burstGeo.attributes.color.needsUpdate = true; return; }
+  burst.t += dt;
+  const T = burst.t;
+  for (let i = 0; i < n; i++) {
+    const s = burst.seed[i], life = clamp01((T - s.ph * 0.06) / 2.6);
+    const a = s.a + life * s.sp * 2.2, r = s.r + life * 0.35;
+    burst.pos[i * 3] = BOOK_CX + Math.cos(a) * r * 0.82;
+    burst.pos[i * 3 + 1] = 0.05 + s.h + easeOut(life) * s.up;
+    burst.pos[i * 3 + 2] = Math.sin(a) * r * 1.1;
+    const b = Math.sin(Math.PI * life) * 0.9;
+    burst.col[i * 3] = b; burst.col[i * 3 + 1] = b * 0.8; burst.col[i * 3 + 2] = b * 0.5;
+  }
+  if (T > 3.2) burst.t = -1;
+  burstGeo.attributes.position.needsUpdate = true; burstGeo.attributes.color.needsUpdate = true;
+}
+
+/* ───────────── 카메라 ───────────── */
+const CAM = {
+  hero:     { p: [1.15, 1.7, 3.95], l: [-0.08, 0.32, -0.75] },  // 영화처럼 비스듬히, 뒤로 서재가 보이게
+  overview: { p: [0.1, 4.3, 2.35],  l: [0.08, 0.0, -0.05] },      // 펼친 수첩 전체
+  closed:   { p: [1.35, 2.75, 4.35], l: [-0.1, 0.25, -0.5] },     // 덮이고 묶인 수첩
+};
+const tv1 = new THREE.Vector3(), tv2 = new THREE.Vector3(), readP = new THREE.Vector3(), readL = new THREE.Vector3();
+function mixV(P, a, b, t) { return P.set(...a).lerp(tv1.set(...b), t); }
+function readView() {
+  // 오른쪽 종이가 하단 바를 피해 화면에 꽉 차도록 거리 계산
+  const vh = window.innerHeight, bar = barHeight() + 30;
+  const useH = Math.max(0.55, 1 - bar / vh - 0.04);
+  const tanV = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+  const dH = (D * 0.5 * 1.04) / (tanV * useH);
+  const dW = (pW * 0.5 * 1.06) / (tanV * camera.aspect);
+  const d = Math.max(dH, dW), tilt = 0.1;
+  readP.set(SHEET_CX, CT + d * Math.cos(tilt), d * Math.sin(tilt));
+  readL.set(SHEET_CX, CT, 0);
+}
+function farScale() { return camera.aspect < 1 ? Math.min(2.3, 0.9 / camera.aspect) : 1; }
+function camTarget(s, P, L) {   // 반환: 읽기 확대 정도(0~1)
+  let z = 0;
+  if (s <= 1) {
+    const t = ease(s);
+    mixV(P, CAM.hero.p, CAM.overview.p, t); mixV(L, CAM.hero.l, CAM.overview.l, t);
+    const f = farScale(); P.sub(L).multiplyScalar(f).add(L);
+    if (s > 0.85) { z = ease((s - 0.85) / 0.15); readView(); P.lerp(readP, z); L.lerp(readL, z); }
+  } else {
+    const k = Math.min(LAST, Math.max(FIRST, Math.round(s)));
+    z = 1 - ease((Math.abs(s - k) - 0.06) / 0.34);
+    P.set(...CAM.overview.p); L.set(...CAM.overview.l);
+    const f = farScale(); P.sub(L).multiplyScalar(f).add(L);
+    readView(); P.lerp(readP, z); L.lerp(readL, z);
+  }
+  if (endSeqT > 0) {
+    const e = ease(endSeqT / 0.55);
+    tv2.set(...CAM.closed.p); const f = farScale(); const cl = new THREE.Vector3(...CAM.closed.l);
+    tv2.sub(cl).multiplyScalar(f).add(cl);
+    P.lerp(tv2, e); L.lerp(cl, e); z *= 1 - e;
+  }
+  return z;
+}
+
+/* ───────────── 소리 (Web Audio 합성) ───────────── */
+let actx = null, soundOn = true, master = null;
+const soundBtn = document.getElementById('soundBtn');
+function ensureAudio() {
+  if (actx) { if (actx.state !== 'running') actx.resume(); return; }
+  try {
+    actx = new (window.AudioContext || window.webkitAudioContext)();
+    master = actx.createGain(); master.gain.value = 0.9;
+    // 서재의 잔향: 짧은 딜레이 피드백
+    const dl = actx.createDelay(0.5); dl.delayTime.value = 0.11;
+    const fb = actx.createGain(); fb.gain.value = 0.22;
+    const lp = actx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
+    master.connect(actx.destination); master.connect(dl); dl.connect(lp); lp.connect(fb); fb.connect(dl); lp.connect(actx.destination);
+  } catch (e) { actx = null; }
+}
+soundBtn.addEventListener('click', () => {
+  soundOn = !soundOn;
+  soundBtn.textContent = soundOn ? '♪ 소리 켬' : '♪ 소리 끔';
+  soundBtn.setAttribute('aria-pressed', String(soundOn));
+  if (soundOn) { ensureAudio(); play('settle'); }
+});
+function noiseBuf(dur, fill) {
+  const sr = actx.sampleRate, buf = actx.createBuffer(1, Math.floor(sr * dur), sr), d = buf.getChannelData(0);
+  fill(d, sr); return buf;
+}
+function env(g, t, a, peak, dur) { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + dur); }
+let lastPlay = {};
+function play(kind) {
+  if (!soundOn || !actx || actx.state !== 'running') return;
+  const now = performance.now(); if (lastPlay[kind] && now - lastPlay[kind] < 90) return; lastPlay[kind] = now;
+  const t = actx.currentTime;
+  if (kind === 'page' || kind === 'settle') {
+    // 바삭한 종이: 크랙클(짧은 충격들) + 사각거림 + 공기 휘익
+    const dur = kind === 'page' ? 0.62 : 0.32;
+    const buf = noiseBuf(dur, (d, sr) => {
+      const n = d.length; let crack = 0;
+      for (let i = 0; i < n; i++) {
+        const p = i / n;
+        const body = Math.pow(Math.sin(Math.PI * Math.min(1, p * 1.25)), 1.4) * (0.35 + 0.65 * Math.abs(Math.sin(p * 31 + Math.sin(p * 7) * 3)));
+        if (Math.random() < (kind === 'page' ? 0.0026 : 0.0016)) crack = 0.9 + Math.random() * 0.6;
+        crack *= 0.986;
+        d[i] = (Math.random() * 2 - 1) * (body * 0.55 + crack);
+      }
+    });
+    const src = actx.createBufferSource(); src.buffer = buf;
+    const bp = actx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 0.7;
+    bp.frequency.setValueAtTime(1800, t); bp.frequency.exponentialRampToValueAtTime(5200, t + dur * 0.35); bp.frequency.exponentialRampToValueAtTime(2400, t + dur);
+    const hp = actx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 450;
+    const g = actx.createGain(); env(g, t, 0.02, kind === 'page' ? 0.55 : 0.28, dur);
+    src.connect(bp).connect(hp).connect(g).connect(master); src.start(t);
+    // 휘익 (낮은 공기)
+    const wb = noiseBuf(dur, d => { for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; });
+    const ws = actx.createBufferSource(); ws.buffer = wb;
+    const lp = actx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.setValueAtTime(380, t); lp.frequency.linearRampToValueAtTime(1100, t + dur * 0.5); lp.frequency.linearRampToValueAtTime(420, t + dur);
+    const wg = actx.createGain(); env(wg, t, dur * 0.4, kind === 'page' ? 0.22 : 0.1, dur);
+    ws.connect(lp).connect(wg).connect(master); ws.start(t);
+    return;
+  }
+  if (kind === 'cover') {
+    // 가죽 표지: 묵직한 툭 + 가죽 스침
+    const o = actx.createOscillator(), g = actx.createGain(); o.type = 'sine'; o.frequency.setValueAtTime(120, t); o.frequency.exponentialRampToValueAtTime(55, t + 0.25);
+    env(g, t, 0.01, 0.5, 0.35); o.connect(g).connect(master); o.start(t); o.stop(t + 0.4);
+    const buf = noiseBuf(0.45, d => { for (let i = 0; i < d.length; i++) { const p = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - p, 2); } });
+    const s = actx.createBufferSource(); s.buffer = buf; const bp = actx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 700; bp.Q.value = 0.9;
+    const g2 = actx.createGain(); env(g2, t, 0.02, 0.35, 0.45); s.connect(bp).connect(g2).connect(master); s.start(t);
+    return;
+  }
+  if (kind === 'snap' || kind === 'stretch') {
+    // 고무줄: 튕김(짧은 피치 하강) + 탁
+    const o = actx.createOscillator(), g = actx.createGain(); o.type = 'triangle';
+    o.frequency.setValueAtTime(kind === 'snap' ? 260 : 180, t); o.frequency.exponentialRampToValueAtTime(kind === 'snap' ? 90 : 320, t + 0.12);
+    env(g, t, 0.005, kind === 'snap' ? 0.4 : 0.15, 0.18); o.connect(g).connect(master); o.start(t); o.stop(t + 0.2);
+    const buf = noiseBuf(0.06, d => { for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 3); });
+    const s = actx.createBufferSource(); s.buffer = buf; const g2 = actx.createGain(); g2.gain.value = kind === 'snap' ? 0.5 : 0.2; s.connect(g2).connect(master); s.start(t);
+    return;
+  }
+  if (kind === 'spell' || kind === 'chime') {
+    // 맑은 종소리 (살짝 어긋난 음정으로 반짝임)
+    const notes = kind === 'spell' ? [880, 1174.7, 1568, 2093, 2637] : [659.3, 987.8, 1318.5, 1975.5];
+    notes.forEach((f, i) => {
+      [0, 4].forEach(det => {
+        const o = actx.createOscillator(), g = actx.createGain(); o.type = 'sine'; o.frequency.value = f; o.detune.value = det;
+        const st = t + i * (kind === 'spell' ? 0.075 : 0.14);
+        env(g, st, 0.015, (kind === 'spell' ? 0.07 : 0.08) / (1 + i * 0.25), 1.6);
+        o.connect(g).connect(master); o.start(st); o.stop(st + 1.7);
+      });
+    });
+  }
+}
+
+/* ───────────── 상태 · 스크롤 ───────────── */
+let opened = false, opening = false, openT = 0;
+let sTarget = 0, sNow = 0;
+const html = document.documentElement;
+const spacer = document.getElementById('spacer');
+spacer.innerHTML = Array.from({ length: END }, (_, i) => `<section aria-label="단계 ${i + 1}"></section>`).join('');
+html.classList.add('locked');
+function readScroll() { if (opened) sTarget = Math.min(END, Math.max(1, 1 + window.scrollY / window.innerHeight)); }
+window.addEventListener('scroll', readScroll, { passive: true });
+function goStep(k) { if (!opened) return; window.scrollTo({ top: (Math.min(END, Math.max(1, k)) - 1) * window.innerHeight, behavior: REDUCED ? 'auto' : 'smooth' }); }
+
+/* ───────────── UI: 하단 바 · 서랍 · 감사 인사 ───────────── */
+const $ = id => document.getElementById(id);
+const barEl = $('bar'), drawer = $('drawerIn'), moreBtn = $('moreBtn'), openBtn = $('openBtn');
+$('brandName').textContent = OWNER.nameEn;
+$('introName').textContent = OWNER.name;
+$('thanksName').textContent = `${OWNER.name}, 완성.`;
+$('thanksMsg').textContent = OWNER.thanks || '';
+$('thanksContact').innerHTML = (OWNER.contact || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
+function barHeight() { return barEl.getBoundingClientRect().height || 64; }
+
+(function buildDots() {
+  let h = '';
+  SHEETS.forEach((S, j) => {
+    if (j > 0 && S.si === 0) h += '<span class="gap"></span>';
+    h += `<button data-k="${FIRST + j}" aria-label="${esc(S.proj.title)} ${S.si + 1}쪽" title="${esc(S.proj.title)}${S.count > 1 ? ' · ' + esc(S.sheet.label || S.si + 1) : ''}"></button>`;
+  });
+  $('bDots').innerHTML = h;
+  $('bDots').addEventListener('click', e => { const b = e.target.closest('button[data-k]'); if (b) goStep(Number(b.dataset.k)); });
+})();
+moreBtn.addEventListener('click', () => {
+  const on = !barEl.classList.contains('open');
+  barEl.classList.toggle('open', on); moreBtn.setAttribute('aria-expanded', String(on)); moreBtn.textContent = on ? '닫기 ▾' : '자세히 ▴';
+});
+openBtn.addEventListener('click', () => castOpen(null));
+$('againBtn').addEventListener('click', restart);
+
+let lastBarKey = '';
+function updateBar(s) {
+  const k = Math.min(LAST, Math.max(FIRST, Math.round(s)));
+  const key = !opened ? 'intro' : endSeqT > 0.5 ? 'end' : 'p' + k;
+  // 완성도 (채워진 페이지)
+  const filled = pages.reduce((a, p) => a + p.reveal, 0);
+  const pct = Math.round(filled / NS * 100);
+  $('meterTxt').innerHTML = `${esc(OWNER.name)} 완성 <b>${pct}%</b>`;
+  $('meterFill').style.width = pct + '%';
+  document.querySelectorAll('#bDots button').forEach((b, j) => { b.classList.toggle('filled', pages[j].reveal > 0.98); b.classList.toggle('cur', opened && endSeqT < 0.5 && j === k - FIRST); });
+  if (key === lastBarKey) return;
+  lastBarKey = key;
+  openBtn.hidden = opened;
+  moreBtn.hidden = !opened || key === 'end';
+  if (key === 'intro') {
+    $('bKind').textContent = 'Portfolio Notebook';
+    $('bTitle').textContent = `${OWNER.name}의 수첩`;
+    $('bMvp').innerHTML = `<span class="hint">${FINE ? '지팡이로 수첩을 톡 두드려 마법을 걸어 보세요' : '수첩을 톡 눌러 마법을 걸어 보세요'}</span>`;
+    drawer.innerHTML = '';
+    return;
+  }
+  if (key === 'end') {
+    $('bKind').textContent = 'The Last Page';
+    $('bTitle').textContent = `${OWNER.name}, 완성`;
+    $('bMvp').textContent = '모든 페이지가 채워졌어요';
+    barEl.classList.remove('open'); moreBtn.textContent = '자세히 ▴';
+    return;
+  }
+  const S = SHEETS[k - FIRST], P = S.proj;
+  $('bKind').textContent = `${P.kind}${S.count > 1 ? ` · ${S.si + 1}/${S.count}` : ''}`;
+  $('bTitle').textContent = P.title;
+  $('bMvp').textContent = P.about ? (OWNER.intro || P.mvp) : (P.mvp || '');
+  let left = `<div><div class="lab">${esc(P.kind)}</div><h3>${esc(P.title)}${S.si > 0 && S.sheet.label ? ' · ' + esc(S.sheet.label) : ''}</h3>`;
+  if (P.about) left += `<p>${esc(OWNER.role)}</p><p>${esc(OWNER.intro)}</p>`;
+  else left += `<div class="lab">MVP</div><p>${esc(P.mvp || '')}</p>`;
+  if (S.sheet.text) left += `<div class="lab">이 페이지</div><p>${esc(S.sheet.text)}</p>`;
+  left += '</div>';
+  let right = '<div>';
+  if (P.tags && P.tags.length) right += `<div class="lab">Tags</div><div class="tags">${P.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>`;
+  if (P.groups) right += P.groups.map(([n, items]) => `<div class="lab">${esc(n)}</div><div class="tags">${items.map(t => `<span>${esc(t)}</span>`).join('')}</div>`).join('');
+  if (P.about) right += `<div class="lab">Contact</div><dl>${(OWNER.contact || []).map(([a, b]) => `<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl>`;
+  right += `<div class="lab">Page</div><p>${pad(S.gi + 1)} / ${pad(NS)} · 스크롤하면 다음 장으로 넘어가요</p></div>`;
+  drawer.innerHTML = left + right;
+}
+
+/* ───────────── 지팡이 커서 · 2D 마법 효과 ───────────── */
+const wandEl = $('wand'), fx = $('fx'), fg = fx.getContext('2d');
+let mx = window.innerWidth * 0.62, my = window.innerHeight * 0.58, lmx = mx, lmy = my, wandAngle = 0;
+const motes = [];
+let spellFx = null;
+function sizeFx() { const dpr = Math.min(2, window.devicePixelRatio || 1); fx.width = window.innerWidth * dpr; fx.height = window.innerHeight * dpr; fg.setTransform(dpr, 0, 0, dpr, 0, 0); }
+if (FINE) document.body.classList.add('wand-on');
+window.addEventListener('pointermove', e => {
+  if (e.pointerType === 'touch') return;
+  mx = e.clientX; my = e.clientY;
+  if (!document.body.classList.contains('wand-on') && FINE) document.body.classList.add('wand-on');
+});
+function hitBook(x, y) {
+  ray.setFromCamera(tv1.set((x / window.innerWidth) * 2 - 1, -(y / window.innerHeight) * 2 + 1, 0), camera);
+  return ray.intersectObjects(clickables, false)[0] || null;
+}
+const ray = new THREE.Raycaster();
+function updateCursor(dt, t) {
+  if (!FINE) return;
+  const dx = mx - lmx, dy = my - lmy, sp = Math.hypot(dx, dy);
+  lmx += dx * Math.min(1, dt * 22); lmy += dy * Math.min(1, dt * 22);
+  wandAngle += ((Math.max(-0.35, Math.min(0.35, dx * 0.012))) - wandAngle) * Math.min(1, dt * 8);
+  wandEl.style.transform = `translate3d(${lmx - 6}px, ${lmy - 6}px, 0) rotate(${wandAngle}rad)`;
+  // 지팡이 끝에서 은은한 금빛 티끌
+  const emit = REDUCED ? 0 : Math.min(3, sp * 0.06) + (wandEl.classList.contains('hot') ? 0.35 : 0.08);
+  let n = Math.floor(emit + Math.random());
+  while (n-- > 0 && motes.length < 140) motes.push({ x: lmx + (Math.random() - 0.5) * 4, y: lmy + (Math.random() - 0.5) * 4, vx: (Math.random() - 0.5) * 18 - dx * 0.4, vy: (Math.random() - 0.5) * 14 - dy * 0.4, life: 0, max: 0.6 + Math.random() * 0.7, r: 0.7 + Math.random() * 1.5 });
+}
+function drawFx(dt) {
+  fg.clearRect(0, 0, window.innerWidth, window.innerHeight);
+  fg.globalCompositeOperation = 'lighter';
+  for (let i = motes.length - 1; i >= 0; i--) {
+    const m = motes[i]; m.life += dt;
+    if (m.life > m.max) { motes.splice(i, 1); continue; }
+    m.vy += 26 * dt; m.vx *= 0.96; m.vy *= 0.96; m.x += m.vx * dt; m.y += m.vy * dt;
+    const a = Math.sin(Math.PI * (m.life / m.max)) * 0.75;
+    const gr = fg.createRadialGradient(m.x, m.y, 0, m.x, m.y, m.r * 4);
+    gr.addColorStop(0, `rgba(255,236,190,${a})`); gr.addColorStop(1, 'rgba(255,190,110,0)');
+    fg.fillStyle = gr; fg.beginPath(); fg.arc(m.x, m.y, m.r * 4, 0, Math.PI * 2); fg.fill();
+  }
+  if (spellFx) {
+    // 지팡이 끝에서 수첩까지 흐르는 빛의 실
+    spellFx.t += dt;
+    const { x0, y0, x1, y1 } = spellFx, cx = (x0 + x1) / 2 + (y1 - y0) * 0.25, cy = Math.min(y0, y1) - 90;
+    const head = clamp01(spellFx.t / 0.55), tail = clamp01((spellFx.t - 0.25) / 0.6);
+    const pt = u => [(1 - u) * (1 - u) * x0 + 2 * (1 - u) * u * cx + u * u * x1, (1 - u) * (1 - u) * y0 + 2 * (1 - u) * u * cy + u * u * y1];
+    fg.lineCap = 'round';
+    for (let u = tail; u < head; u += 0.012) {
+      const [x, y] = pt(u), [x2, y2] = pt(Math.min(head, u + 0.014));
+      const a = (u - tail) / Math.max(0.001, head - tail);
+      fg.strokeStyle = `rgba(255,226,160,${0.55 * a})`; fg.lineWidth = 1.2 + a * 2.6; fg.shadowColor = 'rgba(255,200,120,0.9)'; fg.shadowBlur = 14;
+      fg.beginPath(); fg.moveTo(x, y); fg.lineTo(x2, y2); fg.stroke();
+      if (Math.random() < 0.08 && motes.length < 220) motes.push({ x, y, vx: (Math.random() - 0.5) * 30, vy: (Math.random() - 0.5) * 30, life: 0, max: 0.5 + Math.random() * 0.5, r: 0.8 + Math.random() * 1.2 });
+    }
+    fg.shadowBlur = 0;
+    if (spellFx.t > 0.9) spellFx = null;
+  }
+  fg.globalCompositeOperation = 'source-over';
+}
+
+/* ───────────── 지팡이로 열기 ───────────── */
+function castOpen(e) {
+  if (opened || opening) return;
+  ensureAudio();
+  opening = true;
+  const target = new THREE.Vector3(BOOK_CX, COVER_TOP, 0.2).project(camera);
+  const tx = (target.x * 0.5 + 0.5) * window.innerWidth, ty = (-target.y * 0.5 + 0.5) * window.innerHeight;
+  const x0 = e ? e.clientX : tx + 120, y0 = e ? e.clientY : ty - 140;
+  spellFx = { x0, y0, x1: tx, y1: ty, t: 0 };
+  wandEl.classList.add('flick'); setTimeout(() => wandEl.classList.remove('flick'), 260);
+  play('spell');
+  burst.t = 0;
+  $('intro').classList.add('gone');
+  setTimeout(() => { openStart = clock.elapsedTime; }, REDUCED ? 0 : 420);
+}
+let openStart = -1;
+const OPEN_DUR = REDUCED ? 1.2 : 3.6;
+function finishOpen() {
+  opening = false; opened = true;
+  html.classList.remove('locked');
+  window.scrollTo(0, 0);
+  sTarget = 1;
+  wandEl.classList.add('small');
+}
+function restart() {
+  $('thanks').classList.remove('show'); $('thanks').setAttribute('aria-hidden', 'true');
+  opened = false; opening = false; openStart = -1; openT = 0;
+  html.style.scrollSnapType = 'none'; window.scrollTo(0, 0); html.style.scrollSnapType = '';
+  html.classList.add('locked');
+  sTarget = sNow = sPrev = 0; endSeqT = 0; thanked = false;
+  pages.forEach(p => { p.reveal = 0; p.uReveal.value = 0; p.prevFlip = 0; p.prevArr = 0; });
+  $('intro').classList.remove('gone');
+  wandEl.classList.remove('small');
+  lastBarKey = '';
+}
+
+canvas.addEventListener('click', e => {
+  if (!opened) { if (hitBook(e.clientX, e.clientY)) castOpen(e); else { wandEl.classList.add('flick'); setTimeout(() => wandEl.classList.remove('flick'), 220); } return; }
+  // 펼친 뒤: 종이를 톡 누르면 다음 장
+  if (endSeqT < 0.1 && hitBook(e.clientX, e.clientY)) { wandEl.classList.add('flick'); setTimeout(() => wandEl.classList.remove('flick'), 220); goStep(Math.round(sNow) + 1); }
+});
+window.addEventListener('keydown', e => {
+  if (!opened && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); castOpen(null); return; }
+  if (!opened) return;
+  if (['ArrowDown', 'ArrowRight', 'PageDown'].includes(e.key)) { e.preventDefault(); goStep(Math.round(sNow) + 1); }
+  if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); goStep(Math.round(sNow) - 1); }
+});
+window.addEventListener('pointerdown', ensureAudio, { once: true });
+
+function resize() {
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  sizeFx();
+  readScroll();
+}
+window.addEventListener('resize', resize);
+
+/* ───────────── 루프 ───────────── */
+const clock = new THREE.Clock();
+const P = new THREE.Vector3(), Q = new THREE.Quaternion(), camGoal = new THREE.Vector3(), lookGoal = new THREE.Vector3();
+const camPos = new THREE.Vector3(...CAM.hero.p), camLook = new THREE.Vector3(...CAM.hero.l);
+camera.position.copy(camPos); camera.lookAt(camLook);
+let sPrev = 0, viewShift = 0, prevCover = 0, prevBand = 0, thanked = false;
+function frame() {
+  const dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime;
+
+  /* 진행도 */
+  if (opening && openStart >= 0) {
+    openT = clamp01((t - openStart) / OPEN_DUR);
+    sTarget = openT; sNow = openT;
+    if (openT >= 1) finishOpen();
+  } else {
+    sNow += (sTarget - sNow) * Math.min(1, dt * 3.2);
+  }
+  const endGoal = opened && sNow > END - 0.45 ? 1 : 0;
+  endSeqT += (endGoal ? dt / (REDUCED ? 1.5 : 5.2) : -dt / 1.1);
+  endSeqT = clamp01(endSeqT);
+
+  for (const p of parts) { p.pose(sNow, P, Q); p.pivot.position.copy(P); p.pivot.quaternion.copy(Q); }
+
+  /* 종이: 도착하면 잉크가 채워짐 · 넘김 소리 */
+  for (const p of pages) {
+    const arr = p.arriveAt(sNow);
+    if (arr > 0.97 && p.reveal < 1) p.reveal = Math.min(1, p.reveal + dt / (REDUCED ? 0.6 : 2.0));
+    p.uReveal.value = ease(p.reveal);
+    const f = p.flipAt(sNow);
+    if ((p.prevFlip < 0.5) !== (f < 0.5)) play('page');
+    if (p.prevArr < 0.9 && arr >= 0.9) play('settle');
+    p.prevFlip = f; p.prevArr = arr;
+  }
+  const cf = cover.flipAt(sNow);
+  if ((prevCover < 0.5) !== (cf < 0.5)) play('cover');
+  prevCover = cf;
+  const bk = updateBand(sNow, t);
+  if (prevBand < 0.05 && bk >= 0.05) play('stretch');
+  if (prevBand > 0.03 && bk <= 0.03) play('snap');
+  prevBand = bk;
+
+  /* 마지막: 감사 인사 */
+  if (endSeqT > 0.93 && !thanked) { thanked = true; $('thanks').classList.add('show'); $('thanks').setAttribute('aria-hidden', 'false'); play('chime'); }
+  if (endSeqT < 0.6 && thanked) { thanked = false; $('thanks').classList.remove('show'); $('thanks').setAttribute('aria-hidden', 'true'); }
+  barEl.classList.toggle('dim', endSeqT > 0.9);
+
+  /* 촛불 · 떠 있는 초 · 가루 */
+  candles.forEach(c => {
+    const f = 0.82 + 0.12 * Math.sin(t * 9.3 + c.seed) + 0.07 * Math.sin(t * 23.1 + c.seed * 2) + 0.05 * Math.sin(t * 3.7 + c.seed);
+    c.lt.intensity = c.base * f; c.flame.scale.set(0.085 * (0.92 + 0.08 * f), 0.17 * f, 1);
+    c.flame.material.rotation = Math.sin(t * 2.1 + c.seed) * 0.06; c.halo.material.opacity = 0.16 + 0.08 * f;
+  });
+  floaters.forEach(fl => {
+    fl.g.position.y = fl.base.y + Math.sin(t * 0.6 + fl.seed) * 0.08;
+    fl.g.position.x = fl.base.x + Math.sin(t * 0.25 + fl.seed) * 0.05;
+    fl.flame.scale.y = 0.12 * (0.88 + 0.12 * Math.sin(t * 8 + fl.seed * 3));
+  });
+  updateDust(t, dt);
+  updateBurst(dt);
+
+  /* 수첩 위에서 지팡이가 반짝임 */
+  let hot = false;
+  if (FINE && !opened && !opening) hot = !!hitBook(mx, my);
+  wandEl.classList.toggle('hot', hot);
+  const glowGoal = hot ? 2.2 : 0, spellGlow = burst.t >= 0 ? Math.sin(Math.PI * clamp01(burst.t / 2.6)) * 4.5 : 0;
+  bookGlow.intensity += (Math.max(glowGoal, spellGlow) - bookGlow.intensity) * Math.min(1, dt * 6);
+
+  /* 카메라 (읽을 때는 종이를 화면 가득) */
+  const zoom = camTarget(sNow, camGoal, lookGoal);
+  const k = Math.min(1, dt * 3.6);
+  camPos.lerp(camGoal, k); camLook.lerp(lookGoal, k);
+  camera.position.copy(camPos); camera.lookAt(camLook);
+  const w = window.innerWidth, h = window.innerHeight;
+  const shiftGoal = zoom * (barHeight() + 18) * 0.5;
+  viewShift += (shiftGoal - viewShift) * Math.min(1, dt * 5);
+  if (viewShift > 0.5) camera.setViewOffset(w, h, 0, viewShift, w, h); else camera.clearViewOffset();
+
+  updateBar(sNow);
+  updateCursor(dt, t);
+  drawFx(dt);
+  renderer.render(scene, camera);
+  sPrev = sNow;
+  requestAnimationFrame(frame);
+}
+
+/* ───────────── 시작 ───────────── */
+async function loadFonts() {
+  const words = [JSON.stringify(CFG), 'PORTFOLIO MVP P. / 0123456789 · [대표 이미지] [화면 이미지 자리] [설명을 적어 주세요] [사진 또는 일러스트]'].join(' ');
+  const specs = [`500 32px ${SANS}`, `700 32px ${SANS}`, `900 32px ${SERIF}`, `400 40px ${PEN}`, `400 80px ${SCRIPT}`, `500 24px ${MONO}`, `600 24px ${MONO}`, `italic 600 80px ${INITIAL}`];
+  await new Promise(r => { const l = document.querySelector('link[rel=stylesheet]'); if (!l || l.sheet) r(); else { l.addEventListener('load', r); l.addEventListener('error', r); setTimeout(r, 3000); } });
+  await Promise.race([Promise.all(specs.map(s => document.fonts.load(s, words).catch(() => null))), new Promise(r => setTimeout(r, 4500))]);
+}
+
+(async () => {
+  await Promise.all([loadFonts(), loadImages()]);
+  build();
+  resize();
+  if (FINE) { lmx = mx; lmy = my; }
+  frame();
+  document.getElementById('loader').classList.add('done');
+})();
+</script>
+</body>
+</html>
