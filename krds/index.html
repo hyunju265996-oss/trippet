@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>고용24 개선안 · KRDS 실습</title>
+<meta name="description" content="KRDS 실습용 고용24 개선안 프로토타입 (학습용 예시)">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-gov-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">본문 바로가기</a>
+
+<!-- ============ header_templet__pc ============ -->
+<header class="hdr" id="top">
+  <div class="masthead">
+    <div class="masthead__in">
+      <img class="masthead__icon" src="assets/ic-info-24x16.svg" width="24" height="16" alt="">
+      <p data-i18n="masthead.notice">KRDS 실습 · 고용24 개선안 학습용 프로토타입이에요. 실제 고용24가 아니며, 과정·수치는 예시이고 입력 내용은 저장·전송되지 않아요.</p>
+    </div>
+  </div>
+  <div class="hdr__main">
+    <ul class="util-s">
+      <li class="lang">
+        <button type="button" class="select-text" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="langList">
+          <span data-i18n="header.util.language">language</span>
+          <img src="assets/ic-arrow-down.svg" width="16" height="16" alt="">
+        </button>
+        <ul class="lang__list" id="langList" role="listbox" hidden data-i18n-attr="aria-label:a11y.languageMenu"></ul>
+      </li>
+      <li class="divider" aria-hidden="true"></li>
+      <li><button type="button" class="select-text" data-demo><span data-i18n="header.util.menu">메뉴</span><img src="assets/ic-arrow-down.svg" width="16" height="16" alt=""></button></li>
+      <li class="divider" aria-hidden="true"></li>
+      <li><a class="btn-text" href="#" data-demo><span data-i18n="header.util.remote">원격지원</span><img src="assets/ic-arrow-right.svg" width="16" height="16" alt=""></a></li>
+      <li class="divider" aria-hidden="true"></li>
+      <li><a class="btn-text" href="#" data-demo><span data-i18n="header.util.support">고객센터</span><img src="assets/ic-arrow-right.svg" width="16" height="16" alt=""></a></li>
+      <li class="divider" aria-hidden="true"></li>
+      <li><a class="btn-text" href="#" data-demo><span data-i18n="header.util.mypage">마이페이지</span><img src="assets/ic-arrow-right.svg" width="16" height="16" alt=""></a></li>
+    </ul>
+    <div class="util-g">
+      <a class="logo" href="#/" data-i18n-attr="aria-label:a11y.logo">
+        <img src="assets/logo-mark.svg" width="50" height="50" alt="">
+        <span class="logo__text" data-i18n="header.logoText">고용24</span>
+      </a>
+      <div class="util-m">
+        <a class="hmenu" href="#" data-demo data-i18n="header.login">로그인</a>
+        <a class="hmenu" href="#" data-demo data-i18n="header.signup">회원가입</a>
+        <a class="hmenu" href="#" data-demo><img src="assets/ic-search.svg" width="20" height="20" alt=""><span data-i18n="header.search">검색</span></a>
+      </div>
+    </div>
+  </div>
+  <nav class="mainmenu" aria-label="main">
+    <ul class="mainmenu__in">
+      <li><button type="button" class="mm"><span data-i18n="header.nav.jobs">채용정보</span><img src="assets/ic-arrow-down-20.svg" width="20" height="20" alt=""></button></li>
+      <li><button type="button" class="mm"><span data-i18n="header.nav.employment">취업지원</span><img src="assets/ic-arrow-down-20.svg" width="20" height="20" alt=""></button></li>
+      <li><button type="button" class="mm"><span data-i18n="header.nav.benefit">실업급여</span><img src="assets/ic-arrow-down-20.svg" width="20" height="20" alt=""></button></li>
+      <li><button type="button" class="mm"><span data-i18n="header.nav.skills">직업 능력 개발</span><img src="assets/ic-arrow-down-20.svg" width="20" height="20" alt=""></button></li>
+      <li><button type="button" class="mm"><span data-i18n="header.nav.parental">출산휴가 육아휴직</span><img src="assets/ic-arrow-down-20.svg" width="20" height="20" alt=""></button></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ 01 고용24 (home) ============ -->
+<section class="page page--home" data-page="home">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="blob blob--lavender"></span>
+    <span class="blob blob--pink"></span>
+    <span class="blob blob--blue"></span>
+    <span class="blob blob--sky"></span>
+  </div>
+  <div class="home">
+    <h1 class="hero-title"><span class="t1" data-i18n="home.hero.title">나만의 고용서비스</span><span class="t2" data-i18n="home.hero.comma">,</span><span class="t3" data-i18n="home.hero.brand">고용24</span></h1>
+
+    <form class="hsearch" role="search" onsubmit="return false">
+      <button type="button" class="hsearch__scope"><span data-i18n="home.search.scope">전체</span><img src="assets/ic-arrow-down-24.svg" width="24" height="24" alt=""></button>
+      <span class="hsearch__div" aria-hidden="true"></span>
+      <input class="hsearch__input" type="search" data-i18n-attr="placeholder:home.search.placeholder;aria-label:home.search.placeholder" placeholder="필요한 서비스를 찾아보세요">
+      <button type="submit" class="hsearch__btn" data-i18n-attr="aria-label:header.search"><img src="assets/ic-search-40.svg" width="40" height="40" alt=""></button>
+    </form>
+
+    <div class="htabs" role="tablist">
+      <button type="button" role="tab" class="htab is-on" aria-selected="true" data-i18n="home.tabs.prepare">취업준비</button>
+      <button type="button" role="tab" class="htab" aria-selected="false" data-i18n="home.tabs.find">일자리찾기</button>
+      <button type="button" role="tab" class="htab" aria-selected="false" data-i18n="home.tabs.training">훈련 역량 강화</button>
+      <button type="button" role="tab" class="htab" aria-selected="false" data-i18n="home.tabs.parental">육아휴직</button>
+    </div>
+
+    <!-- 카드뉴스 캐러셀 -->
+    <div class="carousel" data-i18n-attr="aria-label:home.carousel.label" role="region" aria-roledescription="carousel">
+      <div class="carousel__fit">
+        <div class="stage" id="stage"></div>
+        <div class="ctrl">
+          <button type="button" class="ctrl__btn" id="carPrev" data-i18n-attr="aria-label:a11y.prev"><img src="assets/car-prev.svg" width="20" height="20" alt=""></button>
+          <div class="dots" id="carDots"></div>
+          <button type="button" class="ctrl__btn" id="carPause" data-i18n-attr="aria-label:a11y.pause"><img class="i-pause" src="assets/car-pause.svg" width="20" height="20" alt=""><img class="i-play" src="assets/car-play.svg" width="20" height="20" alt=""></button>
+          <button type="button" class="ctrl__btn" id="carNext" data-i18n-attr="aria-label:a11y.next"><img src="assets/car-next.svg" width="20" height="20" alt=""></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 채용공고 / 교육·훈련 -->
+    <section class="stats">
+      <div class="stats__lead">
+        <h2 class="stats__title" data-i18n-html="home.stats.headline"></h2>
+        <img class="stats__img" src="assets/folder.png" width="350" height="222" alt="">
+      </div>
+      <div class="stats__cards">
+        <div class="stat">
+          <a class="stat__head" href="#" data-demo><span data-i18n="home.stats.jobs">채용공고 수</span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a>
+          <p class="stat__num"><span data-num="137026">137,026</span><small data-i18n="home.stats.unit">건</small></p>
+          <ul class="stat__list">
+            <li><a href="#" data-demo><span data-i18n="home.stats.jobRegion"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a></li>
+            <li><a href="#" data-demo><span data-i18n="home.stats.jobOccupation"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a></li>
+            <li><a href="#" data-demo><span data-i18n="home.stats.jobTheme"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a></li>
+          </ul>
+        </div>
+        <div class="stat">
+          <a class="stat__head" href="#" data-demo><span data-i18n="home.stats.trainings">교육·훈련 수</span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a>
+          <p class="stat__num"><span data-num="20979">20,979</span><small data-i18n="home.stats.unit">건</small></p>
+          <ul class="stat__list">
+            <li><a href="#" data-demo><span data-i18n="home.stats.trCard"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a></li>
+            <li><a href="#/list"><span data-i18n="home.stats.trAcademy"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a></li>
+            <li><a href="#" data-demo><span data-i18n="home.stats.trMinistry"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 고용정책 정보 -->
+    <section class="box">
+      <div class="box__head">
+        <h2 class="box__title" data-i18n="home.policy.title">고용정책 정보</h2>
+        <a class="more" href="#" data-demo><span data-i18n="home.policy.more">더보기</span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a>
+      </div>
+      <ul class="policy">
+        <li><a class="pcard" href="#" data-demo><span class="pcard__ic"><img src="assets/lucide-briefcase.svg" width="60" height="60" alt=""></span><strong data-i18n="home.policy.p1.title"></strong><span class="pcard__desc" data-i18n="home.policy.p1.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+        <li><a class="pcard" href="#" data-demo><span class="pcard__ic"><img src="assets/lucide-folder-search.svg" width="60" height="60" alt=""></span><strong data-i18n="home.policy.p2.title"></strong><span class="pcard__desc" data-i18n="home.policy.p2.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+        <li><a class="pcard" href="#/list"><span class="pcard__ic"><img src="assets/lucide-id-card.svg" width="60" height="60" alt=""></span><strong data-i18n="home.policy.p3.title"></strong><span class="pcard__desc" data-i18n="home.policy.p3.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+        <li><a class="pcard" href="#" data-demo><span class="pcard__ic"><img src="assets/lucide-briefcase.svg" width="60" height="60" alt=""></span><strong data-i18n="home.policy.p4.title"></strong><span class="pcard__desc" data-i18n="home.policy.p4.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+        <li><a class="pcard" href="#" data-demo><span class="pcard__ic"><img src="assets/lucide-heart-msg.svg" width="60" height="60" alt=""></span><strong data-i18n="home.policy.p5.title"></strong><span class="pcard__desc" data-i18n="home.policy.p5.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+      </ul>
+    </section>
+
+    <!-- 이용가이드 -->
+    <section class="box box--guide">
+      <div class="box__head">
+        <h2 class="box__title" data-i18n="home.guide.title">이용가이드</h2>
+        <a class="more" href="#" data-demo><span data-i18n="home.policy.more">더보기</span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></a>
+      </div>
+      <ul class="guide">
+        <li><a class="gcard gcard--1" href="#" data-demo><strong data-i18n="home.guide.g1.title"></strong><span data-i18n="home.guide.g1.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+        <li><a class="gcard gcard--2" href="#" data-demo><strong data-i18n="home.guide.g2.title"></strong><span data-i18n="home.guide.g2.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+        <li><a class="gcard gcard--3" href="#" data-demo><strong data-i18n="home.guide.g3.title"></strong><span data-i18n="home.guide.g3.desc"></span><span class="go"><span data-i18n="home.policy.go"></span><img src="assets/chevron-right-sm.png" width="16" height="16" alt=""></span></a></li>
+      </ul>
+    </section>
+  </div>
+  <button type="button" class="top-btn" data-scrolltop><img src="assets/ic-top.svg" width="24" height="24" alt=""><span data-i18n="common.top">위로</span></button>
+</section>
+
+<!-- ============ 02 K-디지털 훈련 목록 ============ -->
+<section class="page page--list" data-page="list" hidden>
+  <div class="wrap">
+    <p class="crumb-plain"><a href="#/" data-i18n="common.home">홈</a><span aria-hidden="true">/</span><span data-i18n="common.breadcrumb.skills">직업능력개발</span><span aria-hidden="true">/</span><span data-i18n="common.breadcrumb.findApply">훈련 찾기·신청</span></p>
+    <h1 class="ptitle" data-i18n="list.title">K-디지털 훈련</h1>
+    <p class="plead" data-i18n="list.lead">배우고 싶은 기술을 찾고, 나에게 맞는 과정을 골라보세요.</p>
+
+    <form class="lsearch" role="search" onsubmit="return false">
+      <label class="lsearch__q" for="lsInput" data-i18n="list.search.question">어떤 기술을 배우고 싶으세요?</label>
+      <div class="lsearch__row">
+        <div class="lsearch__box">
+          <input id="lsInput" type="search" data-i18n-attr="placeholder:list.search.placeholder">
+          <img src="assets/ic-search-40b.svg" width="40" height="40" alt="">
+        </div>
+        <button type="submit" class="btn btn--primary btn--xl" data-i18n="list.search.button">검색</button>
+      </div>
+      <div class="kw">
+        <span data-i18n="list.search.keywords">추천 키워드</span>
+        <button type="button" class="chip chip--s" data-i18n="list.search.kw.ai"></button>
+        <button type="button" class="chip chip--s" data-i18n="list.search.kw.python"></button>
+        <button type="button" class="chip chip--s" data-i18n="list.search.kw.data"></button>
+        <button type="button" class="chip chip--s" data-i18n="list.search.kw.security"></button>
+        <button type="button" class="chip chip--s" data-i18n="list.search.kw.cloud"></button>
+        <button type="button" class="chip chip--s" data-i18n="list.search.kw.3d"></button>
+        <button type="button" class="btn btn--tertiary btn--m" data-i18n="list.search.advanced">상세 조건</button>
+      </div>
+    </form>
+
+    <section class="wish" aria-live="polite">
+      <h2 class="wish__head"><img src="assets/ic-heart-24.svg" width="24" height="24" alt=""><span data-i18n="list.wish.title">찜한 과정</span><span class="wish__count" id="wishCount">0</span></h2>
+      <div id="wishBody"></div>
+    </section>
+
+    <div class="result">
+      <p class="result__total" id="totalLabel"></p>
+      <div class="sort" role="radiogroup">
+        <button type="button" class="btn btn--sort is-on" role="radio" aria-checked="true" data-i18n="list.sort.start"></button>
+        <button type="button" class="btn btn--sort" role="radio" aria-checked="false" data-i18n="list.sort.deadline"></button>
+        <button type="button" class="btn btn--sort" role="radio" aria-checked="false" data-i18n="list.sort.popular"></button>
+      </div>
+    </div>
+    <div class="filters" id="filters"></div>
+
+    <ul class="courses" id="courses"></ul>
+
+    <nav class="paging" aria-label="pagination" id="paging"></nav>
+
+    <section class="about">
+      <h2 data-i18n="list.about.title">K-디지털 훈련이란?</h2>
+      <p data-i18n="list.about.body"></p>
+      <div class="about__links">
+        <a class="btn btn--tertiary btn--m" href="#" data-demo data-i18n="list.about.manual">매뉴얼</a>
+        <a class="btn btn--tertiary btn--m" href="#" data-demo data-i18n="list.about.policy">고용정책안내</a>
+      </div>
+    </section>
+  </div>
+  <button type="button" class="top-btn top-btn--list" data-scrolltop><img src="assets/ic-top.svg" width="24" height="24" alt=""><span data-i18n="common.top">위로</span></button>
+</section>
+
+<!-- ============ 04 훈련과정 상세 ============ -->
+<section class="page page--detail" data-page="detail" hidden>
+  <div class="wrap">
+    <div class="dcrumb">
+      <ol class="dcrumb__list">
+        <li><a href="#/"><img src="assets/bc-home.png" width="16" height="16" alt=""><span data-i18n="common.home">홈</span></a></li>
+        <li><button type="button" class="dcrumb__drop"><span data-i18n="common.breadcrumb.skillsSpaced">직업 능력 개발</span><img src="assets/bc-drop.png" width="16" height="16" alt=""></button></li>
+        <li><button type="button" class="dcrumb__drop"><span data-i18n="common.breadcrumb.findApply">훈련 찾기·신청</span><img src="assets/bc-drop.png" width="16" height="16" alt=""></button></li>
+        <li><a class="dcrumb__drop" href="#/list"><span data-i18n="common.breadcrumb.kdigital">K-디지털 훈련</span><img src="assets/bc-drop.png" width="16" height="16" alt=""></a></li>
+        <li aria-current="page"><span data-i18n="common.breadcrumb.detail">K-디지털 훈련 훈련과정상세</span></li>
+      </ol>
+      <div class="share">
+        <button type="button" data-demo data-i18n-attr="aria-label:a11y.share"><img src="assets/share-1.png" width="24" height="24" alt=""></button>
+        <button type="button" data-demo data-i18n-attr="aria-label:a11y.share"><img src="assets/share-2.png" width="24" height="24" alt=""></button>
+        <button type="button" data-demo data-i18n-attr="aria-label:a11y.share"><img src="assets/share-3.png" width="24" height="24" alt=""></button>
+        <button type="button" onclick="window.print()" data-i18n-attr="aria-label:a11y.print"><img src="assets/share-4.png" width="24" height="24" alt=""></button>
+      </div>
+    </div>
+
+    <h1 class="dtitle" data-i18n="detail.pageTitle">훈련과정 보기</h1>
+    <div class="dtabs" role="tablist">
+      <button type="button" role="tab" class="dtab is-on" aria-selected="true" data-i18n="detail.tabs.course"></button>
+      <button type="button" role="tab" class="dtab" aria-selected="false" data-i18n="detail.tabs.org"></button>
+      <button type="button" role="tab" class="dtab" aria-selected="false" data-i18n="detail.tabs.satisfaction"></button>
+    </div>
+    <p class="dnotice" data-i18n="detail.notice"></p>
+
+    <article class="dcard">
+      <header class="dcard__head">
+        <div class="dcard__titles">
+          <p class="dcard__org"><span data-i18n="detail.org"></span><span class="cert" data-i18n="detail.certified"></span></p>
+          <h2 class="dcard__title" data-i18n="detail.title"></h2>
+        </div>
+        <p class="dcard__count" id="headcount"></p>
+      </header>
+      <div class="dgrid dgrid--fee">
+        <div class="drow">
+          <span class="dk" data-i18n="detail.fee"></span>
+          <span class="dv fee">
+            <s id="feeOrig"></s>
+            <strong id="feeSale"></strong><img src="assets/info-dot.png" width="16" height="16" alt="">
+            <button type="button" class="btn-outline-p" data-demo data-i18n="detail.selfPayButton"></button>
+          </span>
+        </div>
+        <div class="drow">
+          <span class="dk" data-i18n="detail.satisfaction"></span>
+          <span class="dv rating">
+            <span class="stars" aria-hidden="true"><i style="--f:1"></i><i style="--f:1"></i><i style="--f:1"></i><i style="--f:.6"></i><i style="--f:0"></i></span>
+            <span id="rateNum">(3.7)</span>
+            <a href="#" data-demo id="reviews"></a>
+          </span>
+        </div>
+      </div>
+      <div class="dgrid dgrid--info">
+        <section>
+          <h3 data-i18n="detail.basic.title"></h3>
+          <dl>
+            <div><dt data-i18n="detail.basic.type"></dt><dd data-i18n="detail.basic.typeValue"></dd></div>
+            <div><dt data-i18n="detail.basic.period"></dt><dd id="dPeriod"></dd></div>
+            <div><dt data-i18n="detail.basic.dayNight"></dt><dd data-i18n="detail.basic.dayNightValue"></dd></div>
+            <div><dt data-i18n="detail.basic.weekend"></dt><dd data-i18n="detail.basic.weekendValue"></dd></div>
+            <div><dt data-i18n="detail.basic.hours"></dt><dd><span id="dHours"></span><button type="button" class="btn-sm" data-demo data-i18n="detail.basic.timetable"></button></dd></div>
+          </dl>
+        </section>
+        <section>
+          <h3 data-i18n="detail.perf.title"></h3>
+          <dl>
+            <div><dt data-i18n="detail.perf.employment"></dt><dd><span class="bar"><span style="width:60.9%"><b id="empRate">60.9%</b></span></span></dd></div>
+            <div><dt data-i18n="detail.perf.status"></dt><dd data-i18n="detail.perf.statusValue"></dd></div>
+            <div><dt data-i18n="detail.perf.age"></dt><dd>-</dd></div>
+            <div><dt data-i18n="detail.perf.wage"></dt><dd><button type="button" class="btn-sm" data-demo data-i18n="detail.perf.wageButton"></button></dd></div>
+          </dl>
+        </section>
+        <section>
+          <h3 data-i18n="detail.ncs.title"></h3>
+          <dl>
+            <div><dt data-i18n="detail.ncs.category"></dt><dd data-i18n="detail.ncs.categoryValue"></dd></div>
+            <div><dt data-i18n="detail.ncs.level"></dt><dd><span data-i18n="detail.ncs.levelValue"></span><img src="assets/help-dot.png" width="16" height="16" alt="" class="sup"></dd></div>
+            <div><dt data-i18n="detail.ncs.applied"></dt><dd><span data-i18n="detail.ncs.appliedValue"></span><button type="button" class="btn-sm" data-demo data-i18n="detail.ncs.curriculum"></button></dd></div>
+            <div><dt data-i18n="detail.ncs.cert"></dt><dd>-</dd></div>
+          </dl>
+        </section>
+        <section>
+          <h3 data-i18n="detail.place.title"></h3>
+          <dl>
+            <div><dt data-i18n="detail.place.address"></dt><dd class="col"><span data-i18n="detail.place.addressValue"></span><button type="button" class="btn-sm" data-demo data-i18n="detail.place.map"></button></dd></div>
+            <div><dt data-i18n="detail.place.manager"></dt><dd data-i18n="detail.place.managerValue"></dd></div>
+            <div><dt data-i18n="detail.place.phone"></dt><dd>02-0000-0000</dd></div>
+            <div><dt data-i18n="detail.place.email"></dt><dd>itcampus@example.com</dd></div>
+            <div><dt data-i18n="detail.place.ministry"></dt><dd data-i18n="detail.place.ministryValue"></dd></div>
+          </dl>
+        </section>
+      </div>
+    </article>
+
+    <div class="dcta">
+      <button type="button" class="btn-interest" id="interestBtn" aria-pressed="false"><img src="assets/heart-24.png" width="24" height="24" alt=""><span data-i18n="detail.cta.interest"></span></button>
+      <button type="button" class="btn-apply" id="applyBtn" aria-haspopup="dialog" data-i18n="detail.cta.apply"></button>
+    </div>
+    <p class="dconfirm" data-i18n-html="detail.confirmNote"></p>
+
+    <section class="dguide" id="dguide">
+      <h2 data-i18n="detail.guide.title"></h2>
+      <div class="dguide__body" id="dguideBody"><p data-i18n="detail.guide.body"></p></div>
+      <button type="button" class="dguide__more" id="dguideMore" aria-expanded="false" aria-controls="dguideBody"><span data-i18n="detail.guide.more"></span><img src="assets/chevron-14.png" width="16" height="16" alt=""></button>
+    </section>
+  </div>
+  <div class="float-help">
+    <button type="button" class="fh fh--help" data-demo><img src="assets/help-q.png" width="16" height="16" alt=""><span data-i18n="common.helper">도우미</span></button>
+    <button type="button" class="fh fh--top" data-scrolltop><img src="assets/up-arrow.png" width="16" height="16" alt=""><span data-i18n="common.toTop">맨위로</span></button>
+  </div>
+</section>
+
+<!-- ============ 06 수강신청 완료 ============ -->
+<section class="page page--done" data-page="done" hidden>
+  <div class="wrap wrap--done">
+    <p class="crumb-arrow"><a href="#/" data-i18n="common.home">홈</a><span aria-hidden="true">›</span><span data-i18n="common.breadcrumb.skills"></span><span aria-hidden="true">›</span><span data-i18n="common.breadcrumb.findApply"></span><span aria-hidden="true">›</span><a href="#/list" data-i18n="common.breadcrumb.kdigital"></a><span aria-hidden="true">›</span><span data-i18n="common.breadcrumb.done"></span></p>
+    <div class="done-hero">
+      <img src="assets/done-check.svg" width="80" height="80" alt="">
+      <h1 data-i18n="done.title"></h1>
+      <p data-i18n="done.lead"></p>
+    </div>
+    <ol class="steps" data-i18n-attr="aria-label:done.steps.label">
+      <li class="step step--done"><span class="step__n" aria-hidden="true">✓</span><span data-i18n="done.steps.s1"></span></li>
+      <li class="step__line step__line--on" aria-hidden="true"></li>
+      <li class="step step--now" aria-current="step"><span class="step__n">2</span><span data-i18n="done.steps.s2"></span></li>
+      <li class="step__line" aria-hidden="true"></li>
+      <li class="step"><span class="step__n">3</span><span data-i18n="done.steps.s3"></span></li>
+      <li class="step__line" aria-hidden="true"></li>
+      <li class="step"><span class="step__n">4</span><span data-i18n="done.steps.s4"></span></li>
+    </ol>
+    <dl class="dtable">
+      <div><dt data-i18n="done.table.number"></dt><dd data-i18n="done.table.numberValue"></dd></div>
+      <div><dt data-i18n="done.table.course"></dt><dd data-i18n="detail.title"></dd></div>
+      <div><dt data-i18n="done.table.org"></dt><dd data-i18n="detail.org"></dd></div>
+      <div><dt data-i18n="done.table.period"></dt><dd id="doPeriod"></dd></div>
+      <div><dt data-i18n="done.table.date"></dt><dd id="doDate"></dd></div>
+      <div><dt data-i18n="done.table.status"></dt><dd><span class="badge-wait" data-i18n="done.table.statusValue"></span></dd></div>
+    </dl>
+    <div class="done-cta">
+      <a class="btn-o" href="#/list" data-i18n="done.other"></a>
+      <a class="btn-f" href="#" data-demo data-i18n="done.mine"></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ footer ============ -->
+<footer class="ftr">
+  <div class="family" id="familyBar">
+    <div class="family__in">
+      <button type="button" class="family__btn" aria-expanded="false"><span data-i18n="footer.family">패밀리사이트</span><img src="assets/plus-24.png" width="24" height="24" alt=""></button>
+      <button type="button" class="family__btn" aria-expanded="false"><span data-i18n="footer.related">유관기관</span><img src="assets/plus-24.png" width="24" height="24" alt=""></button>
+    </div>
+  </div>
+  <div class="ftr__surface">
+    <div class="ftr__in">
+      <div class="logo logo--ftr"><img src="assets/logo-mark.svg" width="50" height="50" alt=""><span class="logo__text" data-i18n="header.logoText">고용24</span></div>
+      <div class="ftr__grid">
+        <div class="ftr__c1">
+          <p data-i18n="footer.address"></p>
+          <ul>
+            <li><span data-i18n="footer.label"></span><span>010-0000-0000</span><i aria-hidden="true"></i><span data-i18n="footer.placeholder"></span></li>
+            <li><span data-i18n="footer.label"></span><span>email2025@example.com</span><i aria-hidden="true"></i><span data-i18n="footer.placeholder"></span></li>
+            <li><span data-i18n="footer.label"></span><span>oooooo@example.com</span><i aria-hidden="true"></i><span data-i18n="footer.placeholder"></span></li>
+          </ul>
+        </div>
+        <div class="ftr__c2">
+          <p><span data-i18n="footer.infoTitle"></span><span data-i18n="footer.infoBody"></span></p>
+          <p><span data-i18n="footer.infoTitle"></span><span data-i18n="footer.infoBody"></span></p>
+          <p><span data-i18n="footer.infoTitle"></span><span data-i18n="footer.infoBody"></span></p>
+        </div>
+        <div class="ftr__c3">
+          <ul class="ftr__links">
+            <li><a class="btn-text btn-text--m" href="#" data-demo><span data-i18n="footer.utility"></span><img src="assets/ic-arrow-right-20.svg" width="20" height="20" alt=""></a></li>
+            <li><a class="btn-text btn-text--m" href="#" data-demo><span data-i18n="footer.utility"></span><img src="assets/ic-arrow-right-20.svg" width="20" height="20" alt=""></a></li>
+            <li><a class="btn-text btn-text--m" href="#" data-demo><span data-i18n="footer.utility"></span><img src="assets/ic-arrow-right-20.svg" width="20" height="20" alt=""></a></li>
+            <li><a class="btn-text btn-text--m" href="#" data-demo><span data-i18n="footer.utility"></span><img src="assets/ic-arrow-right-20.svg" width="20" height="20" alt=""></a></li>
+            <li><a class="btn-text btn-text--m" href="#" data-demo><span data-i18n="footer.utility"></span><img src="assets/ic-arrow-right-20.svg" width="20" height="20" alt=""></a></li>
+            <li><a class="btn-text btn-text--m" href="#" data-demo><span data-i18n="footer.utility"></span><img src="assets/ic-arrow-right-20.svg" width="20" height="20" alt=""></a></li>
+          </ul>
+          <ul class="sns">
+            <li><a href="#" data-demo aria-label="Instagram"><img src="assets/sns-instagram.svg" width="24" height="24" alt=""></a></li>
+            <li><a href="#" data-demo aria-label="YouTube"><img src="assets/sns-youtube.svg" width="24" height="24" alt=""></a></li>
+            <li><a href="#" data-demo aria-label="X"><img src="assets/sns-x.svg" width="24" height="24" alt=""></a></li>
+            <li><a href="#" data-demo aria-label="Facebook"><img src="assets/sns-facebook.svg" width="24" height="24" alt=""></a></li>
+            <li><a href="#" data-demo aria-label="Blog"><img src="assets/sns-blog.svg" width="24" height="24" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ftr__copy">
+      <ul>
+        <li><a class="btn-text" href="#" data-demo data-i18n="footer.privacy"></a></li>
+        <li><a class="btn-text" href="#" data-demo data-i18n="footer.terms"></a></li>
+        <li><a class="btn-text" href="#" data-demo data-i18n="footer.security"></a></li>
+        <li><a class="btn-text" href="#" data-demo data-i18n="footer.a11y"></a></li>
+        <li><a class="btn-text" href="#" data-demo data-i18n="footer.policy"></a></li>
+      </ul>
+      <p data-i18n="footer.copyright"></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ 05 수강신청 확인 (팝업) ============ -->
+<div class="modal" id="applyModal" hidden>
+  <div class="modal__dim" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="modal__head">
+      <h2 id="mTitle" data-i18n="apply.title">수강신청</h2>
+      <button type="button" class="modal__x" data-close data-i18n-attr="aria-label:a11y.close"><img src="assets/ic-close.svg" width="24" height="24" alt=""></button>
+    </div>
+    <p class="modal__lead" data-i18n="apply.lead"></p>
+    <dl class="minfo">
+      <div><dt data-i18n="apply.course"></dt><dd class="b" data-i18n="detail.title"></dd></div>
+      <div><dt data-i18n="apply.org"></dt><dd data-i18n="detail.org"></dd></div>
+      <div><dt data-i18n="apply.type"></dt><dd data-i18n="detail.basic.typeValue"></dd></div>
+      <div><dt data-i18n="apply.period"></dt><dd id="mPeriod"></dd></div>
+      <div><dt data-i18n="apply.recruit"></dt><dd id="mRecruit"></dd></div>
+    </dl>
+    <div class="mfield">
+      <label for="mPhone" data-i18n="apply.phone"></label>
+      <input id="mPhone" type="tel" inputmode="tel" autocomplete="off" value="010-1234-5678" data-i18n-attr="placeholder:apply.phonePlaceholder" aria-describedby="mPhoneHint mPhoneErr">
+      <p id="mPhoneHint" class="mhint" data-i18n="apply.phoneHint"></p>
+      <p id="mPhoneErr" class="merr" hidden></p>
+    </div>
+    <label class="mcheck"><input type="checkbox" id="mAgree" checked aria-describedby="mAgreeErr"><span class="mcheck__box" aria-hidden="true"></span><span data-i18n="apply.agree"></span></label>
+    <p id="mAgreeErr" class="merr" hidden></p>
+    <p class="mnote" data-i18n="apply.note"></p>
+    <div class="mbtns">
+      <button type="button" class="btn-o btn-o--s" data-close data-i18n="apply.cancel"></button>
+      <button type="button" class="btn-f btn-f--s" id="mSubmit" data-i18n="apply.submit"></button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

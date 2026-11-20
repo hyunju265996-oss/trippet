@@ -1,0 +1,322 @@
+{
+  "meta": {
+    "locale": "ko-KR",
+    "htmlLang": "ko",
+    "languageName": "한국어",
+    "dir": "ltr"
+  },
+  "format": {
+    "date": "YYYY-MM-DD",
+    "currency": "{amount} 원",
+    "count.people": "{count}명",
+    "count.items": "{count}건",
+    "count.hours": "총 {count}시간",
+    "count.days": "{count}일"
+  },
+  "a11y": {
+    "skip": "본문 바로가기",
+    "logo": "고용24 실습 프로토타입 홈",
+    "newWindow": "새 창 열림",
+    "close": "닫기",
+    "prev": "이전 카드",
+    "next": "다음 카드",
+    "pause": "자동재생 일시정지",
+    "play": "자동재생 시작",
+    "slide": "{total}개 중 {index}번째 카드",
+    "languageMenu": "언어 선택",
+    "share": "공유하기",
+    "print": "인쇄"
+  },
+  "masthead": {
+    "notice": "KRDS 실습 · 고용24 개선안 학습용 프로토타입이에요. 실제 고용24가 아니며, 과정·수치는 예시이고 입력 내용은 저장·전송되지 않아요."
+  },
+  "header": {
+    "util": {
+      "language": "language",
+      "menu": "메뉴",
+      "remote": "원격지원",
+      "support": "고객센터",
+      "mypage": "마이페이지"
+    },
+    "logoText": "고용24",
+    "login": "로그인",
+    "signup": "회원가입",
+    "search": "검색",
+    "nav": {
+      "jobs": "채용정보",
+      "employment": "취업지원",
+      "benefit": "실업급여",
+      "skills": "직업 능력 개발",
+      "parental": "출산휴가 육아휴직"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "나만의 고용서비스",
+      "comma": ",",
+      "brand": "고용24"
+    },
+    "search": {
+      "scope": "전체",
+      "placeholder": "필요한 서비스를 찾아보세요"
+    },
+    "tabs": {
+      "prepare": "취업준비",
+      "find": "일자리찾기",
+      "training": "훈련 역량 강화",
+      "parental": "육아휴직"
+    },
+    "carousel": {
+      "label": "주요 서비스 카드뉴스",
+      "cta": "바로가기 →",
+      "c1": { "tag": "취업준비", "title": "일자리 찾기", "desc": "내게 맞는 일자리를\n지역·직종별로 찾아보세요" },
+      "c2": { "tag": "취업준비", "title": "구직(이력서) 관리", "desc": "이력서를 한 번 등록하고\n여러 공고에 지원하세요" },
+      "c3": { "tag": "일자리 찾기", "title": "맞춤채용정보", "desc": "내 조건에 맞는 공고만\n골라서 알려드려요" },
+      "c4": { "tag": "일자리 찾기", "title": "AI추천(일자리)", "desc": "경력과 희망 조건으로\nAI가 공고를 추천해요" },
+      "c5": { "tag": "일자리 찾기", "title": "채용행사", "desc": "박람회·채용설명회 일정을\n한눈에 확인하세요" },
+      "c6": { "tag": "취업준비", "title": "통합경력증명서 발급", "desc": "고용보험 이력을\n한 장의 증명서로 발급해요" },
+      "c7": { "tag": "훈련 역량 강화", "title": "K-디지털 훈련", "desc": "디지털 신기술 훈련,\n지금 수강신청하세요" }
+    },
+    "stats": {
+      "headline": "<em>채용공고</em>와 참여 가능한\n<em>교육·훈련</em>을 확인해 보세요.",
+      "jobs": "채용공고 수",
+      "trainings": "교육·훈련 수",
+      "unit": "건",
+      "jobRegion": "지역별 일자리 정보 찾기",
+      "jobOccupation": "직종별 일자리 정보 찾기",
+      "jobTheme": "테마별 일자리 정보 찾기",
+      "trCard": "국민내일배움카드 훈련과정",
+      "trAcademy": "K-디지털 아카데미 훈련과정",
+      "trMinistry": "정부부처별 훈련과정"
+    },
+    "policy": {
+      "title": "고용정책 정보",
+      "more": "더보기",
+      "go": "바로가기",
+      "p1": { "title": "취업준비", "desc": "취업은 하고 싶은데, 어떻게 해야 할지 모르겠어요" },
+      "p2": { "title": "일자리 찾기", "desc": "내게 맞는 일자리를 찾고 싶어요." },
+      "p3": { "title": "교육훈련", "desc": "취업하기 위해 공부하거나 자격증을 따고 깊어요." },
+      "p4": { "title": "취업준비", "desc": "취업은 하고 싶은데, 어떻게 해야 할지 모르겠어요" },
+      "p5": { "title": "출산.육아휴직", "desc": "출산/육아를 위해 일을 쉬거나 근무 시간을 줄여야 할 거 같아요" }
+    },
+    "guide": {
+      "title": "이용가이드",
+      "g1": { "title": "고용센터 찾기", "desc": "가까운 고용센터를 찾아 취업지원과\n고용 관련 상담을 받으세요." },
+      "g2": { "title": "이용방법", "desc": "고용24 서비스의 다양한 기능을 쉽게\n활용할 수 있는 이용 방법을 확인하세요." },
+      "g3": { "title": "상담센터", "desc": "궁금한 것은 무엇이든 물어보세요.\n상담사가 친절하게 답변 해드립니다." }
+    }
+  },
+  "common": {
+    "top": "위로",
+    "toTop": "맨위로",
+    "helper": "도우미",
+    "home": "홈",
+    "breadcrumb": {
+      "skills": "직업능력개발",
+      "skillsSpaced": "직업 능력 개발",
+      "findApply": "훈련 찾기·신청",
+      "kdigital": "K-디지털 훈련",
+      "detail": "K-디지털 훈련 훈련과정상세",
+      "done": "수강신청 완료"
+    }
+  },
+  "list": {
+    "title": "K-디지털 훈련",
+    "lead": "배우고 싶은 기술을 찾고, 나에게 맞는 과정을 골라보세요.",
+    "search": {
+      "question": "어떤 기술을 배우고 싶으세요?",
+      "placeholder": "과정명이나 기관명을 입력하세요",
+      "button": "검색",
+      "keywords": "추천 키워드",
+      "advanced": "상세 조건",
+      "kw": { "ai": "AI", "python": "파이썬", "data": "데이터", "security": "보안", "cloud": "클라우드", "3d": "3D" }
+    },
+    "wish": {
+      "title": "찜한 과정",
+      "empty": "아직 찜한 과정이 없어요",
+      "hint": "관심 있는 카드의 ‘찜하기’를 누르면 이곳에 모아볼 수 있어요.",
+      "summary.one": "{count}개 과정을 찜했어요",
+      "summary.other": "{count}개 과정을 찜했어요",
+      "remove": "찜 해제"
+    },
+    "total": "전체 과정 {count}",
+    "sort": { "start": "시작일 빠른순", "deadline": "마감임박순", "popular": "인기순" },
+    "filter": { "all": "전체 {count}", "offline": "집체 {count}", "smart": "스마트 {count}", "online": "온라인 {count}", "blended": "혼합 {count}" },
+    "status": { "open": "모집중", "closing": "마감임박" },
+    "card": {
+      "period": "{start} ~ {end} ({round}회차)",
+      "duration": "{days}, {hours}  ·  {mode}",
+      "location": "{area} ( {phone} )",
+      "fee": "훈련비 {amount}",
+      "selfPay": "본인부담 {amount}",
+      "type": "디지털 기초역량훈련",
+      "employment": "NCS직종 훈련기관 취업률: 해당없음",
+      "detail": "과정 자세히",
+      "wish": "찜하기",
+      "wished": "찜함",
+      "compare": "비교",
+      "rounds": "다른 회차 보기"
+    },
+    "mode": { "online": "온라인", "offline": "집체" },
+    "pagination": { "prev": "이전", "next": "다음", "page": "{page} 페이지" },
+    "about": {
+      "title": "K-디지털 훈련이란?",
+      "body": "민간의 혁신훈련기관과 디지털 분야 선도기업, 우수대학 등이 훈련기관으로 참여하여 AI, 빅데이터 등 기반기술과, 이를 활용한 핀테크, 클라우드, 스마트제조등 응용기술을 배우고 실전에서 활용할 수 있도록 다양한 훈련과정을 제공(훈련비 지원 및 훈련수당 지급)",
+      "manual": "매뉴얼",
+      "policy": "고용정책안내"
+    }
+  },
+  "course": {
+    "c1": { "field": "AI · 파이썬", "title": "AI by Hand: 내 손으로 이해하는 딥러닝 기초수학(feat. 파이썬)", "org": "(주)예시디지털연구소", "area": "서울 강남구" },
+    "c2": { "field": "UIUX· 데이터베이스", "title": "UIUX의 기본을 다지고, 데이터베이스 기반으로 디자이너 끝장내기", "org": "(주)예시디지털연구소", "area": "서울 영등포구" },
+    "c3": { "field": "네트워크 · 보안", "title": "[완전정복] 패킷 트레이서를 활용한 네트워크 관리와 보안 끝장내기", "org": "예시원격평생교육원", "area": "대구 수성구" },
+    "c4": { "field": "3D · 제조", "title": "3D모델링과 3D프린팅으로 구현하는 나만의 기계 부품 만들기", "org": "(주)예시디지털연구소", "area": "서울 강남구" },
+    "c5": { "field": "생성형 AI", "title": "생성형 AI를 활용한 15초 광고 만들기", "org": "(주)예시디지털연구소", "area": "서울 노원구" },
+    "c6": { "field": "AI · 파이썬", "title": "AI와 함께 코딩하자! 인공지능/데이터 커리어 첫걸음", "org": "(주)예시디지털연구소", "area": "서울 강남구" }
+  },
+  "detail": {
+    "pageTitle": "훈련과정 보기",
+    "tabs": { "course": "훈련과정 정보", "org": "훈련기관 정보", "satisfaction": "만족도 및 취업률" },
+    "notice": "선택하신 훈련과정의 목표, 내용, 수강 조건 등 상세 정보를 확인하실 수 있습니다.",
+    "org": "예시IT교육센터",
+    "certified": "3년 인증",
+    "title": "프로젝트 기반 UXUI 디자인 실전 캠프",
+    "headcount": {
+      "confirmed": "수강확정인원",
+      "applied": "수강신청인원",
+      "capacity": "모집인원"
+    },
+    "status": "모집중",
+    "fee": "훈련비",
+    "selfPayButton": "자비부담액보기",
+    "satisfaction": "만족도",
+    "reviews": "수강평 {count}개",
+    "basic": {
+      "title": "기본정보",
+      "type": "훈련유형",
+      "typeValue": "K-디지털 트레이닝",
+      "period": "훈련기간",
+      "periodValue": "{start} ~ {end} ({round}회차)",
+      "dayNight": "주야구분",
+      "dayNightValue": "주간",
+      "weekend": "주말여부",
+      "weekendValue": "주중",
+      "hours": "훈련시간",
+      "hoursValue": "{days}, {hours}",
+      "timetable": "시간표 보기"
+    },
+    "perf": {
+      "title": "성과 및 운영 정보",
+      "employment": "훈련과정별 취업률",
+      "status": "실시현황",
+      "statusValue": "6회/7회",
+      "age": "수강생 평균 연령대",
+      "wage": "훈련과정별 임금평균",
+      "wageButton": "취업처 임금평균 보기"
+    },
+    "ncs": {
+      "title": "NCS 및 자격정보",
+      "category": "NCS직무분류",
+      "categoryValue": "UI/UX엔지니어링(20010207)",
+      "level": "NCS수준",
+      "levelValue": "3 수준",
+      "applied": "NCS적용여부",
+      "appliedValue": "미적용",
+      "curriculum": "교과편성",
+      "cert": "관련 자격증"
+    },
+    "place": {
+      "title": "훈련실시장소 및 담당자",
+      "address": "주소",
+      "addressValue": "서울특별시 OO구 OO로 00 (예시빌딩) 4층",
+      "map": "지도 보기",
+      "manager": "담당자 성명",
+      "managerValue": "IT교육센터",
+      "phone": "전화번호",
+      "email": "이메일",
+      "ministry": "주관부처",
+      "ministryValue": "OO고용센터(예시)"
+    },
+    "cta": {
+      "interest": "관심정보 등록",
+      "interestOn": "관심정보 등록됨",
+      "apply": "수강신청"
+    },
+    "confirmNote": "실제 모집마감 여부를 반드시 <em>훈련기관에 확인</em>해보시기 바랍니다.",
+    "guide": {
+      "title": "훈련기관 안내사항",
+      "body": "「프로젝트 기반 UXUI 디자인 실전 캠프」 신청 안내\n\n※ 고용24 수강신청 전, 예시IT교육센터 홈페이지에서 먼저 신청해 주세요.\nhttps://example.com\n\n퀀트(Quant)로 설계하고 바이브(Vibe)로 구현!\n아이디어를 실제 서비스로 만드는 UXUI 실무 프로젝트 과정입니다.\n\n■ 교육운영\n\n정규교과(09/03~11/09) : 오프라인\n프로젝트(11/10~12/30) : 온·오프라인 병행\n(월~수 오프라인 / 목~금 온라인)",
+      "more": "과정 자세히 보기",
+      "less": "접기"
+    }
+  },
+  "apply": {
+    "title": "수강신청",
+    "lead": "아래 훈련과정으로 수강신청을 진행합니다. 신청 내용을 확인해 주세요.",
+    "course": "훈련과정",
+    "org": "훈련기관",
+    "type": "훈련유형",
+    "period": "훈련기간",
+    "periodValue": "{start} ~ {end} ({days}, {hours})",
+    "recruit": "모집현황",
+    "recruitValue": "모집인원 {capacity} · 수강신청 {applied}",
+    "phone": "휴대전화 번호 (필수)",
+    "phonePlaceholder": "010-0000-0000",
+    "phoneHint": "승인 결과를 문자로 안내해 드려요.",
+    "agree": "개인정보 수집·이용 및 훈련기관 제공에 동의합니다. (필수)",
+    "note": "※ 수강신청 후 훈련기관의 승인이 완료되어야 수강이 확정됩니다.",
+    "cancel": "취소",
+    "submit": "수강신청",
+    "error": {
+      "phone": "휴대전화 번호를 010-0000-0000 형식으로 입력해 주세요.",
+      "agree": "개인정보 수집·이용에 동의해야 신청할 수 있어요."
+    }
+  },
+  "done": {
+    "title": "수강신청이 완료되었습니다",
+    "lead": "훈련기관 승인 후 수강이 확정되며, 결과는 문자와 고용24 알림으로 안내해 드립니다.",
+    "steps": {
+      "label": "수강신청 진행 단계",
+      "s1": "수강신청",
+      "s2": "훈련기관 승인 (진행 중)",
+      "s3": "수강 확정",
+      "s4": "훈련 시작"
+    },
+    "table": {
+      "number": "신청번호",
+      "numberValue": "K2026-111900123 (예시)",
+      "course": "훈련과정",
+      "org": "훈련기관",
+      "period": "훈련기간",
+      "date": "신청일",
+      "status": "진행상태",
+      "statusValue": "승인 대기"
+    },
+    "other": "다른 훈련과정 보기",
+    "mine": "나의 수강신청 내역"
+  },
+  "footer": {
+    "family": "패밀리사이트",
+    "related": "유관기관",
+    "address": "주소를 입력해주세요",
+    "label": "정보 레이블",
+    "placeholder": "정보를 입력해주세요",
+    "infoTitle": "정보입력",
+    "infoBody": "중요한 정보를 입력해주세요",
+    "utility": "유틸리티 링크",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "security": "보안센터",
+    "a11y": "웹 접근성 품질인증 마크 획득",
+    "policy": "정책명",
+    "copyright": "© 2026 KRDS 실습 프로젝트. 학습용 예시 화면입니다."
+  },
+  "toast": {
+    "wishAdded": "‘{title}’ 과정을 찜했어요.",
+    "wishRemoved": "‘{title}’ 과정을 찜 목록에서 뺐어요.",
+    "interestOn": "관심정보로 등록했어요.",
+    "interestOff": "관심정보 등록을 해제했어요.",
+    "languageChanged": "언어를 한국어로 바꿨어요.",
+    "demo": "실습용 프로토타입이라 이동하지 않아요."
+  }
+}

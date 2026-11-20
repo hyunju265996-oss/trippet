@@ -1,0 +1,326 @@
+{
+  "meta": {
+    "locale": "en-US",
+    "htmlLang": "en",
+    "languageName": "English",
+    "dir": "ltr"
+  },
+  "format": {
+    "date": "MM/DD/YYYY",
+    "currency": "₩{amount}",
+    "count.people.one": "{count} person",
+    "count.people.other": "{count} people",
+    "count.items": "{count}",
+    "count.hours.one": "{count} hour total",
+    "count.hours.other": "{count} hours total",
+    "count.days.one": "{count} day",
+    "count.days.other": "{count} days"
+  },
+  "a11y": {
+    "skip": "Skip to main content",
+    "logo": "Employment24 practice prototype home",
+    "newWindow": "Opens in a new window",
+    "close": "Close",
+    "prev": "Previous card",
+    "next": "Next card",
+    "pause": "Pause autoplay",
+    "play": "Start autoplay",
+    "slide": "Card {index} of {total}",
+    "languageMenu": "Select language",
+    "share": "Share",
+    "print": "Print"
+  },
+  "masthead": {
+    "notice": "KRDS practice · A learning prototype of an Employment24 redesign. This is not the real service; courses and figures are examples, and nothing you enter is saved or sent."
+  },
+  "header": {
+    "util": {
+      "language": "language",
+      "menu": "Menu",
+      "remote": "Remote support",
+      "support": "Help center",
+      "mypage": "My page"
+    },
+    "logoText": "Employment24",
+    "login": "Log in",
+    "signup": "Sign up",
+    "search": "Search",
+    "nav": {
+      "jobs": "Job listings",
+      "employment": "Job support",
+      "benefit": "Unemployment benefits",
+      "skills": "Skills development",
+      "parental": "Maternity & parental leave"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Your own employment service",
+      "comma": ",",
+      "brand": "Employment24"
+    },
+    "search": {
+      "scope": "All",
+      "placeholder": "Find the service you need"
+    },
+    "tabs": {
+      "prepare": "Job prep",
+      "find": "Find jobs",
+      "training": "Build skills",
+      "parental": "Parental leave"
+    },
+    "carousel": {
+      "label": "Featured service cards",
+      "cta": "Go →",
+      "c1": { "tag": "Job prep", "title": "Find jobs", "desc": "Find jobs that fit you\nby region and occupation" },
+      "c2": { "tag": "Job prep", "title": "Manage résumés", "desc": "Register your résumé once\nand apply to many postings" },
+      "c3": { "tag": "Find jobs", "title": "Tailored job alerts", "desc": "We pick only the postings\nthat match your conditions" },
+      "c4": { "tag": "Find jobs", "title": "AI job picks", "desc": "AI recommends postings from\nyour career and preferences" },
+      "c5": { "tag": "Find jobs", "title": "Hiring events", "desc": "See job fairs and info sessions\nat a glance" },
+      "c6": { "tag": "Job prep", "title": "Career certificate", "desc": "Get your employment insurance\nhistory on one certificate" },
+      "c7": { "tag": "Build skills", "title": "K-Digital Training", "desc": "Training in new digital tech —\napply now" }
+    },
+    "stats": {
+      "headline": "Check <em>job postings</em> and\n<em>training</em> you can join.",
+      "jobs": "Job postings",
+      "trainings": "Training courses",
+      "unit": "",
+      "jobRegion": "Jobs by region",
+      "jobOccupation": "Jobs by occupation",
+      "jobTheme": "Jobs by theme",
+      "trCard": "Lifelong learning card courses",
+      "trAcademy": "K-Digital Academy courses",
+      "trMinistry": "Courses by ministry"
+    },
+    "policy": {
+      "title": "Employment policies",
+      "more": "More",
+      "go": "Go",
+      "p1": { "title": "Job prep", "desc": "I want a job, but I don't know where to start." },
+      "p2": { "title": "Find jobs", "desc": "I want to find a job that suits me." },
+      "p3": { "title": "Education & training", "desc": "I want to study or earn a certificate to get hired." },
+      "p4": { "title": "Job prep", "desc": "I want a job, but I don't know where to start." },
+      "p5": { "title": "Maternity & parental leave", "desc": "I may need time off or shorter hours for childbirth or childcare." }
+    },
+    "guide": {
+      "title": "User guide",
+      "g1": { "title": "Find a job center", "desc": "Visit a nearby job center for job support\nand employment counseling." },
+      "g2": { "title": "How to use", "desc": "Learn how to make the most of\nEmployment24's many features." },
+      "g3": { "title": "Contact center", "desc": "Ask us anything.\nOur counselors are happy to help." }
+    }
+  },
+  "common": {
+    "top": "Top",
+    "toTop": "To top",
+    "helper": "Helper",
+    "home": "Home",
+    "breadcrumb": {
+      "skills": "Skills development",
+      "skillsSpaced": "Skills development",
+      "findApply": "Find & apply for training",
+      "kdigital": "K-Digital Training",
+      "detail": "K-Digital Training course details",
+      "done": "Application complete"
+    }
+  },
+  "list": {
+    "title": "K-Digital Training",
+    "lead": "Find the skills you want to learn and pick the course that fits you.",
+    "search": {
+      "question": "What skill would you like to learn?",
+      "placeholder": "Enter a course or institution name",
+      "button": "Search",
+      "keywords": "Suggested keywords",
+      "advanced": "Advanced filters",
+      "kw": { "ai": "AI", "python": "Python", "data": "Data", "security": "Security", "cloud": "Cloud", "3d": "3D" }
+    },
+    "wish": {
+      "title": "Saved courses",
+      "empty": "You haven't saved any courses yet",
+      "hint": "Tap ‘Save’ on a card you like to collect it here.",
+      "summary.one": "You saved {count} course",
+      "summary.other": "You saved {count} courses",
+      "remove": "Remove"
+    },
+    "total": "All courses {count}",
+    "sort": { "start": "Earliest start", "deadline": "Closing soon", "popular": "Most popular" },
+    "filter": { "all": "All {count}", "offline": "In-person {count}", "smart": "Smart {count}", "online": "Online {count}", "blended": "Blended {count}" },
+    "status": { "open": "Open", "closing": "Closing soon" },
+    "card": {
+      "period": "{start} – {end} (Round {round})",
+      "duration": "{days}, {hours}  ·  {mode}",
+      "location": "{area} ( {phone} )",
+      "fee": "Tuition {amount}",
+      "selfPay": "You pay {amount}",
+      "type": "Basic digital skills training",
+      "employment": "NCS occupation employment rate: N/A",
+      "detail": "Course details",
+      "wish": "Save",
+      "wished": "Saved",
+      "compare": "Compare",
+      "rounds": "Other rounds"
+    },
+    "mode": { "online": "Online", "offline": "In-person" },
+    "pagination": { "prev": "Previous", "next": "Next", "page": "Page {page}" },
+    "about": {
+      "title": "What is K-Digital Training?",
+      "body": "Innovative private training providers, leading digital companies and top universities take part as training institutions, offering a wide range of courses so you can learn core technologies such as AI and big data, plus applied fields like fintech, cloud and smart manufacturing, and put them to use in practice (tuition support and training allowances provided).",
+      "manual": "Manual",
+      "policy": "Employment policy guide"
+    }
+  },
+  "course": {
+    "c1": { "field": "AI · Python", "title": "AI by Hand: Deep learning math you can work out yourself (feat. Python)", "org": "Example Digital Lab Inc.", "area": "Gangnam-gu, Seoul" },
+    "c2": { "field": "UI/UX · Databases", "title": "Master UI/UX fundamentals and become a data-driven designer", "org": "Example Digital Lab Inc.", "area": "Yeongdeungpo-gu, Seoul" },
+    "c3": { "field": "Network · Security", "title": "[Complete guide] Network management and security with Packet Tracer", "org": "Example Remote Lifelong Learning Center", "area": "Suseong-gu, Daegu" },
+    "c4": { "field": "3D · Manufacturing", "title": "Build your own machine parts with 3D modeling and 3D printing", "org": "Example Digital Lab Inc.", "area": "Gangnam-gu, Seoul" },
+    "c5": { "field": "Generative AI", "title": "Make a 15-second ad with generative AI", "org": "Example Digital Lab Inc.", "area": "Nowon-gu, Seoul" },
+    "c6": { "field": "AI · Python", "title": "Code with AI! Your first step into an AI/data career", "org": "Example Digital Lab Inc.", "area": "Gangnam-gu, Seoul" }
+  },
+  "detail": {
+    "pageTitle": "Course details",
+    "tabs": { "course": "Course info", "org": "Institution info", "satisfaction": "Satisfaction & employment" },
+    "notice": "See the goals, content and enrollment requirements of the course you selected.",
+    "org": "Example IT Education Center",
+    "certified": "3-year certified",
+    "title": "Project-based UX/UI Design Bootcamp",
+    "headcount": {
+      "confirmed": "Confirmed",
+      "applied": "Applied",
+      "capacity": "Capacity"
+    },
+    "status": "Open",
+    "fee": "Tuition",
+    "selfPayButton": "See your share",
+    "satisfaction": "Satisfaction",
+    "reviews.one": "{count} review",
+    "reviews.other": "{count} reviews",
+    "basic": {
+      "title": "Basic information",
+      "type": "Training type",
+      "typeValue": "K-Digital Training",
+      "period": "Training period",
+      "periodValue": "{start} – {end} (Round {round})",
+      "dayNight": "Day/evening",
+      "dayNightValue": "Daytime",
+      "weekend": "Weekend",
+      "weekendValue": "Weekdays",
+      "hours": "Training hours",
+      "hoursValue": "{days}, {hours}",
+      "timetable": "View timetable"
+    },
+    "perf": {
+      "title": "Outcomes & operations",
+      "employment": "Course employment rate",
+      "status": "Rounds run",
+      "statusValue": "6 of 7",
+      "age": "Average trainee age",
+      "wage": "Average wage by course",
+      "wageButton": "View employer wage averages"
+    },
+    "ncs": {
+      "title": "NCS & certifications",
+      "category": "NCS job category",
+      "categoryValue": "UI/UX engineering (20010207)",
+      "level": "NCS level",
+      "levelValue": "Level 3",
+      "applied": "NCS applied",
+      "appliedValue": "Not applied",
+      "curriculum": "Curriculum",
+      "cert": "Related certificates"
+    },
+    "place": {
+      "title": "Training location & contact",
+      "address": "Address",
+      "addressValue": "4F, Example Bldg., 00 OO-ro, OO-gu, Seoul",
+      "map": "View map",
+      "manager": "Contact person",
+      "managerValue": "IT Education Center",
+      "phone": "Phone",
+      "email": "Email",
+      "ministry": "Supervising office",
+      "ministryValue": "OO Job Center (example)"
+    },
+    "cta": {
+      "interest": "Add to interests",
+      "interestOn": "Added to interests",
+      "apply": "Apply"
+    },
+    "confirmNote": "Please be sure to <em>check with the institution</em> whether enrollment is still open.",
+    "guide": {
+      "title": "Notes from the institution",
+      "body": "How to apply for “Project-based UX/UI Design Bootcamp”\n\n※ Before applying on Employment24, please apply first on the Example IT Education Center website.\nhttps://example.com\n\nDesign with Quant, build with Vibe!\nA hands-on UX/UI project course that turns ideas into real services.\n\n■ Course operation\n\nRegular curriculum (09/03–11/09): in person\nProject (11/10–12/30): in person and online\n(Mon–Wed in person / Thu–Fri online)",
+      "more": "Show full course details",
+      "less": "Show less"
+    }
+  },
+  "apply": {
+    "title": "Apply for course",
+    "lead": "You are applying for the course below. Please review your application.",
+    "course": "Course",
+    "org": "Institution",
+    "type": "Training type",
+    "period": "Training period",
+    "periodValue": "{start} – {end} ({days}, {hours})",
+    "recruit": "Enrollment",
+    "recruitValue": "Capacity {capacity} · Applied {applied}",
+    "phone": "Mobile number (required)",
+    "phonePlaceholder": "010-0000-0000",
+    "phoneHint": "We'll text you the approval result.",
+    "agree": "I agree to the collection and use of my personal information and its provision to the institution. (required)",
+    "note": "※ Your enrollment is confirmed only after the institution approves it.",
+    "cancel": "Cancel",
+    "submit": "Apply",
+    "error": {
+      "phone": "Enter your mobile number in the 010-0000-0000 format.",
+      "agree": "You need to agree to the use of personal information to apply."
+    }
+  },
+  "done": {
+    "title": "Your application is complete",
+    "lead": "Enrollment is confirmed once the institution approves it. We'll let you know by text and Employment24 notification.",
+    "steps": {
+      "label": "Application progress",
+      "s1": "Applied",
+      "s2": "Institution approval (in progress)",
+      "s3": "Enrollment confirmed",
+      "s4": "Training starts"
+    },
+    "table": {
+      "number": "Application no.",
+      "numberValue": "K2026-111900123 (example)",
+      "course": "Course",
+      "org": "Institution",
+      "period": "Training period",
+      "date": "Applied on",
+      "status": "Status",
+      "statusValue": "Awaiting approval"
+    },
+    "other": "Browse other courses",
+    "mine": "My applications"
+  },
+  "footer": {
+    "family": "Family sites",
+    "related": "Related agencies",
+    "address": "Enter an address",
+    "label": "Info label",
+    "placeholder": "Enter information",
+    "infoTitle": "Information",
+    "infoBody": "Enter important information",
+    "utility": "Utility link",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "security": "Security center",
+    "a11y": "Web accessibility certification",
+    "policy": "Policy name",
+    "copyright": "© 2026 KRDS practice project. Example screens for learning."
+  },
+  "toast": {
+    "wishAdded": "Saved “{title}”.",
+    "wishRemoved": "Removed “{title}” from your saved courses.",
+    "interestOn": "Added to your interests.",
+    "interestOff": "Removed from your interests.",
+    "languageChanged": "Language changed to English.",
+    "demo": "This is a practice prototype, so this link doesn't go anywhere."
+  }
+}

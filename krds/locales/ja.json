@@ -1,0 +1,321 @@
+{
+  "meta": {
+    "locale": "ja-JP",
+    "htmlLang": "ja",
+    "languageName": "日本語",
+    "dir": "ltr"
+  },
+  "format": {
+    "date": "YYYY/MM/DD",
+    "currency": "{amount} ウォン",
+    "count.people": "{count}名",
+    "count.items": "{count}件",
+    "count.hours": "計{count}時間",
+    "count.days": "{count}日"
+  },
+  "a11y": {
+    "skip": "本文へ移動",
+    "logo": "雇用24 練習用プロトタイプ ホーム",
+    "newWindow": "新しいウィンドウで開きます",
+    "close": "閉じる",
+    "prev": "前のカード",
+    "next": "次のカード",
+    "pause": "自動再生を一時停止",
+    "play": "自動再生を開始",
+    "slide": "{total}枚中{index}枚目のカード",
+    "languageMenu": "言語を選択",
+    "share": "共有",
+    "print": "印刷"
+  },
+  "masthead": {
+    "notice": "KRDS練習 · 雇用24改善案の学習用プロトタイプです。実際の雇用24ではなく、講座・数値は例示であり、入力内容は保存・送信されません。"
+  },
+  "header": {
+    "util": {
+      "language": "language",
+      "menu": "メニュー",
+      "remote": "リモートサポート",
+      "support": "カスタマーセンター",
+      "mypage": "マイページ"
+    },
+    "logoText": "雇用24",
+    "login": "ログイン",
+    "signup": "会員登録",
+    "search": "検索",
+    "nav": {
+      "jobs": "求人情報",
+      "employment": "就職支援",
+      "benefit": "失業給付",
+      "skills": "職業能力開発",
+      "parental": "出産休暇・育児休業"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "わたしだけの雇用サービス",
+      "comma": "、",
+      "brand": "雇用24"
+    },
+    "search": {
+      "scope": "すべて",
+      "placeholder": "必要なサービスを探してみましょう"
+    },
+    "tabs": {
+      "prepare": "就職準備",
+      "find": "仕事探し",
+      "training": "訓練・能力強化",
+      "parental": "育児休業"
+    },
+    "carousel": {
+      "label": "主なサービスのカードニュース",
+      "cta": "移動する →",
+      "c1": { "tag": "就職準備", "title": "仕事探し", "desc": "自分に合う仕事を\n地域・職種別に探しましょう" },
+      "c2": { "tag": "就職準備", "title": "求職（履歴書）管理", "desc": "履歴書を一度登録すれば\n複数の求人に応募できます" },
+      "c3": { "tag": "仕事探し", "title": "おすすめ求人情報", "desc": "条件に合う求人だけを\n選んでお知らせします" },
+      "c4": { "tag": "仕事探し", "title": "AIおすすめ（仕事）", "desc": "経歴と希望条件から\nAIが求人をおすすめします" },
+      "c5": { "tag": "仕事探し", "title": "採用イベント", "desc": "就職フェア・説明会の日程を\nひと目で確認できます" },
+      "c6": { "tag": "就職準備", "title": "統合職歴証明書の発行", "desc": "雇用保険の履歴を\n1枚の証明書で発行します" },
+      "c7": { "tag": "訓練・能力強化", "title": "Kデジタル訓練", "desc": "デジタル新技術の訓練、\n今すぐ受講申込を" }
+    },
+    "stats": {
+      "headline": "<em>求人情報</em>と参加できる\n<em>教育・訓練</em>を確認しましょう。",
+      "jobs": "求人数",
+      "trainings": "教育・訓練数",
+      "unit": "件",
+      "jobRegion": "地域別に仕事を探す",
+      "jobOccupation": "職種別に仕事を探す",
+      "jobTheme": "テーマ別に仕事を探す",
+      "trCard": "国民明日学習カード訓練講座",
+      "trAcademy": "Kデジタルアカデミー訓練講座",
+      "trMinistry": "省庁別訓練講座"
+    },
+    "policy": {
+      "title": "雇用政策情報",
+      "more": "もっと見る",
+      "go": "移動する",
+      "p1": { "title": "就職準備", "desc": "就職したいけれど、どうすればいいかわかりません" },
+      "p2": { "title": "仕事探し", "desc": "自分に合う仕事を見つけたいです。" },
+      "p3": { "title": "教育訓練", "desc": "就職のために勉強したり資格を取ったりしたいです。" },
+      "p4": { "title": "就職準備", "desc": "就職したいけれど、どうすればいいかわかりません" },
+      "p5": { "title": "出産・育児休業", "desc": "出産・育児のために仕事を休んだり勤務時間を減らしたりする必要がありそうです" }
+    },
+    "guide": {
+      "title": "ご利用ガイド",
+      "g1": { "title": "雇用センターを探す", "desc": "近くの雇用センターで就職支援や\n雇用に関する相談を受けましょう。" },
+      "g2": { "title": "ご利用方法", "desc": "雇用24のさまざまな機能を\n簡単に使う方法を確認しましょう。" },
+      "g3": { "title": "相談センター", "desc": "気になることは何でもお尋ねください。\n相談員が丁寧にお答えします。" }
+    }
+  },
+  "common": {
+    "top": "上へ",
+    "toTop": "トップへ",
+    "helper": "ヘルパー",
+    "home": "ホーム",
+    "breadcrumb": {
+      "skills": "職業能力開発",
+      "skillsSpaced": "職業能力開発",
+      "findApply": "訓練検索・申込",
+      "kdigital": "Kデジタル訓練",
+      "detail": "Kデジタル訓練 講座詳細",
+      "done": "受講申込完了"
+    }
+  },
+  "list": {
+    "title": "Kデジタル訓練",
+    "lead": "学びたい技術を探して、自分に合う講座を選びましょう。",
+    "search": {
+      "question": "どんな技術を学びたいですか？",
+      "placeholder": "講座名または機関名を入力してください",
+      "button": "検索",
+      "keywords": "おすすめキーワード",
+      "advanced": "詳細条件",
+      "kw": { "ai": "AI", "python": "Python", "data": "データ", "security": "セキュリティ", "cloud": "クラウド", "3d": "3D" }
+    },
+    "wish": {
+      "title": "お気に入り講座",
+      "empty": "まだお気に入りの講座がありません",
+      "hint": "気になるカードの「お気に入り」を押すと、ここにまとめて表示されます。",
+      "summary": "{count}件の講座をお気に入りに追加しました",
+      "remove": "解除"
+    },
+    "total": "全講座 {count}",
+    "sort": { "start": "開始日が早い順", "deadline": "締切が近い順", "popular": "人気順" },
+    "filter": { "all": "すべて {count}", "offline": "集合 {count}", "smart": "スマート {count}", "online": "オンライン {count}", "blended": "混合 {count}" },
+    "status": { "open": "募集中", "closing": "締切間近" },
+    "card": {
+      "period": "{start} ~ {end}（第{round}回）",
+      "duration": "{days}、{hours}  ·  {mode}",
+      "location": "{area}（{phone}）",
+      "fee": "訓練費 {amount}",
+      "selfPay": "自己負担 {amount}",
+      "type": "デジタル基礎能力訓練",
+      "employment": "NCS職種 訓練機関就職率：該当なし",
+      "detail": "講座の詳細",
+      "wish": "お気に入り",
+      "wished": "追加済み",
+      "compare": "比較",
+      "rounds": "他の回を見る"
+    },
+    "mode": { "online": "オンライン", "offline": "集合" },
+    "pagination": { "prev": "前へ", "next": "次へ", "page": "{page}ページ" },
+    "about": {
+      "title": "Kデジタル訓練とは？",
+      "body": "民間の革新的な訓練機関やデジタル分野の先導企業、優秀な大学などが訓練機関として参加し、AI・ビッグデータなどの基盤技術と、それを活用したフィンテック・クラウド・スマート製造などの応用技術を学び、実践で活用できるよう多様な訓練講座を提供（訓練費支援および訓練手当支給）",
+      "manual": "マニュアル",
+      "policy": "雇用政策のご案内"
+    }
+  },
+  "course": {
+    "c1": { "field": "AI · Python", "title": "AI by Hand：自分の手で理解するディープラーニングの基礎数学（feat. Python）", "org": "（株）例示デジタル研究所", "area": "ソウル 江南区" },
+    "c2": { "field": "UI/UX · データベース", "title": "UI/UXの基本を固め、データベースを活かすデザイナーになる", "org": "（株）例示デジタル研究所", "area": "ソウル 永登浦区" },
+    "c3": { "field": "ネットワーク · セキュリティ", "title": "【完全攻略】Packet Tracerで学ぶネットワーク管理とセキュリティ", "org": "例示遠隔生涯教育院", "area": "大邱 寿城区" },
+    "c4": { "field": "3D · 製造", "title": "3Dモデリングと3Dプリントで作る自分だけの機械部品", "org": "（株）例示デジタル研究所", "area": "ソウル 江南区" },
+    "c5": { "field": "生成AI", "title": "生成AIで15秒の広告を作る", "org": "（株）例示デジタル研究所", "area": "ソウル 蘆原区" },
+    "c6": { "field": "AI · Python", "title": "AIと一緒にコーディング！AI・データキャリアの第一歩", "org": "（株）例示デジタル研究所", "area": "ソウル 江南区" }
+  },
+  "detail": {
+    "pageTitle": "訓練講座を見る",
+    "tabs": { "course": "講座情報", "org": "訓練機関情報", "satisfaction": "満足度・就職率" },
+    "notice": "選択した訓練講座の目標、内容、受講条件などの詳細情報を確認できます。",
+    "org": "例示IT教育センター",
+    "certified": "3年認証",
+    "title": "プロジェクト型UX/UIデザイン実践キャンプ",
+    "headcount": {
+      "confirmed": "受講確定人数",
+      "applied": "受講申込人数",
+      "capacity": "募集人数"
+    },
+    "status": "募集中",
+    "fee": "訓練費",
+    "selfPayButton": "自己負担額を見る",
+    "satisfaction": "満足度",
+    "reviews": "受講レビュー{count}件",
+    "basic": {
+      "title": "基本情報",
+      "type": "訓練種別",
+      "typeValue": "Kデジタルトレーニング",
+      "period": "訓練期間",
+      "periodValue": "{start} ~ {end}（第{round}回）",
+      "dayNight": "昼夜区分",
+      "dayNightValue": "昼間",
+      "weekend": "週末の有無",
+      "weekendValue": "平日",
+      "hours": "訓練時間",
+      "hoursValue": "{days}、{hours}",
+      "timetable": "時間割を見る"
+    },
+    "perf": {
+      "title": "成果・運営情報",
+      "employment": "講座別就職率",
+      "status": "実施状況",
+      "statusValue": "6回/7回",
+      "age": "受講生の平均年齢層",
+      "wage": "講座別平均賃金",
+      "wageButton": "就職先の平均賃金を見る"
+    },
+    "ncs": {
+      "title": "NCS・資格情報",
+      "category": "NCS職務分類",
+      "categoryValue": "UI/UXエンジニアリング（20010207）",
+      "level": "NCSレベル",
+      "levelValue": "レベル3",
+      "applied": "NCS適用有無",
+      "appliedValue": "未適用",
+      "curriculum": "カリキュラム",
+      "cert": "関連資格"
+    },
+    "place": {
+      "title": "訓練実施場所・担当者",
+      "address": "住所",
+      "addressValue": "ソウル特別市 OO区 OO路 00（例示ビル）4階",
+      "map": "地図を見る",
+      "manager": "担当者名",
+      "managerValue": "IT教育センター",
+      "phone": "電話番号",
+      "email": "メール",
+      "ministry": "主管部署",
+      "ministryValue": "OO雇用センター（例示）"
+    },
+    "cta": {
+      "interest": "お気に入り登録",
+      "interestOn": "お気に入り登録済み",
+      "apply": "受講申込"
+    },
+    "confirmNote": "実際の募集締切については、必ず<em>訓練機関にご確認</em>ください。",
+    "guide": {
+      "title": "訓練機関からのお知らせ",
+      "body": "「プロジェクト型UX/UIデザイン実践キャンプ」申込のご案内\n\n※ 雇用24で受講申込をする前に、例示IT教育センターのウェブサイトで先にお申し込みください。\nhttps://example.com\n\nQuantで設計し、Vibeで実装！\nアイデアを実際のサービスにするUX/UI実務プロジェクト講座です。\n\n■ 教育運営\n\n正規科目（09/03~11/09）：オフライン\nプロジェクト（11/10~12/30）：オン・オフライン併用\n（月~水 オフライン / 木~金 オンライン）",
+      "more": "講座の詳細を見る",
+      "less": "閉じる"
+    }
+  },
+  "apply": {
+    "title": "受講申込",
+    "lead": "以下の訓練講座で受講申込を行います。申込内容をご確認ください。",
+    "course": "訓練講座",
+    "org": "訓練機関",
+    "type": "訓練種別",
+    "period": "訓練期間",
+    "periodValue": "{start} ~ {end}（{days}、{hours}）",
+    "recruit": "募集状況",
+    "recruitValue": "募集人数 {capacity} · 受講申込 {applied}",
+    "phone": "携帯電話番号（必須）",
+    "phonePlaceholder": "010-0000-0000",
+    "phoneHint": "承認結果をSMSでお知らせします。",
+    "agree": "個人情報の収集・利用および訓練機関への提供に同意します。（必須）",
+    "note": "※ 受講申込後、訓練機関の承認が完了すると受講が確定します。",
+    "cancel": "キャンセル",
+    "submit": "受講申込",
+    "error": {
+      "phone": "携帯電話番号を 010-0000-0000 の形式で入力してください。",
+      "agree": "個人情報の収集・利用に同意すると申し込めます。"
+    }
+  },
+  "done": {
+    "title": "受講申込が完了しました",
+    "lead": "訓練機関の承認後に受講が確定し、結果はSMSと雇用24の通知でお知らせします。",
+    "steps": {
+      "label": "受講申込の進行段階",
+      "s1": "受講申込",
+      "s2": "訓練機関の承認（進行中）",
+      "s3": "受講確定",
+      "s4": "訓練開始"
+    },
+    "table": {
+      "number": "申込番号",
+      "numberValue": "K2026-111900123（例示）",
+      "course": "訓練講座",
+      "org": "訓練機関",
+      "period": "訓練期間",
+      "date": "申込日",
+      "status": "進行状況",
+      "statusValue": "承認待ち"
+    },
+    "other": "他の訓練講座を見る",
+    "mine": "受講申込履歴"
+  },
+  "footer": {
+    "family": "ファミリーサイト",
+    "related": "関連機関",
+    "address": "住所を入力してください",
+    "label": "情報ラベル",
+    "placeholder": "情報を入力してください",
+    "infoTitle": "情報入力",
+    "infoBody": "重要な情報を入力してください",
+    "utility": "ユーティリティリンク",
+    "privacy": "個人情報処理方針",
+    "terms": "利用規約",
+    "security": "セキュリティセンター",
+    "a11y": "ウェブアクセシビリティ品質認証マーク取得",
+    "policy": "ポリシー名",
+    "copyright": "© 2026 KRDS練習プロジェクト。学習用の例示画面です。"
+  },
+  "toast": {
+    "wishAdded": "「{title}」をお気に入りに追加しました。",
+    "wishRemoved": "「{title}」をお気に入りから外しました。",
+    "interestOn": "お気に入りに登録しました。",
+    "interestOff": "お気に入り登録を解除しました。",
+    "languageChanged": "言語を日本語に変更しました。",
+    "demo": "練習用プロトタイプのため、このリンクは移動しません。"
+  }
+}

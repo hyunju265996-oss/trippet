@@ -1,0 +1,321 @@
+{
+  "meta": {
+    "locale": "zh-CN",
+    "htmlLang": "zh-Hans",
+    "languageName": "中文",
+    "dir": "ltr"
+  },
+  "format": {
+    "date": "YYYY-MM-DD",
+    "currency": "{amount} 韩元",
+    "count.people": "{count}人",
+    "count.items": "{count}条",
+    "count.hours": "共{count}小时",
+    "count.days": "{count}天"
+  },
+  "a11y": {
+    "skip": "跳至正文",
+    "logo": "就业24 练习原型首页",
+    "newWindow": "在新窗口打开",
+    "close": "关闭",
+    "prev": "上一张卡片",
+    "next": "下一张卡片",
+    "pause": "暂停自动播放",
+    "play": "开始自动播放",
+    "slide": "第{index}张，共{total}张",
+    "languageMenu": "选择语言",
+    "share": "分享",
+    "print": "打印"
+  },
+  "masthead": {
+    "notice": "KRDS 练习 · 就业24改进方案学习用原型。这不是真正的就业24，课程和数据均为示例，输入内容不会被保存或发送。"
+  },
+  "header": {
+    "util": {
+      "language": "language",
+      "menu": "菜单",
+      "remote": "远程支持",
+      "support": "客服中心",
+      "mypage": "我的页面"
+    },
+    "logoText": "就业24",
+    "login": "登录",
+    "signup": "注册",
+    "search": "搜索",
+    "nav": {
+      "jobs": "招聘信息",
+      "employment": "就业支援",
+      "benefit": "失业补助",
+      "skills": "职业能力开发",
+      "parental": "产假与育儿假"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "专属于我的就业服务",
+      "comma": "，",
+      "brand": "就业24"
+    },
+    "search": {
+      "scope": "全部",
+      "placeholder": "查找您需要的服务"
+    },
+    "tabs": {
+      "prepare": "求职准备",
+      "find": "寻找工作",
+      "training": "提升培训能力",
+      "parental": "育儿假"
+    },
+    "carousel": {
+      "label": "主要服务卡片",
+      "cta": "前往 →",
+      "c1": { "tag": "求职准备", "title": "寻找工作", "desc": "按地区和职业类别\n查找适合您的工作" },
+      "c2": { "tag": "求职准备", "title": "求职（简历）管理", "desc": "简历只需登记一次\n即可投递多个职位" },
+      "c3": { "tag": "寻找工作", "title": "定制招聘信息", "desc": "只为您挑选\n符合条件的职位" },
+      "c4": { "tag": "寻找工作", "title": "AI推荐（工作）", "desc": "根据经历和期望条件\n由AI推荐职位" },
+      "c5": { "tag": "寻找工作", "title": "招聘活动", "desc": "招聘会和宣讲会日程\n一目了然" },
+      "c6": { "tag": "求职准备", "title": "开具综合工作经历证明", "desc": "将雇佣保险记录\n汇总为一张证明" },
+      "c7": { "tag": "提升培训能力", "title": "K-数字培训", "desc": "数字新技术培训，\n立即报名" }
+    },
+    "stats": {
+      "headline": "查看<em>招聘信息</em>和\n可参加的<em>教育·培训</em>。",
+      "jobs": "招聘信息数",
+      "trainings": "教育·培训数",
+      "unit": "条",
+      "jobRegion": "按地区查找工作",
+      "jobOccupation": "按职业查找工作",
+      "jobTheme": "按主题查找工作",
+      "trCard": "国民明日学习卡培训课程",
+      "trAcademy": "K-数字学院培训课程",
+      "trMinistry": "各政府部门培训课程"
+    },
+    "policy": {
+      "title": "就业政策信息",
+      "more": "更多",
+      "go": "前往",
+      "p1": { "title": "求职准备", "desc": "想要就业，却不知道该怎么做" },
+      "p2": { "title": "寻找工作", "desc": "想找一份适合我的工作。" },
+      "p3": { "title": "教育培训", "desc": "为了就业，想学习或考取资格证。" },
+      "p4": { "title": "求职准备", "desc": "想要就业，却不知道该怎么做" },
+      "p5": { "title": "生育·育儿假", "desc": "为了生育/育儿，可能需要休息或缩短工作时间" }
+    },
+    "guide": {
+      "title": "使用指南",
+      "g1": { "title": "查找就业中心", "desc": "前往附近的就业中心，\n获得就业支援和相关咨询。" },
+      "g2": { "title": "使用方法", "desc": "了解如何轻松使用\n就业24的各种功能。" },
+      "g3": { "title": "咨询中心", "desc": "有任何问题都可以咨询。\n咨询师会耐心为您解答。" }
+    }
+  },
+  "common": {
+    "top": "顶部",
+    "toTop": "回到顶部",
+    "helper": "助手",
+    "home": "首页",
+    "breadcrumb": {
+      "skills": "职业能力开发",
+      "skillsSpaced": "职业能力开发",
+      "findApply": "查找·报名培训",
+      "kdigital": "K-数字培训",
+      "detail": "K-数字培训 课程详情",
+      "done": "报名完成"
+    }
+  },
+  "list": {
+    "title": "K-数字培训",
+    "lead": "寻找想学的技术，挑选适合自己的课程。",
+    "search": {
+      "question": "您想学习什么技术？",
+      "placeholder": "请输入课程名或机构名",
+      "button": "搜索",
+      "keywords": "推荐关键词",
+      "advanced": "详细条件",
+      "kw": { "ai": "AI", "python": "Python", "data": "数据", "security": "安全", "cloud": "云计算", "3d": "3D" }
+    },
+    "wish": {
+      "title": "收藏的课程",
+      "empty": "还没有收藏的课程",
+      "hint": "点击感兴趣卡片上的“收藏”，即可在这里集中查看。",
+      "summary": "已收藏{count}门课程",
+      "remove": "取消收藏"
+    },
+    "total": "全部课程 {count}",
+    "sort": { "start": "开课日期最早", "deadline": "即将截止", "popular": "最受欢迎" },
+    "filter": { "all": "全部 {count}", "offline": "线下 {count}", "smart": "智能 {count}", "online": "在线 {count}", "blended": "混合 {count}" },
+    "status": { "open": "招生中", "closing": "即将截止" },
+    "card": {
+      "period": "{start} ~ {end}（第{round}期）",
+      "duration": "{days}，{hours}  ·  {mode}",
+      "location": "{area}（{phone}）",
+      "fee": "培训费 {amount}",
+      "selfPay": "个人负担 {amount}",
+      "type": "数字基础能力培训",
+      "employment": "NCS职业类别培训机构就业率：不适用",
+      "detail": "课程详情",
+      "wish": "收藏",
+      "wished": "已收藏",
+      "compare": "比较",
+      "rounds": "查看其他期次"
+    },
+    "mode": { "online": "在线", "offline": "线下" },
+    "pagination": { "prev": "上一页", "next": "下一页", "page": "第{page}页" },
+    "about": {
+      "title": "什么是K-数字培训？",
+      "body": "由民间创新培训机构、数字领域领先企业和优秀大学等作为培训机构参与，提供多样的培训课程，帮助学员学习AI、大数据等基础技术，以及金融科技、云计算、智能制造等应用技术，并在实战中加以运用（提供培训费支援及培训津贴）",
+      "manual": "使用手册",
+      "policy": "就业政策指南"
+    }
+  },
+  "course": {
+    "c1": { "field": "AI · Python", "title": "AI by Hand：亲手理解深度学习基础数学（feat. Python）", "org": "示例数字研究所（株）", "area": "首尔 江南区" },
+    "c2": { "field": "UI/UX · 数据库", "title": "夯实UI/UX基础，成为基于数据库的设计师", "org": "示例数字研究所（株）", "area": "首尔 永登浦区" },
+    "c3": { "field": "网络 · 安全", "title": "【完全攻克】使用Packet Tracer掌握网络管理与安全", "org": "示例远程终身教育院", "area": "大邱 寿城区" },
+    "c4": { "field": "3D · 制造", "title": "用3D建模和3D打印制作属于自己的机械零件", "org": "示例数字研究所（株）", "area": "首尔 江南区" },
+    "c5": { "field": "生成式AI", "title": "用生成式AI制作15秒广告", "org": "示例数字研究所（株）", "area": "首尔 芦原区" },
+    "c6": { "field": "AI · Python", "title": "和AI一起写代码！迈向人工智能/数据职业的第一步", "org": "示例数字研究所（株）", "area": "首尔 江南区" }
+  },
+  "detail": {
+    "pageTitle": "查看培训课程",
+    "tabs": { "course": "课程信息", "org": "培训机构信息", "satisfaction": "满意度及就业率" },
+    "notice": "您可以查看所选培训课程的目标、内容、报名条件等详细信息。",
+    "org": "示例IT教育中心",
+    "certified": "3年认证",
+    "title": "基于项目的UX/UI设计实战训练营",
+    "headcount": {
+      "confirmed": "确认人数",
+      "applied": "报名人数",
+      "capacity": "招生人数"
+    },
+    "status": "招生中",
+    "fee": "培训费",
+    "selfPayButton": "查看自付金额",
+    "satisfaction": "满意度",
+    "reviews": "{count}条评价",
+    "basic": {
+      "title": "基本信息",
+      "type": "培训类型",
+      "typeValue": "K-数字培训",
+      "period": "培训期间",
+      "periodValue": "{start} ~ {end}（第{round}期）",
+      "dayNight": "日夜区分",
+      "dayNightValue": "白天",
+      "weekend": "是否周末",
+      "weekendValue": "工作日",
+      "hours": "培训时间",
+      "hoursValue": "{days}，{hours}",
+      "timetable": "查看课表"
+    },
+    "perf": {
+      "title": "成果及运营信息",
+      "employment": "课程就业率",
+      "status": "开展情况",
+      "statusValue": "6次/7次",
+      "age": "学员平均年龄段",
+      "wage": "课程平均工资",
+      "wageButton": "查看就业单位平均工资"
+    },
+    "ncs": {
+      "title": "NCS及资格信息",
+      "category": "NCS职务分类",
+      "categoryValue": "UI/UX工程（20010207）",
+      "level": "NCS等级",
+      "levelValue": "3级",
+      "applied": "是否适用NCS",
+      "appliedValue": "未适用",
+      "curriculum": "课程编排",
+      "cert": "相关资格证"
+    },
+    "place": {
+      "title": "培训地点及负责人",
+      "address": "地址",
+      "addressValue": "首尔特别市 OO区 OO路 00（示例大厦）4层",
+      "map": "查看地图",
+      "manager": "负责人姓名",
+      "managerValue": "IT教育中心",
+      "phone": "电话号码",
+      "email": "电子邮箱",
+      "ministry": "主管部门",
+      "ministryValue": "OO就业中心（示例）"
+    },
+    "cta": {
+      "interest": "添加关注",
+      "interestOn": "已关注",
+      "apply": "报名"
+    },
+    "confirmNote": "请务必<em>向培训机构确认</em>是否已截止招生。",
+    "guide": {
+      "title": "培训机构须知",
+      "body": "「基于项目的UX/UI设计实战训练营」报名须知\n\n※ 在就业24报名前，请先在示例IT教育中心官网报名。\nhttps://example.com\n\n用Quant设计，用Vibe实现！\n这是一门把创意变成真实服务的UX/UI实务项目课程。\n\n■ 教学安排\n\n正规课程（09/03~11/09）：线下\n项目（11/10~12/30）：线上线下结合\n（周一至周三线下 / 周四至周五线上）",
+      "more": "查看课程详情",
+      "less": "收起"
+    }
+  },
+  "apply": {
+    "title": "报名",
+    "lead": "将按以下培训课程进行报名。请确认报名信息。",
+    "course": "培训课程",
+    "org": "培训机构",
+    "type": "培训类型",
+    "period": "培训期间",
+    "periodValue": "{start} ~ {end}（{days}，{hours}）",
+    "recruit": "招生情况",
+    "recruitValue": "招生 {capacity} · 已报名 {applied}",
+    "phone": "手机号码（必填）",
+    "phonePlaceholder": "010-0000-0000",
+    "phoneHint": "审核结果将通过短信通知您。",
+    "agree": "同意收集·使用个人信息并提供给培训机构。（必填）",
+    "note": "※ 报名后需经培训机构审核通过，方可确认参加。",
+    "cancel": "取消",
+    "submit": "报名",
+    "error": {
+      "phone": "请按 010-0000-0000 格式输入手机号码。",
+      "agree": "需同意收集·使用个人信息后才能报名。"
+    }
+  },
+  "done": {
+    "title": "报名已完成",
+    "lead": "培训机构审核通过后即确认参加，结果将通过短信和就业24通知告知您。",
+    "steps": {
+      "label": "报名进度",
+      "s1": "报名",
+      "s2": "培训机构审核（进行中）",
+      "s3": "确认参加",
+      "s4": "培训开始"
+    },
+    "table": {
+      "number": "报名编号",
+      "numberValue": "K2026-111900123（示例）",
+      "course": "培训课程",
+      "org": "培训机构",
+      "period": "培训期间",
+      "date": "报名日期",
+      "status": "进行状态",
+      "statusValue": "待审核"
+    },
+    "other": "查看其他培训课程",
+    "mine": "我的报名记录"
+  },
+  "footer": {
+    "family": "关联网站",
+    "related": "相关机构",
+    "address": "请输入地址",
+    "label": "信息标签",
+    "placeholder": "请输入信息",
+    "infoTitle": "信息输入",
+    "infoBody": "请输入重要信息",
+    "utility": "实用链接",
+    "privacy": "个人信息处理方针",
+    "terms": "使用条款",
+    "security": "安全中心",
+    "a11y": "获得网络无障碍质量认证标志",
+    "policy": "政策名称",
+    "copyright": "© 2026 KRDS 练习项目。学习用示例页面。"
+  },
+  "toast": {
+    "wishAdded": "已收藏“{title}”课程。",
+    "wishRemoved": "已将“{title}”从收藏中移除。",
+    "interestOn": "已添加到关注。",
+    "interestOff": "已取消关注。",
+    "languageChanged": "语言已切换为中文。",
+    "demo": "这是练习用原型，此链接不会跳转。"
+  }
+}
