@@ -328,7 +328,61 @@
     <section class="dguide" id="dguide">
       <h2 data-i18n="detail.guide.title"></h2>
       <div class="dguide__body" id="dguideBody"><p data-i18n="detail.guide.body"></p></div>
-      <button type="button" class="dguide__more" id="dguideMore" aria-expanded="false" aria-controls="dguideBody"><span data-i18n="detail.guide.more"></span><img src="assets/chevron-14.png" width="16" height="16" alt=""></button>
+      <button type="button" class="dguide__more" id="dguideMore" aria-expanded="false" aria-controls="moreMenu"><span data-i18n="detail.guide.more"></span><img src="assets/chevron-14.png" width="16" height="16" alt=""></button>
+    </section>
+
+    <!-- 펼침 (Figma 변수 Switch / "펼침매뉴가펼쳐졌나요?" — True면 펼침, False면 40px 빈 영역) -->
+    <section class="xmenu" id="moreMenu" data-expanded="false">
+      <div class="xmenu__body" id="moreMenuBody" hidden>
+        <div class="xtabs" role="tablist">
+          <button type="button" role="tab" class="xtab is-on" aria-selected="true" data-i18n="detail.more.tabs.guide"></button>
+          <button type="button" role="tab" class="xtab" aria-selected="false" data-i18n="detail.more.tabs.timetable"></button>
+          <button type="button" role="tab" class="xtab" aria-selected="false" data-i18n="detail.more.tabs.inquiry"></button>
+          <button type="button" role="tab" class="xtab" aria-selected="false" data-i18n="detail.more.tabs.rounds"></button>
+        </div>
+        <div class="xpanel" role="tabpanel">
+          <h3 class="xh" data-i18n="detail.more.overview"></h3>
+          <div class="xtarget">
+            <div class="xtarget__k" data-i18n="detail.more.target"></div>
+            <div class="xtarget__v" data-i18n="detail.more.targetBody"></div>
+          </div>
+
+          <div class="xncs" id="xncs">
+            <div class="xncs__clip">
+              <table class="xt xt--kv">
+                <tr><th scope="row" data-i18n="detail.more.ncs.mainJob"></th><td data-i18n="detail.more.ncs.mainJobValue"></td><th scope="row" data-i18n="detail.more.ncs.totalHours"></th><td id="xTotalHours"></td></tr>
+              </table>
+              <table class="xt xt--ncs">
+                <thead><tr><th scope="col" data-i18n="detail.more.ncs.level"></th><th scope="col" colspan="2" data-i18n="detail.more.ncs.unit"></th><th scope="col" data-i18n="detail.more.ncs.unitHours"></th></tr></thead>
+                <tbody id="xNcsRows"></tbody>
+              </table>
+            </div>
+            <button type="button" class="xncs__more" id="xncsMore" aria-expanded="false"><span data-i18n="detail.more.ncs.more"></span><img src="assets/chevron-14.png" width="16" height="16" alt=""></button>
+          </div>
+
+          <h3 class="xh xh--gap" data-i18n="detail.more.books.title"></h3>
+          <div class="xscroll"><table class="xt xt--books">
+            <thead><tr><th scope="col" data-i18n="detail.more.books.name"></th><th scope="col" data-i18n="detail.more.books.author"></th><th scope="col" data-i18n="detail.more.books.year"></th><th scope="col" data-i18n="detail.more.books.own"></th><th scope="col" data-i18n="detail.more.books.supply"></th><th scope="col" data-i18n="detail.more.books.price"></th></tr></thead>
+            <tbody id="xBooks"></tbody>
+          </table></div>
+
+          <div class="xh-row xh--gap">
+            <h3 class="xh" data-i18n="detail.more.teachers.title"></h3>
+            <span class="xstar"><img src="assets/star-teacher.png" width="16" height="16" alt=""><span data-i18n="detail.more.teachers.star"></span></span>
+          </div>
+          <p class="xnote" data-i18n="detail.more.teachers.note"></p>
+          <div class="xscroll"><table class="xt xt--teachers">
+            <thead><tr><th scope="col" data-i18n="detail.more.teachers.name"></th><th scope="col" data-i18n="detail.more.teachers.major"></th><th scope="col" data-i18n="detail.more.teachers.cert"></th></tr></thead>
+            <tbody id="xTeachers"></tbody>
+          </table></div>
+
+          <h3 class="xh xh--gap" data-i18n="detail.more.facility.title"></h3>
+          <div class="xscroll"><table class="xt xt--fac">
+            <thead><tr><th scope="col" data-i18n="detail.more.facility.name"></th><th scope="col" data-i18n="detail.more.facility.type"></th><th scope="col" data-i18n="detail.more.facility.area"></th><th scope="col" data-i18n="detail.more.facility.perPerson"></th></tr></thead>
+            <tbody id="xFacility"></tbody>
+          </table></div>
+        </div>
+      </div>
     </section>
   </div>
   <div class="float-help">

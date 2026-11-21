@@ -72,13 +72,41 @@
     "carousel": {
       "label": "Featured service cards",
       "cta": "Go →",
-      "c1": { "tag": "Job prep", "title": "Find jobs", "desc": "Find jobs that fit you\nby region and occupation" },
-      "c2": { "tag": "Job prep", "title": "Manage résumés", "desc": "Register your résumé once\nand apply to many postings" },
-      "c3": { "tag": "Find jobs", "title": "Tailored job alerts", "desc": "We pick only the postings\nthat match your conditions" },
-      "c4": { "tag": "Find jobs", "title": "AI job picks", "desc": "AI recommends postings from\nyour career and preferences" },
-      "c5": { "tag": "Find jobs", "title": "Hiring events", "desc": "See job fairs and info sessions\nat a glance" },
-      "c6": { "tag": "Job prep", "title": "Career certificate", "desc": "Get your employment insurance\nhistory on one certificate" },
-      "c7": { "tag": "Build skills", "title": "K-Digital Training", "desc": "Training in new digital tech —\napply now" }
+      "c1": {
+        "tag": "Job prep",
+        "title": "Find jobs",
+        "desc": "Find jobs that fit you\nby region and occupation"
+      },
+      "c2": {
+        "tag": "Job prep",
+        "title": "Manage résumés",
+        "desc": "Register your résumé once\nand apply to many postings"
+      },
+      "c3": {
+        "tag": "Find jobs",
+        "title": "Tailored job alerts",
+        "desc": "We pick only the postings\nthat match your conditions"
+      },
+      "c4": {
+        "tag": "Find jobs",
+        "title": "AI job picks",
+        "desc": "AI recommends postings from\nyour career and preferences"
+      },
+      "c5": {
+        "tag": "Find jobs",
+        "title": "Hiring events",
+        "desc": "See job fairs and info sessions\nat a glance"
+      },
+      "c6": {
+        "tag": "Job prep",
+        "title": "Career certificate",
+        "desc": "Get your employment insurance\nhistory on one certificate"
+      },
+      "c7": {
+        "tag": "Build skills",
+        "title": "K-Digital Training",
+        "desc": "Training in new digital tech —\napply now"
+      }
     },
     "stats": {
       "headline": "Check <em>job postings</em> and\n<em>training</em> you can join.",
@@ -96,17 +124,41 @@
       "title": "Employment policies",
       "more": "More",
       "go": "Go",
-      "p1": { "title": "Job prep", "desc": "I want a job, but I don't know where to start." },
-      "p2": { "title": "Find jobs", "desc": "I want to find a job that suits me." },
-      "p3": { "title": "Education & training", "desc": "I want to study or earn a certificate to get hired." },
-      "p4": { "title": "Job prep", "desc": "I want a job, but I don't know where to start." },
-      "p5": { "title": "Maternity & parental leave", "desc": "I may need time off or shorter hours for childbirth or childcare." }
+      "p1": {
+        "title": "Job prep",
+        "desc": "I want a job, but I don't know where to start."
+      },
+      "p2": {
+        "title": "Find jobs",
+        "desc": "I want to find a job that suits me."
+      },
+      "p3": {
+        "title": "Education & training",
+        "desc": "I want to study or earn a certificate to get hired."
+      },
+      "p4": {
+        "title": "Job prep",
+        "desc": "I want a job, but I don't know where to start."
+      },
+      "p5": {
+        "title": "Maternity & parental leave",
+        "desc": "I may need time off or shorter hours for childbirth or childcare."
+      }
     },
     "guide": {
       "title": "User guide",
-      "g1": { "title": "Find a job center", "desc": "Visit a nearby job center for job support\nand employment counseling." },
-      "g2": { "title": "How to use", "desc": "Learn how to make the most of\nEmployment24's many features." },
-      "g3": { "title": "Contact center", "desc": "Ask us anything.\nOur counselors are happy to help." }
+      "g1": {
+        "title": "Find a job center",
+        "desc": "Visit a nearby job center for job support\nand employment counseling."
+      },
+      "g2": {
+        "title": "How to use",
+        "desc": "Learn how to make the most of\nEmployment24's many features."
+      },
+      "g3": {
+        "title": "Contact center",
+        "desc": "Ask us anything.\nOur counselors are happy to help."
+      }
     }
   },
   "common": {
@@ -132,7 +184,14 @@
       "button": "Search",
       "keywords": "Suggested keywords",
       "advanced": "Advanced filters",
-      "kw": { "ai": "AI", "python": "Python", "data": "Data", "security": "Security", "cloud": "Cloud", "3d": "3D" }
+      "kw": {
+        "ai": "AI",
+        "python": "Python",
+        "data": "Data",
+        "security": "Security",
+        "cloud": "Cloud",
+        "3d": "3D"
+      }
     },
     "wish": {
       "title": "Saved courses",
@@ -143,9 +202,22 @@
       "remove": "Remove"
     },
     "total": "All courses {count}",
-    "sort": { "start": "Earliest start", "deadline": "Closing soon", "popular": "Most popular" },
-    "filter": { "all": "All {count}", "offline": "In-person {count}", "smart": "Smart {count}", "online": "Online {count}", "blended": "Blended {count}" },
-    "status": { "open": "Open", "closing": "Closing soon" },
+    "sort": {
+      "start": "Earliest start",
+      "deadline": "Closing soon",
+      "popular": "Most popular"
+    },
+    "filter": {
+      "all": "All {count}",
+      "offline": "In-person {count}",
+      "smart": "Smart {count}",
+      "online": "Online {count}",
+      "blended": "Blended {count}"
+    },
+    "status": {
+      "open": "Open",
+      "closing": "Closing soon"
+    },
     "card": {
       "period": "{start} – {end} (Round {round})",
       "duration": "{days}, {hours}  ·  {mode}",
@@ -160,8 +232,15 @@
       "compare": "Compare",
       "rounds": "Other rounds"
     },
-    "mode": { "online": "Online", "offline": "In-person" },
-    "pagination": { "prev": "Previous", "next": "Next", "page": "Page {page}" },
+    "mode": {
+      "online": "Online",
+      "offline": "In-person"
+    },
+    "pagination": {
+      "prev": "Previous",
+      "next": "Next",
+      "page": "Page {page}"
+    },
     "about": {
       "title": "What is K-Digital Training?",
       "body": "Innovative private training providers, leading digital companies and top universities take part as training institutions, offering a wide range of courses so you can learn core technologies such as AI and big data, plus applied fields like fintech, cloud and smart manufacturing, and put them to use in practice (tuition support and training allowances provided).",
@@ -170,16 +249,50 @@
     }
   },
   "course": {
-    "c1": { "field": "AI · Python", "title": "AI by Hand: Deep learning math you can work out yourself (feat. Python)", "org": "Example Digital Lab Inc.", "area": "Gangnam-gu, Seoul" },
-    "c2": { "field": "UI/UX · Databases", "title": "Master UI/UX fundamentals and become a data-driven designer", "org": "Example Digital Lab Inc.", "area": "Yeongdeungpo-gu, Seoul" },
-    "c3": { "field": "Network · Security", "title": "[Complete guide] Network management and security with Packet Tracer", "org": "Example Remote Lifelong Learning Center", "area": "Suseong-gu, Daegu" },
-    "c4": { "field": "3D · Manufacturing", "title": "Build your own machine parts with 3D modeling and 3D printing", "org": "Example Digital Lab Inc.", "area": "Gangnam-gu, Seoul" },
-    "c5": { "field": "Generative AI", "title": "Make a 15-second ad with generative AI", "org": "Example Digital Lab Inc.", "area": "Nowon-gu, Seoul" },
-    "c6": { "field": "AI · Python", "title": "Code with AI! Your first step into an AI/data career", "org": "Example Digital Lab Inc.", "area": "Gangnam-gu, Seoul" }
+    "c1": {
+      "field": "AI · Python",
+      "title": "AI by Hand: Deep learning math you can work out yourself (feat. Python)",
+      "org": "Example Digital Lab Inc.",
+      "area": "Gangnam-gu, Seoul"
+    },
+    "c2": {
+      "field": "UI/UX · Databases",
+      "title": "Master UI/UX fundamentals and become a data-driven designer",
+      "org": "Example Digital Lab Inc.",
+      "area": "Yeongdeungpo-gu, Seoul"
+    },
+    "c3": {
+      "field": "Network · Security",
+      "title": "[Complete guide] Network management and security with Packet Tracer",
+      "org": "Example Remote Lifelong Learning Center",
+      "area": "Suseong-gu, Daegu"
+    },
+    "c4": {
+      "field": "3D · Manufacturing",
+      "title": "Build your own machine parts with 3D modeling and 3D printing",
+      "org": "Example Digital Lab Inc.",
+      "area": "Gangnam-gu, Seoul"
+    },
+    "c5": {
+      "field": "Generative AI",
+      "title": "Make a 15-second ad with generative AI",
+      "org": "Example Digital Lab Inc.",
+      "area": "Nowon-gu, Seoul"
+    },
+    "c6": {
+      "field": "AI · Python",
+      "title": "Code with AI! Your first step into an AI/data career",
+      "org": "Example Digital Lab Inc.",
+      "area": "Gangnam-gu, Seoul"
+    }
   },
   "detail": {
     "pageTitle": "Course details",
-    "tabs": { "course": "Course info", "org": "Institution info", "satisfaction": "Satisfaction & employment" },
+    "tabs": {
+      "course": "Course info",
+      "org": "Institution info",
+      "satisfaction": "Satisfaction & employment"
+    },
     "notice": "See the goals, content and enrollment requirements of the course you selected.",
     "org": "Example IT Education Center",
     "certified": "3-year certified",
@@ -252,6 +365,72 @@
       "body": "How to apply for “Project-based UX/UI Design Bootcamp”\n\n※ Before applying on Employment24, please apply first on the Example IT Education Center website.\nhttps://example.com\n\nDesign with Quant, build with Vibe!\nA hands-on UX/UI project course that turns ideas into real services.\n\n■ Course operation\n\nRegular curriculum (09/03–11/09): in person\nProject (11/10–12/30): in person and online\n(Mon–Wed in person / Thu–Fri online)",
       "more": "Show full course details",
       "less": "Show less"
+    },
+    "more": {
+      "tabs": {
+        "guide": "Course guide",
+        "timetable": "Timetable",
+        "inquiry": "Course inquiries",
+        "rounds": "Other rounds"
+      },
+      "overview": "Course overview",
+      "target": "Eligibility",
+      "targetBody": "Education: high school graduate or above, job seekers\nMajor: software, design, MIS, industrial design, business, etc. preferred\nPre-study: 'UI/UX planning' pre-course provided via Example STEP LMS\nCertificates: Engineer Information Processing, ACE, ADsP, GQT holders preferred\nWork experience: data analysis, marketing, app development, content development, service planning or team projects preferred\nOther preferences\n - People with disabilities, low-income households, veterans\n - Long-term unemployed for 6+ months",
+      "ncs": {
+        "mainJob": "Main occupation",
+        "mainJobValue": "[20010207] UI/UX engineering",
+        "totalHours": "Total hours",
+        "totalHoursValue": "{count} hours",
+        "level": "Level",
+        "unit": "NCS competency unit (element)",
+        "unitHours": "NCS unit (element) hours",
+        "basic": "Basic job skills",
+        "more": "Show NCS learning-path courses",
+        "less": "Hide NCS learning-path courses"
+      },
+      "books": {
+        "title": "Course materials",
+        "name": "Title",
+        "author": "Author",
+        "year": "Year",
+        "own": "In-house / purchased",
+        "supply": "How provided",
+        "price": "Price",
+        "b1": "Components",
+        "b2": "Responsive interfaces",
+        "b3": "Methodologies and changing flows",
+        "ownValue": "In-house",
+        "supplyValue": "Free"
+      },
+      "teachers": {
+        "title": "Instructors",
+        "star": "The icon marks star instructors",
+        "note": "※ Clicking an instructor opens the instructor lookup. Details are shown only if the instructor has chosen to make them public through 'Talent Bank'.",
+        "name": "Name",
+        "major": "Major",
+        "cert": "Certifications",
+        "m1": "Geoinformatics engineering",
+        "m2": "Computer engineering",
+        "m3": "New media design",
+        "m4": "Liberal arts",
+        "m5": "Art technology",
+        "m6": "Liberal arts",
+        "m7": "Design",
+        "c1": "Engineer Information Processing, Vocational Training Instructor (IT development, level 3), Vocational Training Instructor (Information processing, level 3)",
+        "c5": "Craftsman Programming",
+        "c6": "Blockchain Expert (level 2), IP Ability Test (IPAT)"
+      },
+      "facility": {
+        "title": "Training facilities",
+        "name": "Facility",
+        "type": "Type",
+        "area": "Area (m²)",
+        "perPerson": "Area per person (m²)",
+        "room": "Classroom {n}",
+        "hall": "OO training hall",
+        "hall3": "Training hall 3",
+        "typeValue": "Lecture & lab room"
+      }
     }
   },
   "apply": {

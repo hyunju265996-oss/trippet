@@ -404,8 +404,7 @@
     $('#dPeriod').textContent = I.t('detail.basic.periodValue', { start: I.date(DETAIL.start), end: I.date(DETAIL.end), round: DETAIL.round });
     $('#dHours').textContent = I.t('detail.basic.hoursValue', { days: I.count('days', DETAIL.days), hours: I.count('hours', DETAIL.hours) });
     $('#interestBtn span').textContent = I.t(state.interest ? 'detail.cta.interestOn' : 'detail.cta.interest');
-    var more = $('#dguideMore');
-    $('span', more).textContent = I.t(more.getAttribute('aria-expanded') === 'true' ? 'detail.guide.less' : 'detail.guide.more');
+    renderMoreMenu();
 
     var period = I.t('apply.periodValue', { start: I.date(DETAIL.start), end: I.date(DETAIL.end), days: I.count('days', DETAIL.days), hours: I.count('hours', DETAIL.hours) });
     $('#mPeriod').textContent = period;
@@ -421,12 +420,70 @@
     toast(I.t(state.interest ? 'toast.interestOn' : 'toast.interestOff'));
   });
 
+  /* ------------------------------------------------------------------ 펼침 메뉴
+     Figma: Variable collection "Switch" › BOOLEAN "펼침매뉴가펼쳐졌나요?" (default false).
+     「과정 자세히 보기」 ON_CLICK → SET_VARIABLE = NOT(variable).
+     Instance "펼침" › variant "Property 1" is bound to the variable: True = Tab List + Tab Panel shown,
+     False = 40px empty white area. Variant swap has no transition in the prototype. */
+  var vars = { '펼침매뉴가펼쳐졌나요?': false };
+
+  function setExpanded(value) {
+    vars['펼침매뉴가펼쳐졌나요?'] = value;
+    var menu = $('#moreMenu');
+    menu.dataset.expanded = String(value);
+    $('#moreMenuBody').hidden = !value;
+    $('#dguideMore').setAttribute('aria-expanded', String(value));
+  }
   $('#dguideMore').addEventListener('click', function () {
+    setExpanded(!vars['펼침매뉴가펼쳐졌나요?']);
+  });
+
+  var NCS_LEVELS = ['8', '7', '6', '5', '4', '3', '2', '1', 'basic'];
+  var BOOKS = ['b1', 'b2', 'b3'];
+  // 강사 성명은 원본처럼 가운데 글자를 가린 형태. link = 정보공개 강사(파란 밑줄).
+  var TEACHERS = [['강*진', 1, false], ['강*구', 2, false], ['김*연', 3, true], ['김*준', 4, false], ['김*얼', 5, true], ['민*근', 6, false], ['배*훈', 7, false]];
+  var FACILITIES = [['room', 1, 61.4, 3], ['room', 5, 92, 4.6], ['room', 2, 46.4, 2.3], ['room', 3, 46.58, 2.3], ['room', 4, 48, 2.4], ['hall', 0, 90, 4.5], ['hall3', 0, 64, 2.13]];
+
+  function row(cells) {
+    var tr = document.createElement('tr');
+    cells.forEach(function (c) {
+      var td = document.createElement('td');
+      if (c && c.nodeType) td.appendChild(c); else td.textContent = c;
+      tr.appendChild(td);
+    });
+    return tr;
+  }
+  function fill(sel, rows) { var tb = $(sel); tb.innerHTML = ''; rows.forEach(function (r) { tb.appendChild(r); }); }
+
+  function renderMoreMenu() {
+    var m = 'detail.more.';
+    $('#xTotalHours').textContent = I.t(m + 'ncs.totalHoursValue', { count: DETAIL.hours });
+    fill('#xNcsRows', NCS_LEVELS.map(function (l) {
+      return row([l === 'basic' ? I.t(m + 'ncs.basic') : l, '-', '-', '-']);
+    }));
+    fill('#xBooks', BOOKS.map(function (b) {
+      return row([I.t(m + 'books.' + b), '김*연', '2024', I.t(m + 'books.ownValue'), I.t(m + 'books.supplyValue'), I.number(0)]);
+    }));
+    fill('#xTeachers', TEACHERS.map(function (t) {
+      var name = t[0];
+      if (t[2]) { var a = document.createElement('a'); a.href = '#'; a.setAttribute('data-demo', ''); a.textContent = t[0]; name = a; }
+      var certKey = m + 'teachers.c' + t[1];
+      return row([name, I.t(m + 'teachers.m' + t[1]), ['c1', 'c5', 'c6'].indexOf('c' + t[1]) > -1 ? I.t(certKey) : '']);
+    }));
+    fill('#xFacility', FACILITIES.map(function (f) {
+      return row([I.t(m + 'facility.' + f[0], { n: f[1] }), I.t(m + 'facility.typeValue'), I.number(f[2]), I.number(f[3])]);
+    }));
+    var nb = $('#xncsMore');
+    $('span', nb).textContent = I.t(nb.getAttribute('aria-expanded') === 'true' ? m + 'ncs.less' : m + 'ncs.more');
+  }
+
+  $('#xncsMore').addEventListener('click', function () {
     var open = this.getAttribute('aria-expanded') !== 'true';
     this.setAttribute('aria-expanded', String(open));
-    $('#dguide').classList.toggle('is-open', open);
-    $('span', this).textContent = I.t(open ? 'detail.guide.less' : 'detail.guide.more');
+    $('#xncs').classList.toggle('is-open', open);
+    $('span', this).textContent = I.t(open ? 'detail.more.ncs.less' : 'detail.more.ncs.more');
   });
+  tabGroup('.xtab');
 
   /* ------------------------------------------------------------------ 수강신청 modal (OVERLAY · DISSOLVE 0.3s ease-in) */
   var modal = $('#applyModal');
